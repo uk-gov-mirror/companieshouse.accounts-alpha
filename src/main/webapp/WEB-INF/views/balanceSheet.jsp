@@ -105,14 +105,14 @@
     <div id="global-header-bar"></div>
 
     
-<main id="content" role="main" class="two-column-accounts">
+<main id="page-container" role="main" class="two-column-accounts">
   <div class="phase-banner-alpha">
   <p>
     <strong class="phase-tag">ALPHA</strong>
     <span>This is a new service – your <a href="javascript:void(0)">feedback</a> will help us to improve it.</span>
   </p>
 </div>
-
+<div class="" id="global-nav">
 <nav class="content" role="navigation">
   <ul id="navigation" class="mobile-hidden">
     <li class="user" id="signed-in-user">username@email.co.uk: </li>
@@ -121,6 +121,7 @@
     <li><a href="javascript:void(0)" id="user-signout">Sign out</a></li>
   </ul>
 </nav>
+</div>
 
 <p class="company-details">Filing for <a class="heading-small" href="javascript:void(0)">A TEST COMPANY LIMITED (01234567)</a><br>Period of accounts: 1 April 2015 to 31 March 2016</p>
 
@@ -271,37 +272,25 @@
 
     <footer class="group js-footer" id="footer" role="contentinfo">
 
-      <div class="footer-wrapper">
-        
-
-        <div class="footer-meta">
-          <div class="footer-meta-inner">
+    <nav>
+          <div>
             <ul>
-    	   			<li><a href="javascript:void(0)">Policies</a></li>
-	            <li><a href="javascript:void(0)">Cookies</a></li>
-	            <li><a href="javascript:void(0)">Contact us</a></li>
-             	<li><a href="javascript:void(0)">Developers</a></li>
+    	   		<li><a href="http://resources.companieshouse.gov.uk/legal/termsAndConditions.shtml" target="_blank">Policies</a></li>
+	            <li><a  href="/help/cookies">Cookies</a></li>
+	            <li><a  href="/help/contact-us">Contact us</a></li>
+             	<li><a href="https://developer.companieshouse.gov.uk/" target="_blank">Developers</a></li>
     	      </ul>
           </div>
+	</nav>
 
-
-        </div>
-      </div>
     </footer>
 
     <div id="global-app-error" class="app-error hidden"></div>
-
-    <script src="/public/javascripts/govuk-template.js?0.17.3"></script>
-
     
   <!-- Javascript -->
-<script src="${cdnUrl}/javascripts/details.polyfill.js"></script>
-<script src="${cdnUrl}/javascripts/jquery-1.11.3.js"></script>
-<script src="${cdnUrl}/javascripts/govuk/selection-buttons.js"></script>
-<script src="${cdnUrl}/javascripts/application.js"></script>
-<script src="${cdnUrl}/javascripts/balance-sheet-calculations.js"></script>
-<script src="${cdnUrl}/javascripts/balance-sheet-notes-calculations.js"></script>
-<script src="${cdnUrl}/javascripts/accounts.js"></script>
+<script src="${cdnUrl}/script/vendor/jquery-1.9.1.js"></script>
+  <spring:url value="/resources/javascripts/balance-sheet.js" var="balanceSheetJs" />
+<script src="${balanceSheetJs }"></script>
 
   <!-- GOV.UK Prototype kit v3.0.0 -->
 
