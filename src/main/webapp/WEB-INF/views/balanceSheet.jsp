@@ -163,14 +163,14 @@
     <div class="column-quarter">
       <div class="form-group">
         <label for="intangible-assets-current"><span class="mobile-only-label">Intangible assets (2016)</span>
-          <input type="number" class="form-control" id="intangible-assets-current">
+          <input type="number" onkeypress='validate(event)' class="form-control" id="intangible-assets-current">
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label for="intangible-assets-previous"><span class="mobile-only-label">Intangible assets (2015)</span>
-          <input type="number" class="form-control" id="intangible-assets-previous">
+          <input type="number" onkeypress='validate(event)' class="form-control" id="intangible-assets-previous">
         </label>
       </div>
     </div>
@@ -191,14 +191,14 @@
     <div class="column-quarter">
       <div class="form-group">
         <label for="tangible-assets-current"><span class="mobile-only-label">Tangible assets (2016)</span>
-          <input type="number" class="form-control" id="tangible-assets-current">
+          <input type="number" onkeypress='validate(event)' class="form-control" id="tangible-assets-current">
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label" for="tangible-assets-previous"><span class="mobile-only-label">Tangible assets (2015)</span>
-          <input type="number" class="form-control" id="tangible-assets-previous">
+          <input type="number" onkeypress='validate(event)' class="form-control" id="tangible-assets-previous">
         </label>
       </div>
     </div>
@@ -218,14 +218,14 @@
     <div class="column-quarter">
       <div class="form-group">
         <label for="investments-fixed-assets-current"><span class="mobile-only-label">Investments (fixed assets) (2016)</span>
-          <input type="number" class="form-control" id="investments-fixed-assets-current">
+          <input type="number" onkeypress='validate(event)' class="form-control" id="investments-fixed-assets-current">
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label" for="investments-fixed-assets-previous"><span class="mobile-only-label">Investments (fixed assets) (2015)</span>
-          <input type="number" class="form-control" id="investments-fixed-assets-previous">
+          <input type="number" onkeypress='validate(event)' class="form-control" id="investments-fixed-assets-previous">
         </label>
       </div>
     </div>
@@ -245,14 +245,14 @@
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label-bold" for="total-fixed-assets-current"><span class="mobile-only-label">Total fixed assets (2016)</span>
-          <input type="number" class="form-control" id="total-fixed-assets-current">
+          <input type="number"  class="form-control" id="total-fixed-assets-current">
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label-bold" for="total-fixed-assets-previous"><span class="mobile-only-label">Total fixed assets (2015)</span>
-          <input type="number" class="form-control" id="total-fixed-assets-previous">
+          <input type="number"  class="form-control" id="total-fixed-assets-previous">
         </label>
       </div>
     </div>
