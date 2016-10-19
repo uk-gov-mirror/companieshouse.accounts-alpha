@@ -15,3 +15,17 @@ $(function() {
 			calculateBalanceSheetSectionTotal($('#total-fixed-assets-previous') ,$('#intangible-assets-previous'),  $('#tangible-assets-previous'),  $('#investments-fixed-assets-previous'));
 	}
 );
+
+function validate(evt) {
+	 	
+	 	  var theEvent = evt || window.event;
+	 	  var key = theEvent.keyCode || theEvent.which;
+	 	  key = String.fromCharCode( key );
+		  var regex = /^[0-9]{0,7}$/;
+		  var element = document.getElementById(theEvent.target.id)	  
+	 	  
+	 	  if( !regex.test(element.value) || !regex.test(key)) {		  
+	 		  theEvent.returnValue = false;
+	 		  if(theEvent.preventDefault) theEvent.preventDefault();
+		  }	  
+} 

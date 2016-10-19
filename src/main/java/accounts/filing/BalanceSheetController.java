@@ -1,7 +1,5 @@
 package accounts.filing;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BalanceSheetController {
 	
 
-	private String cdnUrl = "http://wswebdev2.orctel.internal:21502";
+	private String cdnUrl = "http://chs-dev:8080";
 	
 	@RequestMapping(value="/balanceSheet")
 	public String showBalanceSheetPage(Model model){
