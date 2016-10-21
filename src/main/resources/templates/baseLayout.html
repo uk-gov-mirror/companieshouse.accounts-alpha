@@ -7,22 +7,22 @@
   Title goes here
 </title>
 
-<!--[if gt IE 8]><!--><link th:href="@{{cdnUrl}/style/assets-digital-cabinet-office-gov-uk-static/govuk-template.css(cdnUrl=${cdnUrl})}" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
-    <link th:href="@{{cdnUrl}/style/assets-digital-cabinet-office-gov-uk-static/govuk-template-print.css(cdnUrl=${cdnUrl})}" media="print" rel="stylesheet" type="text/css" />
+<!--[if gt IE 8]><!--><link th:href="@{{cdnUrl}/style/assets-digital-cabinet-office-gov-uk-static/govuk-template.css(cdnUrl=${@environment.getProperty('cdn.url')})}" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
+    <link th:href="@{{cdnUrl}/style/assets-digital-cabinet-office-gov-uk-static/govuk-template-print.css(cdnUrl=${@environment.getProperty('cdn.url')})}" media="print" rel="stylesheet" type="text/css" />
 
-    <link rel="shortcut icon" th:href="@{{cdnUrl}/images/favicon.ico?0.17.3(cdnUrl=${cdnUrl})}" type="image/x-icon" />
-    <link rel="mask-icon" th:href="@{{cdnUrl}/images/gov.uk_logotype_crown.svg?0.17.3(cdnUrl=${cdnUrl})}" color="#0b0c0c" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" th:href="@{{cdnUrl}/images/apple-touch-icon-152x152.png?0.17.3(cdnUrl=${cdnUrl})}" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" th:href="@{{cdnUrl}/images/apple-touch-icon-120x120.png?0.17.3(cdnUrl=${cdnUrl})}" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" th:href="@{{cdnUrl}/images/apple-touch-icon-76x76.png?0.17.3(cdnUrl=${cdnUrl})}" />
-    <link rel="apple-touch-icon-precomposed" th:href="@{{cdnUrl}/images/apple-touch-icon-60x60.png?0.17.3(cdnUrl=${cdnUrl})}" />
+    <link rel="shortcut icon" th:href="@{{cdnUrl}/images/favicon.ico?0.17.3(cdnUrl=${@environment.getProperty('cdn.url')})}" type="image/x-icon" />
+    <link rel="mask-icon" th:href="@{{cdnUrl}/images/gov.uk_logotype_crown.svg?0.17.3(cdnUrl=${@environment.getProperty('cdn.url')})}" color="#0b0c0c" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" th:href="@{{cdnUrl}/images/apple-touch-icon-152x152.png?0.17.3(cdnUrl=${@environment.getProperty('cdn.url')})}" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" th:href="@{{cdnUrl}/images/apple-touch-icon-120x120.png?0.17.3(cdnUrl=${@environment.getProperty('cdn.url')})}" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" th:href="@{{cdnUrl}/images/apple-touch-icon-76x76.png?0.17.3(cdnUrl=${@environment.getProperty('cdn.url')})}" />
+    <link rel="apple-touch-icon-precomposed" th:href="@{{cdnUrl}/images/apple-touch-icon-60x60.png?0.17.3(cdnUrl=${@environment.getProperty('cdn.url')})}" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-    <meta property="og:image" content="@{{cdnUrl}/images/opengraph-image.png?0.17.3(cdnUrl=${cdnUrl})}"></meta>
+    <meta property="og:image" content="@{{cdnUrl}/images/opengraph-image.png?0.17.3(cdnUrl=${@environment.getProperty('cdn.url')})}"></meta>
 
     
-<link th:href="@{{cdnUrl}/style/application.css(cdnUrl=${cdnUrl})}" rel="stylesheet" type="text/css" /> 
-<link th:href="@{{cdnUrl}/style/ch-accounts.css(cdnUrl=${cdnUrl})}" rel="stylesheet" type="text/css" />
+<link th:href="@{{cdnUrl}/style/application.css(cdnUrl=${@environment.getProperty('cdn.url')})}" rel="stylesheet" type="text/css" /> 
+<link th:href="@{{cdnUrl}/style/ch-accounts.css(cdnUrl=${@environment.getProperty('cdn.url')})}" rel="stylesheet" type="text/css" />
 
   </head>
 
@@ -122,7 +122,7 @@
     
   <!-- Javascript -->
  
-<script th:src="@{{cdnUrl}/script/vendor/jquery-1.9.1.js(cdnUrl=${cdnUrl})}"></script>
+<script th:src="@{{cdnUrl}/script/vendor/jquery-1.9.1.js(cdnUrl=${@environment.getProperty('cdn.url')})}"></script>
 
  <div layout:fragment="page-scripts"></div>
 
