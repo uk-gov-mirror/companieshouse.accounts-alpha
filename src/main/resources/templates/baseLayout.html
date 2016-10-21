@@ -121,9 +121,10 @@
     <div id="global-app-error" class="app-error hidden"></div>
     
   <!-- Javascript -->
+ 
 <script th:src="@{{cdnUrl}/script/vendor/jquery-1.9.1.js(cdnUrl=${cdnUrl})}"></script>
-<script th:src="@{balance-sheet.js}"></script>
 
+ <div layout:fragment="page-scripts"></div>
 
   </body>
 </html>
