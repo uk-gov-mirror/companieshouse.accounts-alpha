@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class BalanceSheetController {
-	
-	
 
 	@RequestMapping(value="/balanceSheet")
 	public String showBalanceSheetPage(){
