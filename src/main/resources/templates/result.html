@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="baseLayout"> 
+
+<head>
+<title>Balance Sheet</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+
+	<h1>Result</h1>
+    <p th:text="': ' + ${balanceSheet.currentIntangibleAssets}" />
+  
+    <p th:text="': ' + ${balanceSheet.currentTangibleAssets}" />
+    <p th:text="': ' + ${balanceSheet.currentInvestments}" />
+    <p th:text="': ' + ${balanceSheet.currentTotalFixedAssets}" />
+    <p th:text="': ' + ${balanceSheet.previousIntangibleAssets}" />
+ 	<p th:text="': ' + ${balanceSheet.previousTangibleAssets}" />
+    <p th:text="': ' + ${balanceSheet.previousInvestments}" />
+    <p th:text="': ' + ${balanceSheet.previousTotalFixedAssets}" />
+
+    
+    
+    
+    <a href="/greeting">Submit another message</a>
+    
+
+</div>
+<div layout:fragment="page-scripts">
+<script th:src="@{balance-sheet.js}"></script>
+</div>
+
+</body>
+</html>

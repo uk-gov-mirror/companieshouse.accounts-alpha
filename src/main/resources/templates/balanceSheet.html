@@ -15,25 +15,27 @@
       &nbsp;
     </div>
     <div class="column-quarter">
-      <h2 class="heading-small">1 April 2015 to<br />31 March 2016</h2>
+      <h2 class="heading-small">2015 to 2016</h2>
     </div>
     <div class="column-quarter">
-      <h2 class="heading-small">1 April 2014 to<br />31 March 2015</h2>
+      <h2 class="heading-small">2014 to 2015</h2>
     </div>
   </div>
 
 
 
-<form action="/" method="post" class="form" id="balance-sheet">
+<form action="/balanceSheet" th:action="@{/balanceSheet}"  th:object="${balanceSheet}" method="post" class="form" id="balance-sheet">
 
 <h2 class="heading-medium">Fixed assets</h2>
+
+
 
   <div class="grid-row">
     <div class="column-half">
         <details>
           <summary><span class="summary">Intangible assets</span></summary>
           <div class="panel panel-border-narrow">
-            <p>The value of the company's non-physical assets - for example, patents, trademarks, licences, goodwill (taking account of depreciation).</p>
+            <p>The value of the company's non-physical assets - for example, patents, trademarks, licences, good will (taking account of depreciation).</p>
           </div>
         </details>
     </div>
@@ -41,14 +43,14 @@
     <div class="column-quarter">
       <div class="form-group">
         <label for="intangible-assets-current"><span class="mobile-only-label">Intangible assets (2016)</span>
-           <input type="number" onkeypress='validate(event)' class="form-control" id="intangible-assets-current" />
+           <input type="number" onkeypress='validate(event)' class="form-control" id="intangible-assets-current" th:field="*{currentIntangibleAssets}" />
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label for="intangible-assets-previous"><span class="mobile-only-label">Intangible assets (2015)</span>
-           <input type="number" onkeypress='validate(event)' class="form-control" id="intangible-assets-previous" />
+           <input type="number" onkeypress='validate(event)' class="form-control" id="intangible-assets-previous" th:field="*{previousIntangibleAssets}" />
         </label>
       </div>
     </div>
@@ -67,14 +69,14 @@
     <div class="column-quarter">
       <div class="form-group">
         <label for="tangible-assets-current"><span class="mobile-only-label">Tangible assets (2016)</span>
-           <input type="number" onkeypress='validate(event)' class="form-control" id="tangible-assets-current" />
+           <input type="number" onkeypress='validate(event)' class="form-control" id="tangible-assets-current" th:field="*{currentTangibleAssets}" />
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label" for="tangible-assets-previous"><span class="mobile-only-label">Tangible assets (2015)</span>
-           <input type="number" onkeypress='validate(event)' class="form-control" id="tangible-assets-previous" />
+           <input type="number" onkeypress='validate(event)' class="form-control" id="tangible-assets-previous" th:field="*{previousTangibleAssets}" />
         </label>
       </div>
     </div>
@@ -94,14 +96,14 @@
     <div class="column-quarter">
       <div class="form-group">
         <label for="investments-fixed-assets-current"><span class="mobile-only-label">Investments (fixed assets) (2016)</span>
-           <input type="number" onkeypress='validate(event)' class="form-control" id="investments-fixed-assets-current" />
+           <input type="number" onkeypress='validate(event)' class="form-control" id="investments-fixed-assets-current" th:field="*{currentInvestments}" />
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label" for="investments-fixed-assets-previous"><span class="mobile-only-label">Investments (fixed assets) (2015)</span>
-           <input type="number" onkeypress='validate(event)' class="form-control" id="investments-fixed-assets-previous" />
+           <input type="number" onkeypress='validate(event)' class="form-control" id="investments-fixed-assets-previous" th:field="*{previousInvestments}" />
         </label>
       </div>
     </div>
@@ -121,14 +123,14 @@
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label-bold" for="total-fixed-assets-current"><span class="mobile-only-label">Total fixed assets (2016)</span>
-           <input type="number" class="form-control" id="total-fixed-assets-current" readonly="readonly" value="0" />
+           <input type="number" class="form-control" id="total-fixed-assets-current" readonly="readonly" value="0" th:field="*{currentTotalFixedAssets}" />
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label-bold" for="total-fixed-assets-previous"><span class="mobile-only-label">Total fixed assets (2015)</span>
-           <input type="number" class="form-control" id="total-fixed-assets-previous" readonly="readonly" value="0" />
+           <input type="number" class="form-control" id="total-fixed-assets-previous" readonly="readonly" value="0" th:field="*{previousTotalFixedAssets}" />
         </label>
       </div>
     </div>
@@ -136,12 +138,12 @@
   </div>
   <!--End total fixed assets-->
 
-
-
       <div class="form-group">
-        <a class="button" href="cato-style-balance-sheet-statements">Continue to Balance sheet statements</a>
+        <input type="submit" class="button" value="Continue to Balance sheet statements" />
       </div>
 </form>
+<!--  href="cato-style-balance-sheet-statements" -->
+
 
 </div>
 <div layout:fragment="page-scripts">
