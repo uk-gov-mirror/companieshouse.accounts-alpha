@@ -1,20 +1,35 @@
-function calculateBalanceSheetSectionTotal($total, $val1, $val2, $val3){
-
-$val1.add($val2).add($val3).on('change', function () 
-		{
-			$total.val(
-					+$val1.val() + +$val2.val() + +$val3.val()
-					);
-			}
-);
-}
-
 $(function() {
 		
-			calculateBalanceSheetSectionTotal($('#total-fixed-assets-current') ,$('#intangible-assets-current'),  $('#tangible-assets-current'),  $('#investments-fixed-assets-current'));
-			calculateBalanceSheetSectionTotal($('#total-fixed-assets-previous') ,$('#intangible-assets-previous'),  $('#tangible-assets-previous'),  $('#investments-fixed-assets-previous'));
+	// Fixed assets
+	attachOnChangeListener([$('#intangible-assets-current'),  $('#tangible-assets-current'),  $('#investments-fixed-assets-current')], 'total-fixed-assets-current' )
+	attachOnChangeListener([$('#intangible-assets-previous'),  $('#tangible-assets-previous'),  $('#investments-fixed-assets-previous')], 'total-fixed-assets-previous' )
+	
+	// Current assets 
+	attachOnChangeListener([$('#stocks-current'),  $('#debtors-current'),  $('#cash-at-bank-and-in-hand-current'), $('#investments-current-assets-current')], 'total-current-assets-current' )
+	attachOnChangeListener([$('#stocks-previous'),  $('#debtors-previous'),  $('#cash-at-bank-and-in-hand-previous'), $('#investments-current-assets-previous')], 'total-current-assets-previous' )
 	}
 );
+
+
+function attachOnChangeListener(arr, total){
+	for(var i=0;i<arr.length;i++){
+		arr[i].on('change', function() {
+			findTotal(arr, total)
+		});
+	}
+}
+
+
+function findTotal(arr, totalField){
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].val()))
+            tot += parseInt(arr[i].val());
+    }
+    document.getElementById(totalField).value = tot;
+}
+
+
 
 function validate(evt) {
 	

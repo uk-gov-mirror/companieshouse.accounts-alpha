@@ -9,9 +9,8 @@
 <div layout:fragment="content">
 
 
-	<h1>Result</h1>
-    <p th:text="': ' + ${balanceSheet.currentIntangibleAssets}" />
-  
+		<h1>FIXED </h1>
+    <p th:text="': ' + ${balanceSheet.currentIntangibleAssets}" /> 
     <p th:text="': ' + ${balanceSheet.currentTangibleAssets}" />
     <p th:text="': ' + ${balanceSheet.currentInvestments}" />
     <p th:text="': ' + ${balanceSheet.currentTotalFixedAssets}" />
@@ -19,13 +18,22 @@
  	<p th:text="': ' + ${balanceSheet.previousTangibleAssets}" />
     <p th:text="': ' + ${balanceSheet.previousInvestments}" />
     <p th:text="': ' + ${balanceSheet.previousTotalFixedAssets}" />
-
     
+    	<h1>CURRENT </h1>
+    <p th:text="': ' + ${balanceSheet.currentStocks}" /> 
+    <p th:text="': ' + ${balanceSheet.currentDebtors}" />
+    <p th:text="': ' + ${balanceSheet.currentCABAIH}" />
+    <p th:text="': ' + ${balanceSheet.currentInvestments}" />
+    <p th:text="': ' + ${balanceSheet.currentTotalAssets}" />
     
+    <p th:text="': ' + ${balanceSheet.previousStocks}" /> 
+    <p th:text="': ' + ${balanceSheet.previousDebtors}" />
+    <p th:text="': ' + ${balanceSheet.previousCABAIH}" />
+    <p th:text="': ' + ${balanceSheet.previousInvestments}" />
+    <p th:text="': ' + ${balanceSheet.previousTotalAssets}" />
     
-    <a href="/greeting">Submit another message</a>
+     
     
-
 </div>
 <div layout:fragment="page-scripts">
 <script th:src="@{balance-sheet.js}"></script>
