@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="baseLayout"> 
+
+<head>
+<title>Eligibility Page</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+<h1 class="heading-xlarge">File abridged accounts</h1>
+
+
+        <p>Use this service to file prepared and approved abridged accounts.</p>
+
+        <details>
+          <summary><span class="summary">Not sure what type of accounts you have?</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Our example accounts may help you identify which type of accounts you've prepared.</p>
+            <ul class="list list-bullet">
+              <li><a href="javascript:void(0)">Word or similar: accounts for private limited companies (88KB)</a></li>
+              <li><a href="javascript:void(0)">PDF: accounts for private limited companies (24KB)</a></li>
+            </ul>
+          </div>
+        </details>
+        
+        
+      <h2 class="heading-medium">Before you start</h2>
+      <ul class="list list-bullet">
+        <li>The abridged accounts need to be prepared, with figures rounded to whole numbers. Round down income, and round up spending.</li>
+        <li>The abridged accounts should have been approved by the director/board of directors.</li>
+      </ul>
+
+	  <div class="form-group">
+        <a th:href="@{/balanceSheet}" class="button button-start"  id="start-button">Start</a>
+      </div>
+
+</div>
+
+</body>
+</html>
