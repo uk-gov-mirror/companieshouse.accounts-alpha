@@ -22,15 +22,32 @@
     	<h1>CURRENT </h1>
     <p th:text="': ' + ${balanceSheet.currentStocks}" /> 
     <p th:text="': ' + ${balanceSheet.currentDebtors}" />
-    <p th:text="': ' + ${balanceSheet.currentCABAIH}" />
+    <p th:text="': ' + ${balanceSheet.currentCash}" />
     <p th:text="': ' + ${balanceSheet.currentInvestments}" />
     <p th:text="': ' + ${balanceSheet.currentTotalAssets}" />
     
     <p th:text="': ' + ${balanceSheet.previousStocks}" /> 
     <p th:text="': ' + ${balanceSheet.previousDebtors}" />
-    <p th:text="': ' + ${balanceSheet.previousCABAIH}" />
+    <p th:text="': ' + ${balanceSheet.previousCash}" />
     <p th:text="': ' + ${balanceSheet.previousInvestments}" />
     <p th:text="': ' + ${balanceSheet.previousTotalAssets}" />
+    
+    	<h1>Liabilities </h1>
+    <p th:text="': ' + ${balanceSheet.currentCreditorsOneYear}" />
+    <p th:text="': ' + ${balanceSheet.previousCreditorsOneYear}" />
+    <p th:text="': ' + ${balanceSheet.currentNetAssets}" />
+    <p th:text="': ' + ${balanceSheet.previousNetAssets}" />
+    <p th:text="': ' + ${balanceSheet.currentTotalAssetsMinusCurrentLiabilities}" />
+    <p th:text="': ' + ${balanceSheet.previousTotalAssetsMinusCurrentLiabilities}" />
+    <p th:text="': ' + ${balanceSheet.currentCreditorsMoreYears}" />
+    <p th:text="': ' + ${balanceSheet.previousCreditorsMoreYears}" />
+    <p th:text="': ' + ${balanceSheet.currentProvisionLiabilities}" />
+    <p th:text="': ' + ${balanceSheet.previousProvisionLiabilities}" />
+    <p th:text="': ' + ${balanceSheet.currentTotalNetAssetsLiabilities}" />
+    <p th:text="': ' + ${balanceSheet.previousTotalNetAssetsLiabilities}" />
+    
+    
+    
     
      
     
