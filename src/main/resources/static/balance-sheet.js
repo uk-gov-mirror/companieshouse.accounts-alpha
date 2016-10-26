@@ -7,7 +7,7 @@ $(function() {
 	// Current assets 
 	attachOnChangeListener([$('#stocks-current'),  $('#debtors-current'),  $('#cash-at-bank-and-in-hand-current'), $('#investments-current-assets-current')], 'total-current-assets-current' )
 	attachOnChangeListener([$('#stocks-previous'),  $('#debtors-previous'),  $('#cash-at-bank-and-in-hand-previous'), $('#investments-current-assets-previous')], 'total-current-assets-previous' )
-	
+	    
 	// Net current assets 
 	attachOnChangeListener([$('#total-current-assets-current'),  $('#creditors-amounts-falling-due-within-one-year-current')], 'net-current-assets-liabilities-current', true )
 	attachOnChangeListener([$('#total-current-assets-previous'),  $('#creditors-amounts-falling-due-within-one-year-previous')], 'net-current-assets-liabilities-previous', true )	
@@ -19,8 +19,11 @@ $(function() {
 	// Total net assets (liabilities)
 	attachOnChangeListener([$('#total-assets-less-current-liabilities-current'),  $('#creditors-amounts-falling-due-after-more-than-one-year-current'), $('#provision-for-liabilities-current')], 'total-net-assets-liabilities-current', true )
 	attachOnChangeListener([$('#total-assets-less-current-liabilities-previous'),  $('#creditors-amounts-falling-due-after-more-than-one-year-previous'), $('#provision-for-liabilities-previous')], 'total-net-assets-liabilities-current', true )	
-	}
-);
+
+    //Capital and reserves
+	attachOnChangeListener([$('#called-up-share-capital-current'),  $('#share-premium-account-current'),  $('#revaluation-reserve-current'), $('#other-reserves-current'), $('#profit-and-loss-account-current')], 'total-shareholders-funds-current' )
+	attachOnChangeListener([$('#called-up-share-capital-previous'),  $('#share-premium-account-previous'),  $('#revaluation-reserve-previous'), $('#other-reserves-previous'), $('#profit-and-loss-account-previous')], 'total-shareholders-funds-previous' )
+});
 
 
 function attachOnChangeListener(arr, total, substract){

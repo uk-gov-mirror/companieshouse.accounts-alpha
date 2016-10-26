@@ -277,6 +277,7 @@
    </div>
    
      <!-- END of CURRENT ASSETS -->
+
      
      <!--  Beginning of Liabilities -->
      
@@ -447,6 +448,176 @@
            </div>
          </div>
        </div>
+
+
+     <!-- BEGINNING of CAPITAL AND RESERVES -->
+     <h2 class="heading-medium">Capital and reserves</h2>
+     
+     <!-- Called up share capital -->
+     <div class="grid-row">
+           <div class="column-half">
+             <label class="form-label" for="stocks-previous">
+               <details role="group">
+                 <summary role="button" aria-controls="details-content-15" aria-expanded="true"><span class="summary">Called up share capital</span></summary>
+                 <div class="panel panel-border-narrow" id="details-content-15" aria-hidden="false">
+                   <p>The total value of all company shares issued at this date. For example, if you issued 100 shares at £1 each at incorporation, and a further 50 shares at £1 each in this period, your called up share capital for the period would be £150.</p>
+                 </div>
+               </details>
+             </label>
+           </div>
+
+           <div class="column-quarter">
+             <div class="form-group">
+               <label for="called-up-share-capital-current"><span class="mobile-only-label">Called up share capital (2016)</span>
+                 <input type="number" placeholder="0" class="form-control" id="called-up-share-capital-current" onkeypress='validate(event)' th:field="*{currentShareCapital}" />
+               </label>
+             </div>
+           </div>
+           <div class="column-quarter">
+             <div class="form-group">
+               <label for="called-up-share-capital-current"><span class="mobile-only-label">Called up share capital (2015)</span>
+                 <input type="number" placeholder="0" class="form-control" id="called-up-share-capital-previous" onkeypress='validate(event)' th:field="*{previousShareCapital}" />
+               </label>
+             </div>
+           </div>
+         </div>
+     
+     <!-- Share premium account-->
+     <div class="grid-row">
+           <div class="column-half">
+               <details role="group">
+                 <summary role="button" aria-controls="details-content-16" aria-expanded="false"><span class="summary">Share premium account</span></summary>
+                 <div class="panel panel-border-narrow" id="details-content-16" aria-hidden="true">
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at dolor eu turpis hendrerit vulputate sollicitudin quis dui. In posuere nibh sed eros sollicitudin, in congue ipsum aliquam.</p>
+                 </div>
+               </details>
+           </div>
+
+           <div class="column-quarter">
+             <div class="form-group">
+               <label for="share-premium-account-current"><span class="mobile-only-label">Share premium account (2016)</span>
+                 <input type="number" placeholder="0" class="form-control" id="share-premium-account-current" onkeypress='validate(event)' th:field="*{currentSharePremiumAccount}" />
+               </label>
+             </div>
+           </div>
+           <div class="column-quarter">
+             <div class="form-group">
+               <label class="form-label" for="share-premium-account-previous"><span class="mobile-only-label">Share premium account (2015)</span>
+                 <input type="number" placeholder="0" class="form-control" id="share-premium-account-previous" onkeypress='validate(event)' th:field="*{previousSharePremiumAccount}" />
+               </label>
+             </div>
+           </div>
+         </div>
+     
+     <!-- Revaluation reserve -->
+     <div class="grid-row">
+           <div class="column-half">
+               <details role="group">
+                 <summary role="button" aria-controls="details-content-17" aria-expanded="false"><span class="summary">Revaluation reserve</span></summary>
+                 <div class="panel panel-border-narrow" id="details-content-17" aria-hidden="true">
+                   <p>How much assets have changed in value due to being revalued, compared to their previous values on the balance sheet - for example, to reflect market value. </p>
+                 </div>
+               </details>
+           </div>
+
+           <div class="column-quarter">
+             <div class="form-group">
+               <label for="revaluation-reserve-current"><span class="mobile-only-label">Revaluation reserve (2016)</span>
+                 <input type="number" placeholder="0" class="form-control" id="revaluation-reserve-current" onkeypress='validate(event)' th:field="*{currentRevaluationReserve}" />
+               </label>
+             </div>
+           </div>
+           <div class="column-quarter">
+             <div class="form-group">
+               <label class="form-label" for="revaluation-reserve-previous"><span class="mobile-only-label">Revaluation reserve (2015)</span>
+                 <input type="number" placeholder="0" class="form-control" id="revaluation-reserve-previous" onkeypress='validate(event)' th:field="*{previousRevaluationReserve}" />
+               </label>
+             </div>
+           </div>
+         </div>
+     
+     <!-- Other reserves -->
+     <div class="grid-row">
+           <div class="column-half">
+               <details role="group">
+                 <summary role="button" aria-controls="details-content-18" aria-expanded="false"><span class="summary">Other reserves</span></summary>
+                 <div class="panel panel-border-narrow" id="details-content-18" aria-hidden="true">
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at dolor eu turpis hendrerit vulputate sollicitudin quis dui. In posuere nibh sed eros sollicitudin, in congue ipsum aliquam.</p>
+                 </div>
+               </details>
+           </div>
+
+           <div class="column-quarter">
+             <div class="form-group">
+               <label for="other-reserves-current"><span class="mobile-only-label">Other reserves (2016)</span>
+                 <input type="number" placeholder="0" class="form-control" id="other-reserves-current" onkeypress='validate(event)' th:field="*{currentOtherReserves}" />
+               </label>
+             </div>
+           </div>
+           <div class="column-quarter">
+             <div class="form-group">
+               <label class="form-label" for="other-reserves-previous"><span class="mobile-only-label">Other reserves (2015)</span>
+                 <input type="number" placeholder="0" class="form-control" id="other-reserves-previous" onkeypress='validate(event)' th:field="*{previousOtherReserves}" />
+               </label>
+             </div>
+           </div>
+         </div>
+     
+     <!-- Profit and loss account -->
+     <div class="grid-row">
+           <div class="column-half">
+               <details role="group">
+                 <summary role="button" aria-controls="details-content-19" aria-expanded="false"><span class="summary">Profit and loss account</span></summary>
+                 <div class="panel panel-border-narrow" id="details-content-19" aria-hidden="true">
+                   <p>Also known as 'retained earnings' - running total of profits, retained by the company and not paid out with dividends.</p>
+                 </div>
+               </details>
+           </div>
+
+           <div class="column-quarter">
+             <div class="form-group">
+               <label for="profit-and-loss-account-current"><span class="mobile-only-label">Profit and loss account (2016)</span>
+                 <input type="number" placeholder="0" class="form-control" id="profit-and-loss-account-current" onkeypress='validate(event)' th:field="*{currentProfitAndLoss}" />
+               </label>
+             </div>
+           </div>
+           <div class="column-quarter">
+             <div class="form-group">
+               <label class="form-label" for="profit-and-loss-account-previous"><span class="mobile-only-label">Profit and loss account (2015)</span>
+                 <input type="number" placeholder="0" class="form-control" id="profit-and-loss-account-previous" onkeypress='validate(event)' th:field="*{previousProfitAndLoss}" />
+               </label>
+             </div>
+           </div>
+         </div>
+     
+     <!-- Total shareholders' fund -->
+     <div class="grid-row accounts-total">
+           <div class="column-half">
+             <details role="group">
+               <summary role="button" aria-controls="details-content-20" aria-expanded="false"><span class="summary">Total shareholders' funds</span></summary>
+               <div class="panel panel-border-narrow" id="details-content-20" aria-hidden="true">
+                 <p><strong>Calculation:</strong> 'Called up share capital' plus 'revaluation reserve' plus 'profit and loss account'. This must match 'total net assets or liabilities'.</p>
+               </div>
+             </details>
+           </div>
+
+           <div class="column-quarter">
+             <div class="form-group">
+               <label class="form-label-bold" for="total-shareholders-funds-current"><span class="mobile-only-label"> Total shareholders' funds (2016)</span>
+                 <input type="number" placeholder="0" class="form-control" id="total-shareholders-funds-current" onkeypress='validate(event)' readonly="readonly" th:field="*{currentTotalShareholdersFunds}" />
+               </label>
+             </div>
+           </div>
+           <div class="column-quarter">
+             <div class="form-group">
+               <label class="form-label-bold" for="total-shareholders-funds-previous"><span class="mobile-only-label"> Total shareholders' funds (2015)</span>
+                 <input type="number" placeholder="0" class="form-control" id="total-shareholders-funds-previous" onkeypress='validate(event)' readonly="readonly" th:field="*{previousTotalShareholdersFunds}" />
+               </label>
+             </div>
+           </div>
+         </div>
+     
+     <!-- END of CAPITAL AND RESERVES -->
 
       <div class="form-group">
         <input type="submit" class="button" value="Continue to Balance sheet statements" />
