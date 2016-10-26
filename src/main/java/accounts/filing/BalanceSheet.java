@@ -4,150 +4,81 @@ package accounts.filing;
 public class BalanceSheet {
     
 	// Fixed assets
-	private int currentIntangibleAssets;
-	private int currentTangibleAssets;
-	private int currentFixedInvestments;
-	private int currentTotalFixedAssets;
+	private Integer currentIntangibleAssets;
+	private Integer currentTangibleAssets;
+	private Integer currentFixedInvestments;
+	private Integer currentTotalFixedAssets;
 				
-	private int previousIntangibleAssets;
-	private int previousTangibleAssets;
-	private int previousFixedInvestments;
-	private int previousTotalFixedAssets;
+	private Integer previousIntangibleAssets;
+	private Integer previousTangibleAssets;
+	private Integer previousFixedInvestments;
+	private Integer previousTotalFixedAssets;
 	
 	// Current assets
-	private int currentStocks;
-	private int currentDebtors;
-	private int currentCABAIH;
-	private int currentInvestments;
-	private int currentTotalAssets;
+	private Integer currentStocks;
+	private Integer currentDebtors;
+	private Integer currentCash;
+	private Integer currentInvestments;
+	private Integer currentTotalAssets;
 				
-	private int previousStocks;
-	private int previousDebtors;
-	private int previousCABAIH;
-	private int previousInvestments;
-	private int previousTotalAssets;
+	private Integer previousStocks;
+	private Integer previousDebtors;
+	private Integer previousCash;
+	private Integer previousInvestments;
+	private Integer previousTotalAssets;
+	
+	// Liabilities
+	
+	private Integer currentCreditorsOneYear;
+	private Integer currentNetAssets;
+	private Integer currentTotalAssetsMinusCurrentLiabilities;
+	private Integer currentCreditorsMoreYears;
+	private Integer currentProvisionLiabilities;
+	private Integer currentTotalNetAssetsLiabilities;
+				
+	private Integer previousCreditorsOneYear;
+	private Integer previousNetAssets;
+	private Integer previousTotalAssetsMinusCurrentLiabilities;
+	private Integer previousCreditorsMoreYears;
+	private Integer previousProvisionLiabilities;
+	private Integer previousTotalNetAssetsLiabilities;
 	
 	// Capital and reserves
-	
-	
-	public int getCurrentShareCapital() {
-		return currentShareCapital;
-	}
 
-	public void setCurrentShareCapital(int currentShareCapital) {
-		this.currentShareCapital = currentShareCapital;
-	}
-
-	public int getCurrentSharePremiumAccount() {
-		return currentSharePremiumAccount;
-	}
-
-	public void setCurrentSharePremiumAccount(int currentSharePremiumAccount) {
-		this.currentSharePremiumAccount = currentSharePremiumAccount;
-	}
-
-	public int getCurrentRevaluationReserve() {
-		return currentRevaluationReserve;
-	}
-
-	public void setCurrentRevaluationReserve(int currentRevaluationReserve) {
-		this.currentRevaluationReserve = currentRevaluationReserve;
-	}
-
-	public int getCurrentOtherReserves() {
-		return currentOtherReserves;
-	}
-
-	public void setCurrentOtherReserves(int currentOtherReserves) {
-		this.currentOtherReserves = currentOtherReserves;
-	}
-
-	public int getCurrentProfitAndLoss() {
-		return currentProfitAndLoss;
-	}
-
-	public void setCurrentProfitAndLoss(int currentProfitAndLoss) {
-		this.currentProfitAndLoss = currentProfitAndLoss;
-	}
-	
-	public int getPreviousProfitAndLoss() {
-		return previousProfitAndLoss;
-	}
-
-	public void setPreviousProfitAndLoss(int previousProfitAndLoss) {
-		this.previousProfitAndLoss = previousProfitAndLoss;
-	}
-
-	public int getCurrentTotalShareholdersFunds() {
-		return currentTotalShareholdersFunds;
-	}
-
-	public void setCurrentTotalShareholdersFunds(int currentTotalShareholdersFunds) {
-		this.currentTotalShareholdersFunds = currentTotalShareholdersFunds;
-	}
-
-	public int getPreviousShareCapital() {
-		return previousShareCapital;
-	}
-
-	public void setPreviousShareCapital(int previousShareCapital) {
-		this.previousShareCapital = previousShareCapital;
-	}
-
-	public int getPreviousSharePremiumAccount() {
-		return previousSharePremiumAccount;
-	}
-
-	public void setPreviousSharePremiumAccount(int previousSharePremiumAccount) {
-		this.previousSharePremiumAccount = previousSharePremiumAccount;
-	}
-
-	public int getPreviousRevaluationReserve() {
-		return previousRevaluationReserve;
-	}
-
-	public void setPreviousRevaluationReserve(int previousRevaluationReserve) {
-		this.previousRevaluationReserve = previousRevaluationReserve;
-	}
-
-	public int getPreviousOtherReserves() {
-		return previousOtherReserves;
-	}
-
-	public void setPreviousOtherReserves(int previousOtherReserves) {
-		this.previousOtherReserves = previousOtherReserves;
-	}
-
-	public int getPreviousTotalShareholdersFunds() {
-		return previousTotalShareholdersFunds;
-	}
-
-	public void setPreviousTotalShareholdersFunds(int previousTotalShareholdersFunds) {
-		this.previousTotalShareholdersFunds = previousTotalShareholdersFunds;
-	}
-
-	private int currentShareCapital;
-	private int currentSharePremiumAccount;
-	private int currentRevaluationReserve;
-	private int currentOtherReserves;
-	private int currentProfitAndLoss;
-	private int currentTotalShareholdersFunds;
+	private Integer currentShareCapital;
+	private Integer currentSharePremiumAccount;
+	private Integer currentRevaluationReserve;
+	private Integer currentOtherReserves;
+	private Integer currentProfitAndLoss;
+	private Integer currentTotalShareholdersFunds;
 				
-	private int previousShareCapital;
-	private int previousSharePremiumAccount;
-	private int previousRevaluationReserve;
-	private int previousOtherReserves;
-	private int previousProfitAndLoss;
-	private int previousTotalShareholdersFunds;
+	private Integer previousShareCapital;
+	private Integer previousSharePremiumAccount;
+	private Integer previousRevaluationReserve;
+	private Integer previousOtherReserves;
+	private Integer previousProfitAndLoss;
+	private Integer previousTotalShareholdersFunds;
 	
 	
 	public BalanceSheet(){}
 	
-	public BalanceSheet(int currentIntangibleAssets, int currentTangibleAssets, int currentFixedInvestments,
-			int currentTotalFixedAssets, int previousIntangibleAssets, int previousTangibleAssets,
-			int previousFixedInvestments, int previousTotalFixedAssets, int currentStocks, int currentDebtors,
-			int currentCABAIH, int currentInvestments, int currentTotalAssets, int previousStocks, int previousDebtors,
-			int previousCABAIH, int previousInvestments, int previousTotalAssets) {
+
+
+	public BalanceSheet(Integer currentIntangibleAssets, Integer currentTangibleAssets, Integer currentFixedInvestments,
+			Integer currentTotalFixedAssets, Integer previousIntangibleAssets, Integer previousTangibleAssets,
+			Integer previousFixedInvestments, Integer previousTotalFixedAssets, Integer currentStocks,
+			Integer currentDebtors, Integer currentCash, Integer currentInvestments, Integer currentTotalAssets,
+			Integer previousStocks, Integer previousDebtors, Integer previousCash, Integer previousInvestments,
+			Integer previousTotalAssets, Integer currentCreditorsOneYear, Integer currentNetAssets,
+			Integer currentTotalAssetsMinusCurrentLiabilities, Integer currentCreditorsMoreYears,
+			Integer currentProvisionLiabilities, Integer currentTotalNetAssetsLiabilities,
+			Integer previousCreditorsOneYear, Integer previousNetAssets,
+			Integer previousTotalAssetsMinusCurrentLiabilities, Integer previousCreditorsMoreYears,
+			Integer previousProvisionLiabilities, Integer previousTotalNetAssetsLiabilities,
+			Integer currentShareCapital, Integer currentSharePremiumAccount, Integer currentRevaluationReserve,
+			Integer currentOtherReserves, Integer currentProfitAndLoss, Integer currentTotalShareholdersFunds,
+			Integer previousShareCapital, Integer previousSharePremiumAccount, Integer previousRevaluationReserve,
+			Integer previousOtherReserves, Integer previousProfitAndLoss, Integer previousTotalShareholdersFunds) {
 		super();
 		this.currentIntangibleAssets = currentIntangibleAssets;
 		this.currentTangibleAssets = currentTangibleAssets;
@@ -159,167 +90,427 @@ public class BalanceSheet {
 		this.previousTotalFixedAssets = previousTotalFixedAssets;
 		this.currentStocks = currentStocks;
 		this.currentDebtors = currentDebtors;
-		this.currentCABAIH = currentCABAIH;
+		this.currentCash = currentCash;
 		this.currentInvestments = currentInvestments;
 		this.currentTotalAssets = currentTotalAssets;
 		this.previousStocks = previousStocks;
 		this.previousDebtors = previousDebtors;
-		this.previousCABAIH = previousCABAIH;
+		this.previousCash = previousCash;
 		this.previousInvestments = previousInvestments;
 		this.previousTotalAssets = previousTotalAssets;
+		this.currentCreditorsOneYear = currentCreditorsOneYear;
+		this.currentNetAssets = currentNetAssets;
+		this.currentTotalAssetsMinusCurrentLiabilities = currentTotalAssetsMinusCurrentLiabilities;
+		this.currentCreditorsMoreYears = currentCreditorsMoreYears;
+		this.currentProvisionLiabilities = currentProvisionLiabilities;
+		this.currentTotalNetAssetsLiabilities = currentTotalNetAssetsLiabilities;
+		this.previousCreditorsOneYear = previousCreditorsOneYear;
+		this.previousNetAssets = previousNetAssets;
+		this.previousTotalAssetsMinusCurrentLiabilities = previousTotalAssetsMinusCurrentLiabilities;
+		this.previousCreditorsMoreYears = previousCreditorsMoreYears;
+		this.previousProvisionLiabilities = previousProvisionLiabilities;
+		this.previousTotalNetAssetsLiabilities = previousTotalNetAssetsLiabilities;
+		this.currentShareCapital = currentShareCapital;
+		this.currentSharePremiumAccount = currentSharePremiumAccount;
+		this.currentRevaluationReserve = currentRevaluationReserve;
+		this.currentOtherReserves = currentOtherReserves;
+		this.currentProfitAndLoss = currentProfitAndLoss;
+		this.currentTotalShareholdersFunds = currentTotalShareholdersFunds;
+		this.previousShareCapital = previousShareCapital;
+		this.previousSharePremiumAccount = previousSharePremiumAccount;
+		this.previousRevaluationReserve = previousRevaluationReserve;
+		this.previousOtherReserves = previousOtherReserves;
+		this.previousProfitAndLoss = previousProfitAndLoss;
+		this.previousTotalShareholdersFunds = previousTotalShareholdersFunds;
 	}
 
-	public int getCurrentIntangibleAssets() {
+
+
+	public Integer getCurrentIntangibleAssets() {
 		return currentIntangibleAssets;
 	}
 
-	public void setCurrentIntangibleAssets(int currentIntangibleAssets) {
+	public void setCurrentIntangibleAssets(Integer currentIntangibleAssets) {
 		this.currentIntangibleAssets = currentIntangibleAssets;
 	}
 
-	public int getCurrentTangibleAssets() {
+	public Integer getCurrentTangibleAssets() {
 		return currentTangibleAssets;
 	}
 
-	public void setCurrentTangibleAssets(int currentTangibleAssets) {
+	public void setCurrentTangibleAssets(Integer currentTangibleAssets) {
 		this.currentTangibleAssets = currentTangibleAssets;
 	}
 
-	public int getCurrentFixedInvestments() {
+	public Integer getCurrentFixedInvestments() {
 		return currentFixedInvestments;
 	}
 
-	public void setCurrentFixedInvestments(int currentFixedInvestments) {
+	public void setCurrentFixedInvestments(Integer currentFixedInvestments) {
 		this.currentFixedInvestments = currentFixedInvestments;
 	}
 
-	public int getCurrentTotalFixedAssets() {
+	public Integer getCurrentTotalFixedAssets() {
 		return currentTotalFixedAssets;
 	}
 
-	public void setCurrentTotalFixedAssets(int currentTotalFixedAssets) {
+	public void setCurrentTotalFixedAssets(Integer currentTotalFixedAssets) {
 		this.currentTotalFixedAssets = currentTotalFixedAssets;
 	}
 
-	public int getPreviousIntangibleAssets() {
+	public Integer getPreviousIntangibleAssets() {
 		return previousIntangibleAssets;
 	}
 
-	public void setPreviousIntangibleAssets(int previousIntangibleAssets) {
+	public void setPreviousIntangibleAssets(Integer previousIntangibleAssets) {
 		this.previousIntangibleAssets = previousIntangibleAssets;
 	}
 
-	public int getPreviousTangibleAssets() {
+	public Integer getPreviousTangibleAssets() {
 		return previousTangibleAssets;
 	}
 
-	public void setPreviousTangibleAssets(int previousTangibleAssets) {
+	public void setPreviousTangibleAssets(Integer previousTangibleAssets) {
 		this.previousTangibleAssets = previousTangibleAssets;
 	}
 
-	public int getPreviousFixedInvestments() {
+	public Integer getPreviousFixedInvestments() {
 		return previousFixedInvestments;
 	}
 
-	public void setPreviousFixedInvestments(int previousFixedInvestments) {
+	public void setPreviousFixedInvestments(Integer previousFixedInvestments) {
 		this.previousFixedInvestments = previousFixedInvestments;
 	}
 
-	public int getPreviousTotalFixedAssets() {
+	public Integer getPreviousTotalFixedAssets() {
 		return previousTotalFixedAssets;
 	}
 
-	public void setPreviousTotalFixedAssets(int previousTotalFixedAssets) {
+	public void setPreviousTotalFixedAssets(Integer previousTotalFixedAssets) {
 		this.previousTotalFixedAssets = previousTotalFixedAssets;
 	}
 
-	public int getCurrentStocks() {
+	public Integer getCurrentStocks() {
 		return currentStocks;
 	}
 
-	public void setCurrentStocks(int currentStocks) {
+	public void setCurrentStocks(Integer currentStocks) {
 		this.currentStocks = currentStocks;
 	}
 
-	public int getCurrentDebtors() {
+	public Integer getCurrentDebtors() {
 		return currentDebtors;
 	}
 
-	public void setCurrentDebtors(int currentDebtors) {
+	public void setCurrentDebtors(Integer currentDebtors) {
 		this.currentDebtors = currentDebtors;
 	}
 
-	public int getCurrentCABAIH() {
-		return currentCABAIH;
+	public Integer getCurrentCash() {
+		return currentCash;
 	}
 
-	public void setCurrentCABAIH(int currentCABAIH) {
-		this.currentCABAIH = currentCABAIH;
+	public void setCurrentCash(Integer currentCash) {
+		this.currentCash = currentCash;
 	}
 
-	public int getCurrentInvestments() {
+	public Integer getCurrentInvestments() {
 		return currentInvestments;
 	}
 
-	public void setCurrentInvestments(int currentInvestments) {
+	public void setCurrentInvestments(Integer currentInvestments) {
 		this.currentInvestments = currentInvestments;
 	}
 
-	public int getCurrentTotalAssets() {
+	public Integer getCurrentTotalAssets() {
 		return currentTotalAssets;
 	}
 
-	public void setCurrentTotalAssets(int currentTotalAssets) {
+	public void setCurrentTotalAssets(Integer currentTotalAssets) {
 		this.currentTotalAssets = currentTotalAssets;
 	}
 
-	public int getPreviousStocks() {
+	public Integer getPreviousStocks() {
 		return previousStocks;
 	}
 
-	public void setPreviousStocks(int previousStocks) {
+	public void setPreviousStocks(Integer previousStocks) {
 		this.previousStocks = previousStocks;
 	}
 
-	public int getPreviousDebtors() {
+	public Integer getPreviousDebtors() {
 		return previousDebtors;
 	}
 
-	public void setPreviousDebtors(int previousDebtors) {
+	public void setPreviousDebtors(Integer previousDebtors) {
 		this.previousDebtors = previousDebtors;
 	}
 
-	public int getPreviousCABAIH() {
-		return previousCABAIH;
+	public Integer getPreviousCash() {
+		return previousCash;
 	}
 
-	public void setPreviousCABAIH(int previousCABAIH) {
-		this.previousCABAIH = previousCABAIH;
+	public void setPreviousCash(Integer previousCash) {
+		this.previousCash = previousCash;
 	}
 
-	public int getPreviousInvestments() {
+	public Integer getPreviousInvestments() {
 		return previousInvestments;
 	}
 
-	public void setPreviousInvestments(int previousInvestments) {
+	public void setPreviousInvestments(Integer previousInvestments) {
 		this.previousInvestments = previousInvestments;
 	}
 
-	public int getPreviousTotalAssets() {
+	public Integer getPreviousTotalAssets() {
 		return previousTotalAssets;
 	}
 
-	public void setPreviousTotalAssets(int previousTotalAssets) {
+	public void setPreviousTotalAssets(Integer previousTotalAssets) {
 		this.previousTotalAssets = previousTotalAssets;
 	}
-	
-	
-	
-	
-	
-	
-	
 
+	public Integer getCurrentCreditorsOneYear() {
+		return currentCreditorsOneYear;
+	}
+
+	public void setCurrentCreditorsOneYear(Integer currentCreditorsOneYear) {
+		this.currentCreditorsOneYear = currentCreditorsOneYear;
+	}
+
+	public Integer getCurrentNetAssets() {
+		return currentNetAssets;
+	}
+
+	public void setCurrentNetAssets(Integer currentNetAssets) {
+		this.currentNetAssets = currentNetAssets;
+	}
+
+	public Integer getCurrentTotalAssetsMinusCurrentLiabilities() {
+		return currentTotalAssetsMinusCurrentLiabilities;
+	}
+
+	public void setCurrentTotalAssetsMinusCurrentLiabilities(Integer currentTotalAssetsMinusCurrentLiabilities) {
+		this.currentTotalAssetsMinusCurrentLiabilities = currentTotalAssetsMinusCurrentLiabilities;
+	}
+
+	public Integer getCurrentCreditorsMoreYears() {
+		return currentCreditorsMoreYears;
+	}
+
+	public void setCurrentCreditorsMoreYears(Integer currentCreditorsMoreYears) {
+		this.currentCreditorsMoreYears = currentCreditorsMoreYears;
+	}
+
+	public Integer getCurrentProvisionLiabilities() {
+		return currentProvisionLiabilities;
+	}
+
+	public void setCurrentProvisionLiabilities(Integer currentProvisionLiabilities) {
+		this.currentProvisionLiabilities = currentProvisionLiabilities;
+	}
+
+	public Integer getCurrentTotalNetAssetsLiabilities() {
+		return currentTotalNetAssetsLiabilities;
+	}
+
+	public void setCurrentTotalNetAssetsLiabilities(Integer currentTotalNetAssetsLiabilities) {
+		this.currentTotalNetAssetsLiabilities = currentTotalNetAssetsLiabilities;
+	}
+
+	public Integer getPreviousCreditorsOneYear() {
+		return previousCreditorsOneYear;
+	}
+
+	public void setPreviousCreditorsOneYear(Integer previousCreditorsOneYear) {
+		this.previousCreditorsOneYear = previousCreditorsOneYear;
+	}
+
+	public Integer getPreviousNetAssets() {
+		return previousNetAssets;
+	}
+
+	public void setPreviousNetAssets(Integer previousNetAssets) {
+		this.previousNetAssets = previousNetAssets;
+	}
+
+	public Integer getPreviousTotalAssetsMinusCurrentLiabilities() {
+		return previousTotalAssetsMinusCurrentLiabilities;
+	}
+
+	public void setPreviousTotalAssetsMinusCurrentLiabilities(Integer previousTotalAssetsMinusCurrentLiabilities) {
+		this.previousTotalAssetsMinusCurrentLiabilities = previousTotalAssetsMinusCurrentLiabilities;
+	}
+
+	public Integer getPreviousCreditorsMoreYears() {
+		return previousCreditorsMoreYears;
+	}
+
+	public void setPreviousCreditorsMoreYears(Integer previousCreditorsMoreYears) {
+		this.previousCreditorsMoreYears = previousCreditorsMoreYears;
+	}
+
+	public Integer getPreviousProvisionLiabilities() {
+		return previousProvisionLiabilities;
+	}
+
+	public void setPreviousProvisionLiabilities(Integer previousProvisionLiabilities) {
+		this.previousProvisionLiabilities = previousProvisionLiabilities;
+	}
+
+	public Integer getPreviousTotalNetAssetsLiabilities() {
+		return previousTotalNetAssetsLiabilities;
+	}
+
+	public void setPreviousTotalNetAssetsLiabilities(Integer previousTotalNetAssetsLiabilities) {
+		this.previousTotalNetAssetsLiabilities = previousTotalNetAssetsLiabilities;
+	}
+
+
+
+	public Integer getCurrentShareCapital() {
+		return currentShareCapital;
+	}
+
+
+
+	public void setCurrentShareCapital(Integer currentShareCapital) {
+		this.currentShareCapital = currentShareCapital;
+	}
+
+
+
+	public Integer getCurrentSharePremiumAccount() {
+		return currentSharePremiumAccount;
+	}
+
+
+
+	public void setCurrentSharePremiumAccount(Integer currentSharePremiumAccount) {
+		this.currentSharePremiumAccount = currentSharePremiumAccount;
+	}
+
+
+
+	public Integer getCurrentRevaluationReserve() {
+		return currentRevaluationReserve;
+	}
+
+
+
+	public void setCurrentRevaluationReserve(Integer currentRevaluationReserve) {
+		this.currentRevaluationReserve = currentRevaluationReserve;
+	}
+
+
+
+	public Integer getCurrentOtherReserves() {
+		return currentOtherReserves;
+	}
+
+
+
+	public void setCurrentOtherReserves(Integer currentOtherReserves) {
+		this.currentOtherReserves = currentOtherReserves;
+	}
+
+
+
+	public Integer getCurrentProfitAndLoss() {
+		return currentProfitAndLoss;
+	}
+
+
+
+	public void setCurrentProfitAndLoss(Integer currentProfitAndLoss) {
+		this.currentProfitAndLoss = currentProfitAndLoss;
+	}
+
+
+
+	public Integer getCurrentTotalShareholdersFunds() {
+		return currentTotalShareholdersFunds;
+	}
+
+
+
+	public void setCurrentTotalShareholdersFunds(Integer currentTotalShareholdersFunds) {
+		this.currentTotalShareholdersFunds = currentTotalShareholdersFunds;
+	}
+
+
+
+	public Integer getPreviousShareCapital() {
+		return previousShareCapital;
+	}
+
+
+
+	public void setPreviousShareCapital(Integer previousShareCapital) {
+		this.previousShareCapital = previousShareCapital;
+	}
+
+
+
+	public Integer getPreviousSharePremiumAccount() {
+		return previousSharePremiumAccount;
+	}
+
+
+
+	public void setPreviousSharePremiumAccount(Integer previousSharePremiumAccount) {
+		this.previousSharePremiumAccount = previousSharePremiumAccount;
+	}
+
+
+
+	public Integer getPreviousRevaluationReserve() {
+		return previousRevaluationReserve;
+	}
+
+
+
+	public void setPreviousRevaluationReserve(Integer previousRevaluationReserve) {
+		this.previousRevaluationReserve = previousRevaluationReserve;
+	}
+
+
+
+	public Integer getPreviousOtherReserves() {
+		return previousOtherReserves;
+	}
+
+
+
+	public void setPreviousOtherReserves(Integer previousOtherReserves) {
+		this.previousOtherReserves = previousOtherReserves;
+	}
+
+
+
+	public Integer getPreviousProfitAndLoss() {
+		return previousProfitAndLoss;
+	}
+
+
+
+	public void setPreviousProfitAndLoss(Integer previousProfitAndLoss) {
+		this.previousProfitAndLoss = previousProfitAndLoss;
+	}
+
+
+
+	public Integer getPreviousTotalShareholdersFunds() {
+		return previousTotalShareholdersFunds;
+	}
+
+
+
+	public void setPreviousTotalShareholdersFunds(Integer previousTotalShareholdersFunds) {
+		this.previousTotalShareholdersFunds = previousTotalShareholdersFunds;
+	}
+
+	
 }
 
 

@@ -26,9 +26,9 @@
 
 <form action="/balanceSheet" th:action="@{/balanceSheet}"  th:object="${balanceSheet}" method="post" class="form" id="balance-sheet">
 
+<!--  FIXED ASSETS BEGINNING -->
+
 <h2 class="heading-medium">Fixed assets</h2>
-
-
 
   <div class="grid-row">
     <div class="column-half">
@@ -43,14 +43,14 @@
     <div class="column-quarter">
       <div class="form-group">
         <label for="intangible-assets-current"><span class="mobile-only-label">Intangible assets (2016)</span>
-           <input type="number" onkeypress='validate(event)' class="form-control" id="intangible-assets-current" th:field="*{currentIntangibleAssets}" />
+           <input type="number" placeholder="0"  onkeypress='validate(event)' class="form-control" id="intangible-assets-current" th:field="*{currentIntangibleAssets}" />
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label for="intangible-assets-previous"><span class="mobile-only-label">Intangible assets (2015)</span>
-           <input type="number" onkeypress='validate(event)'  class="form-control" id="intangible-assets-previous" th:field="*{previousIntangibleAssets}" />
+           <input type="number" placeholder="0" onkeypress='validate(event)'  class="form-control" id="intangible-assets-previous" th:field="*{previousIntangibleAssets}" />
         </label>
       </div>
     </div>
@@ -69,14 +69,14 @@
     <div class="column-quarter">
       <div class="form-group">
         <label for="tangible-assets-current"><span class="mobile-only-label">Tangible assets (2016)</span>
-           <input type="number" onkeypress='validate(event)' class="form-control" id="tangible-assets-current" th:field="*{currentTangibleAssets}" />
+           <input type="number" placeholder="0" onkeypress='validate(event)' class="form-control" id="tangible-assets-current" th:field="*{currentTangibleAssets}" />
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label" for="tangible-assets-previous"><span class="mobile-only-label">Tangible assets (2015)</span>
-           <input type="number" onkeypress='validate(event)' class="form-control" id="tangible-assets-previous" th:field="*{previousTangibleAssets}" />
+           <input type="number" placeholder="0" onkeypress='validate(event)' class="form-control" id="tangible-assets-previous" th:field="*{previousTangibleAssets}" />
         </label>
       </div>
     </div>
@@ -96,14 +96,14 @@
     <div class="column-quarter">
       <div class="form-group">
         <label for="investments-fixed-assets-current"><span class="mobile-only-label">Investments (fixed assets) (2016)</span>
-           <input type="number" onkeypress='validate(event)' class="form-control" id="investments-fixed-assets-current" th:field="*{currentFixedInvestments}" />
+           <input type="number" placeholder="0" onkeypress='validate(event)' class="form-control" id="investments-fixed-assets-current" th:field="*{currentFixedInvestments}" />
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label" for="investments-fixed-assets-previous"><span class="mobile-only-label">Investments (fixed assets) (2015)</span>
-           <input type="number" onkeypress='validate(event)' class="form-control" id="investments-fixed-assets-previous" th:field="*{previousFixedInvestments}" />
+           <input type="number" placeholder="0" onkeypress='validate(event)' class="form-control" id="investments-fixed-assets-previous" th:field="*{previousFixedInvestments}" />
         </label>
       </div>
     </div>
@@ -123,14 +123,14 @@
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label-bold" for="total-fixed-assets-current"><span class="mobile-only-label">Total fixed assets (2016)</span>
-           <input type="number" class="form-control" id="total-fixed-assets-current" readonly="readonly" value="0" th:field="*{currentTotalFixedAssets}" />
+           <input type="number" placeholder="0" class="form-control" id="total-fixed-assets-current" readonly="readonly" th:field="*{currentTotalFixedAssets}" />
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
         <label class="form-label-bold" for="total-fixed-assets-previous"><span class="mobile-only-label">Total fixed assets (2015)</span>
-           <input type="number" class="form-control" id="total-fixed-assets-previous" readonly="readonly" value="0" th:field="*{previousTotalFixedAssets}" />
+           <input type="number" placeholder="0" class="form-control" id="total-fixed-assets-previous" readonly="readonly" th:field="*{previousTotalFixedAssets}" />
         </label>
       </div>
     </div>
@@ -154,14 +154,14 @@
      <div class="column-quarter">
        <div class="form-group">
          <label for="stocks-current"><span class="mobile-only-label">Stocks (2016)</span>
-           <input type="number" class="form-control" id="stocks-current" onkeypress='validate(event)' th:field="*{currentStocks}" />
+           <input type="number" placeholder="0" class="form-control" id="stocks-current" onkeypress='validate(event)' th:field="*{currentStocks}" />
          </label>
        </div>
      </div>
      <div class="column-quarter">
        <div class="form-group">
          <label for="stocks-current"><span class="mobile-only-label">Stocks (2015)</span>
-           <input type="number" class="form-control" id="stocks-previous" onkeypress='validate(event)' th:field="*{previousStocks}" />
+           <input type="number" placeholder="0" class="form-control" id="stocks-previous" onkeypress='validate(event)' th:field="*{previousStocks}" />
          </label>
        </div>
      </div>
@@ -182,14 +182,14 @@
      <div class="column-quarter">
        <div class="form-group">
          <label for="debtors-current"><span class="mobile-only-label">Debtors (2016)</span>
-           <input type="number" class="form-control" id="debtors-current" onkeypress='validate(event)' th:field="*{currentDebtors}"  />
+           <input type="number" placeholder="0" class="form-control" id="debtors-current" onkeypress='validate(event)' th:field="*{currentDebtors}"  />
          </label>
        </div>
      </div>
      <div class="column-quarter">
        <div class="form-group">
          <label class="form-label" for="debtors-previous"><span class="mobile-only-label">Debtors (2015)</span>
-           <input type="number" class="form-control" id="debtors-previous" onkeypress='validate(event)' th:field="*{previousDebtors}" />
+           <input type="number" placeholder="0" class="form-control" id="debtors-previous" onkeypress='validate(event)' th:field="*{previousDebtors}" />
          </label>
        </div>
      </div>
@@ -209,14 +209,14 @@
      <div class="column-quarter">
        <div class="form-group">
          <label for="cash-at-bank-and-in-hand-current"><span class="mobile-only-label">Cash at bank and in hand (2016)</span>
-           <input type="number" class="form-control" id="cash-at-bank-and-in-hand-current" onkeypress='validate(event)' th:field="*{currentCABAIH}" />
+           <input type="number" placeholder="0" class="form-control" id="cash-at-bank-and-in-hand-current" onkeypress='validate(event)' th:field="*{currentCash}" />
          </label>
        </div>
      </div>
      <div class="column-quarter">
        <div class="form-group">
          <label class="form-label" for="cash-at-bank-and-in-hand-previous"><span class="mobile-only-label">Cash at bank and in hand (2015)</span>
-           <input type="number" class="form-control" id="cash-at-bank-and-in-hand-previous" onkeypress='validate(event)' th:field="*{previousCABAIH}" />
+           <input type="number" placeholder="0" class="form-control" id="cash-at-bank-and-in-hand-previous" onkeypress='validate(event)' th:field="*{previousCash}" />
          </label>
        </div>
      </div>
@@ -236,14 +236,14 @@
      <div class="column-quarter">
        <div class="form-group">
          <label for="investments-current-assets-current"><span class="mobile-only-label">Investments (current assets) (2016)</span>
-           <input type="number" class="form-control" id="investments-current-assets-current" onkeypress='validate(event)' th:field="*{currentInvestments}" />
+           <input type="number" placeholder="0" class="form-control" id="investments-current-assets-current" onkeypress='validate(event)' th:field="*{currentInvestments}" />
          </label>
        </div>
      </div>
      <div class="column-quarter">
        <div class="form-group">
          <label class="form-label" for="investments-current-assets-previous"><span class="mobile-only-label">Investments (current assets) (2015)</span>
-           <input type="number" class="form-control" id="investments-current-assets-previous" onkeypress='validate(event)'  th:field="*{previousInvestments}" />
+           <input type="number" placeholder="0" class="form-control" id="investments-current-assets-previous" onkeypress='validate(event)'  th:field="*{previousInvestments}" />
          </label>
        </div>
      </div>
@@ -263,22 +263,193 @@
      <div class="column-quarter">
        <div class="form-group">
          <label class="form-label-bold" for="total-fixed-current-current"><span class="mobile-only-label">Total current assets (2016)</span>
-           <input type="number" class="form-control" id="total-current-assets-current" readonly="readonly" th:field="*{currentTotalAssets}" />
+           <input type="number" placeholder="0" class="form-control" id="total-current-assets-current" readonly="readonly" th:field="*{currentTotalAssets}" />
          </label>
        </div>
      </div>
      <div class="column-quarter">
        <div class="form-group">
          <label class="form-label-bold" for="total-current-assets-previous"><span class="mobile-only-label">Total current assets (2015)</span>
-           <input type="number" class="form-control" id="total-current-assets-previous" readonly="readonly" th:field="*{previousTotalAssets}" />
+           <input type="number" placeholder="0" class="form-control" id="total-current-assets-previous" readonly="readonly" th:field="*{previousTotalAssets}" />
          </label>
        </div>
      </div>
    </div>
    
      <!-- END of CURRENT ASSETS -->
-    
+
      
+     <!--  Beginning of Liabilities -->
+     
+     <!--  Creditors Same Year -->
+     <div class="grid-row accounts-row-spacer">
+     <div class="column-half">
+         <details role="group">
+           <summary role="button" aria-controls="details-content-9" aria-expanded="true"><span class="summary">Creditors - amounts falling due within one year</span></summary>
+           <div class="panel panel-border-narrow" id="details-content-9" aria-hidden="false">
+             <p>Debts you expect to settle within a year - for example, unpaid supplier invoices, bank loans or overdrafts.</p>
+           </div>
+         </details>
+     </div>
+
+     <div class="column-quarter">
+       <div class="form-group">
+         <label for="creditors-amounts-falling-due-within-one-year-current"><span class="mobile-only-label">Creditors - amounts falling due within one year (2016)</span>
+           <input type="number" placeholder="0" class="form-control" id="creditors-amounts-falling-due-within-one-year-current" onkeypress='validate(event)' th:field="*{currentCreditorsOneYear}" />
+         </label>
+       </div>
+     </div>
+     <div class="column-quarter">
+       <div class="form-group">
+         <label class="form-label" for="creditors-amounts-falling-due-within-one-year-previous"><span class="mobile-only-label">Creditors - amounts falling due within one year (2015)</span>
+           <input type="number" placeholder="0" class="form-control" value='' id="creditors-amounts-falling-due-within-one-year-previous" onkeypress='validate(event)' th:field="*{previousCreditorsOneYear}" />
+         </label>
+       </div>
+     </div>
+   </div>
+   
+   <!-- Net current assets liabilities -->
+   
+   <div class="grid-row accounts-total">
+     <div class="column-half">
+         <details role="group">
+           <summary role="button" aria-controls="details-content-10" aria-expanded="false"><span class="summary">Net current assets (liabilities)</span></summary>
+           <div class="panel panel-border-narrow" id="details-content-10" aria-hidden="true">
+             <p><strong>Calculation:</strong> 'Total current assets' minus 'creditors amounts falling due within one year'.</p>
+           </div>
+         </details>
+     </div>
+
+     <div class="column-quarter">
+       <div class="form-group">
+         <label class="form-label-bold" for="net-current-assets-liabilities-current"><span class="mobile-only-label">Net current assets (liabilities) (2016)</span>
+           <input type="number" placeholder="0" class="form-control" id="net-current-assets-liabilities-current" readonly="readonly" th:field="*{currentNetAssets}" />
+         </label>
+       </div>
+     </div>
+     <div class="column-quarter">
+       <div class="form-group">
+         <label class="form-label-bold" for="net-current-assets-liabilities-previous"><span class="mobile-only-label">Net current assets (liabilities) (2015)</span>
+           <input type="number" placeholder="0" class="form-control" id="net-current-assets-liabilities-previous" readonly="readonly" th:field="*{previousNetAssets}" />
+         </label>
+       </div>
+     </div>
+   </div>
+   
+   <!-- Total assets less current liabilities  -->
+   
+   <div class="grid-row accounts-total accounts-row-spacer">
+     <div class="column-half">
+         <details role="group">
+           <summary role="button" aria-controls="details-content-11" aria-expanded="true"><span class="summary">Total assets less current liabilities</span></summary>
+           <div class="panel panel-border-narrow" id="details-content-11" aria-hidden="false">
+             <p><strong>Calculation:</strong> 'Total fixed assets' plus 'net current assets or liabilities'.</p>
+           </div>
+         </details>
+     </div>
+
+     <div class="column-quarter">
+       <div class="form-group">
+         <label class="form-label-bold" for="total-assets-less-current-liabilities-current"><span class="mobile-only-label">Total assets less current liabilities (2016)</span>
+           <input type="number" placeholder="0" class="form-control" id="total-assets-less-current-liabilities-current" readonly="readonly" th:field="*{currentTotalAssetsMinusCurrentLiabilities}" />
+         </label>
+       </div>
+     </div>
+     <div class="column-quarter">
+       <div class="form-group">
+         <label class="form-label-bold" for="total-assets-less-current-liabilities-previous"><span class="mobile-only-label">Total assets less current liabilities (2015)</span>
+           <input type="number" placeholder="0" class="form-control" id="total-assets-less-current-liabilities-previous" readonly="readonly" th:field="*{previousTotalAssetsMinusCurrentLiabilities}" />
+         </label>
+       </div>
+     </div>
+   </div>
+   
+   
+   <!-- Creditors - amounts falling due after more than one year  -->
+   
+   <div class="grid-row accounts-row-spacer">
+     <div class="column-half">
+         <details role="group">
+           <summary role="button" aria-controls="details-content-12" aria-expanded="true"><span class="summary">Creditors - amounts falling due after more than one year</span></summary>
+           <div class="panel panel-border-narrow" id="details-content-12" aria-hidden="false">
+             <p>Debts you expect to settle after more than one year - for example, bank loans with instalments due after more than a year. </p>
+           </div>
+         </details>
+     </div>
+
+     <div class="column-quarter">
+       <div class="form-group">
+         <label for="creditors-amounts-falling-due-after-more-than-one-year-current"><span class="mobile-only-label">Creditors - amounts falling due within one year (2016)</span>
+           <input type="number" placeholder="0" class="form-control" id="creditors-amounts-falling-due-after-more-than-one-year-current" onkeypress='validate(event)' th:field="*{currentCreditorsMoreYears}" />
+         </label>
+       </div>
+     </div>
+     <div class="column-quarter">
+       <div class="form-group">
+         <label class="form-label" for="creditors-amounts-falling-due-after-more-than-one-year-previous"><span class="mobile-only-label">Creditors - amounts falling due within one year (2015)</span>
+           <input type="number" placeholder="0" class="form-control" id="creditors-amounts-falling-due-after-more-than-one-year-previous" onkeypress='validate(event)' th:field="*{previousCreditorsMoreYears}" />
+         </label>
+       </div>
+     </div>
+   </div>
+   
+   <!-- Provision for liabilities -->
+   
+   <div class="grid-row">
+     <div class="column-half">
+         <details role="group">
+           <summary role="button" aria-controls="details-content-13" aria-expanded="false"><span class="summary">Provision for liabilities</span></summary>
+           <div class="panel panel-border-narrow" id="details-content-13" aria-hidden="true">
+             <p>An amount set aside to cover future costs - for example, for tax, costs of restructuring or providing pensions.</p>
+           </div>
+         </details>
+     </div>
+
+     <div class="column-quarter">
+       <div class="form-group">
+         <label for="provision-for-liabilities-current"><span class="mobile-only-label">Provision for liabilities (2016)</span>
+           <input type="number" placeholder="0" class="form-control" id="provision-for-liabilities-current" onkeypress='validate(event)' th:field="*{currentProvisionLiabilities}" />
+         </label>
+       </div>
+     </div>
+     <div class="column-quarter">
+       <div class="form-group">
+         <label class="form-label" for="provision-for-liabilities-previous"><span class="mobile-only-label">Provision for liabilities (2015)</span>
+           <input type="number" placeholder="0" class="form-control" id="provision-for-liabilities-previous" onkeypress='validate(event)' th:field="*{previousProvisionLiabilities}" />
+         </label>
+       </div>
+     </div>
+   </div>
+   
+	<!-- Total net assets (liabilities) -->   
+  
+  <div class="grid-row accounts-total">
+         <div class="column-half">
+             <details role="group">
+               <summary role="button" aria-controls="details-content-14" aria-expanded="true"><span class="summary">Total net assets (liabilities)</span></summary>
+               <div class="panel panel-border-narrow" id="details-content-14" aria-hidden="false">
+                 <p><strong>Calculation:</strong> 'Total assets less current liabilities' minus 'creditors amounts falling due after more than one year' minus 'provision for liabilities'. This must match 'total shareholders' funds'.</p>
+               </div>
+             </details>
+         </div>
+
+         <div class="column-quarter">
+           <div class="form-group">
+             <label class="form-label-bold" for="total-net-assets-liabilities-current"><span class="mobile-only-label">Total net assets (liabilities) (2016)</span>
+               <input type="number" placeholder="0" class="form-control" id="total-net-assets-liabilities-current" readonly="readonly" th:field="*{currentTotalNetAssetsLiabilities}" />
+             </label>
+           </div>
+         </div>
+         <div class="column-quarter">
+           <div class="form-group">
+             <label class="form-label-bold" for="total-net-assets-liabilities-previous"><span class="mobile-only-label">Total net assets (liabilities) (2015)</span>
+               <input type="number" placeholder="0" class="form-control" id="total-net-assets-liabilities-previous" readonly="readonly" th:field="*{previousTotalNetAssetsLiabilities}" />
+             </label>
+           </div>
+         </div>
+       </div>
+
+
      <!-- BEGINNING of CAPITAL AND RESERVES -->
      <h2 class="heading-medium">Capital and reserves</h2>
      
@@ -298,14 +469,14 @@
            <div class="column-quarter">
              <div class="form-group">
                <label for="called-up-share-capital-current"><span class="mobile-only-label">Called up share capital (2016)</span>
-                 <input type="number" class="form-control" id="called-up-share-capital-current" onkeypress='validate(event)' th:field="*{currentShareCapital}" />
+                 <input type="number" placeholder="0" class="form-control" id="called-up-share-capital-current" onkeypress='validate(event)' th:field="*{currentShareCapital}" />
                </label>
              </div>
            </div>
            <div class="column-quarter">
              <div class="form-group">
                <label for="called-up-share-capital-current"><span class="mobile-only-label">Called up share capital (2015)</span>
-                 <input type="number" class="form-control" id="called-up-share-capital-previous" onkeypress='validate(event)' th:field="*{previousShareCapital}" />
+                 <input type="number" placeholder="0" class="form-control" id="called-up-share-capital-previous" onkeypress='validate(event)' th:field="*{previousShareCapital}" />
                </label>
              </div>
            </div>
@@ -325,14 +496,14 @@
            <div class="column-quarter">
              <div class="form-group">
                <label for="share-premium-account-current"><span class="mobile-only-label">Share premium account (2016)</span>
-                 <input type="number" class="form-control" id="share-premium-account-current" onkeypress='validate(event)' th:field="*{currentSharePremiumAccount}" />
+                 <input type="number" placeholder="0" class="form-control" id="share-premium-account-current" onkeypress='validate(event)' th:field="*{currentSharePremiumAccount}" />
                </label>
              </div>
            </div>
            <div class="column-quarter">
              <div class="form-group">
                <label class="form-label" for="share-premium-account-previous"><span class="mobile-only-label">Share premium account (2015)</span>
-                 <input type="number" class="form-control" id="share-premium-account-previous" onkeypress='validate(event)' th:field="*{previousSharePremiumAccount}" />
+                 <input type="number" placeholder="0" class="form-control" id="share-premium-account-previous" onkeypress='validate(event)' th:field="*{previousSharePremiumAccount}" />
                </label>
              </div>
            </div>
@@ -352,14 +523,14 @@
            <div class="column-quarter">
              <div class="form-group">
                <label for="revaluation-reserve-current"><span class="mobile-only-label">Revaluation reserve (2016)</span>
-                 <input type="number" class="form-control" id="revaluation-reserve-current" onkeypress='validate(event)' th:field="*{currentRevaluationReserve}" />
+                 <input type="number" placeholder="0" class="form-control" id="revaluation-reserve-current" onkeypress='validate(event)' th:field="*{currentRevaluationReserve}" />
                </label>
              </div>
            </div>
            <div class="column-quarter">
              <div class="form-group">
                <label class="form-label" for="revaluation-reserve-previous"><span class="mobile-only-label">Revaluation reserve (2015)</span>
-                 <input type="number" class="form-control" id="revaluation-reserve-previous" onkeypress='validate(event)' th:field="*{previousRevaluationReserve}" />
+                 <input type="number" placeholder="0" class="form-control" id="revaluation-reserve-previous" onkeypress='validate(event)' th:field="*{previousRevaluationReserve}" />
                </label>
              </div>
            </div>
@@ -379,14 +550,14 @@
            <div class="column-quarter">
              <div class="form-group">
                <label for="other-reserves-current"><span class="mobile-only-label">Other reserves (2016)</span>
-                 <input type="number" class="form-control" id="other-reserves-current" onkeypress='validate(event)' th:field="*{currentOtherReserves}" />
+                 <input type="number" placeholder="0" class="form-control" id="other-reserves-current" onkeypress='validate(event)' th:field="*{currentOtherReserves}" />
                </label>
              </div>
            </div>
            <div class="column-quarter">
              <div class="form-group">
                <label class="form-label" for="other-reserves-previous"><span class="mobile-only-label">Other reserves (2015)</span>
-                 <input type="number" class="form-control" id="other-reserves-previous" onkeypress='validate(event)' th:field="*{previousOtherReserves}" />
+                 <input type="number" placeholder="0" class="form-control" id="other-reserves-previous" onkeypress='validate(event)' th:field="*{previousOtherReserves}" />
                </label>
              </div>
            </div>
@@ -406,14 +577,14 @@
            <div class="column-quarter">
              <div class="form-group">
                <label for="profit-and-loss-account-current"><span class="mobile-only-label">Profit and loss account (2016)</span>
-                 <input type="number" class="form-control" id="profit-and-loss-account-current" onkeypress='validate(event)' th:field="*{currentProfitAndLoss}" />
+                 <input type="number" placeholder="0" class="form-control" id="profit-and-loss-account-current" onkeypress='validate(event)' th:field="*{currentProfitAndLoss}" />
                </label>
              </div>
            </div>
            <div class="column-quarter">
              <div class="form-group">
                <label class="form-label" for="profit-and-loss-account-previous"><span class="mobile-only-label">Profit and loss account (2015)</span>
-                 <input type="number" class="form-control" id="profit-and-loss-account-previous" onkeypress='validate(event)' th:field="*{previousProfitAndLoss}" />
+                 <input type="number" placeholder="0" class="form-control" id="profit-and-loss-account-previous" onkeypress='validate(event)' th:field="*{previousProfitAndLoss}" />
                </label>
              </div>
            </div>
@@ -433,21 +604,20 @@
            <div class="column-quarter">
              <div class="form-group">
                <label class="form-label-bold" for="total-shareholders-funds-current"><span class="mobile-only-label"> Total shareholders' funds (2016)</span>
-                 <input type="number" class="form-control" id="total-shareholders-funds-current" onkeypress='validate(event)' readonly="readonly" th:field="*{currentTotalShareholdersFunds}" />
+                 <input type="number" placeholder="0" class="form-control" id="total-shareholders-funds-current" onkeypress='validate(event)' readonly="readonly" th:field="*{currentTotalShareholdersFunds}" />
                </label>
              </div>
            </div>
            <div class="column-quarter">
              <div class="form-group">
                <label class="form-label-bold" for="total-shareholders-funds-previous"><span class="mobile-only-label"> Total shareholders' funds (2015)</span>
-                 <input type="number" class="form-control" id="total-shareholders-funds-previous" onkeypress='validate(event)' readonly="readonly" th:field="*{previousTotalShareholdersFunds}" />
+                 <input type="number" placeholder="0" class="form-control" id="total-shareholders-funds-previous" onkeypress='validate(event)' readonly="readonly" th:field="*{previousTotalShareholdersFunds}" />
                </label>
              </div>
            </div>
          </div>
      
      <!-- END of CAPITAL AND RESERVES -->
-  
 
       <div class="form-group">
         <input type="submit" class="button" value="Continue to Balance sheet statements" />
