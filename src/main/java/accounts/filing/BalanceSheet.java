@@ -27,6 +27,119 @@ public class BalanceSheet {
 	private int previousInvestments;
 	private int previousTotalAssets;
 	
+	// Capital and reserves
+	
+	
+	public int getCurrentShareCapital() {
+		return currentShareCapital;
+	}
+
+	public void setCurrentShareCapital(int currentShareCapital) {
+		this.currentShareCapital = currentShareCapital;
+	}
+
+	public int getCurrentSharePremiumAccount() {
+		return currentSharePremiumAccount;
+	}
+
+	public void setCurrentSharePremiumAccount(int currentSharePremiumAccount) {
+		this.currentSharePremiumAccount = currentSharePremiumAccount;
+	}
+
+	public int getCurrentRevaluationReserve() {
+		return currentRevaluationReserve;
+	}
+
+	public void setCurrentRevaluationReserve(int currentRevaluationReserve) {
+		this.currentRevaluationReserve = currentRevaluationReserve;
+	}
+
+	public int getCurrentOtherReserves() {
+		return currentOtherReserves;
+	}
+
+	public void setCurrentOtherReserves(int currentOtherReserves) {
+		this.currentOtherReserves = currentOtherReserves;
+	}
+
+	public int getCurrentProfitAndLoss() {
+		return currentProfitAndLoss;
+	}
+
+	public void setCurrentProfitAndLoss(int currentProfitAndLoss) {
+		this.currentProfitAndLoss = currentProfitAndLoss;
+	}
+	
+	public int getPreviousProfitAndLoss() {
+		return previousProfitAndLoss;
+	}
+
+	public void setPreviousProfitAndLoss(int previousProfitAndLoss) {
+		this.previousProfitAndLoss = previousProfitAndLoss;
+	}
+
+	public int getCurrentTotalShareholdersFunds() {
+		return currentTotalShareholdersFunds;
+	}
+
+	public void setCurrentTotalShareholdersFunds(int currentTotalShareholdersFunds) {
+		this.currentTotalShareholdersFunds = currentTotalShareholdersFunds;
+	}
+
+	public int getPreviousShareCapital() {
+		return previousShareCapital;
+	}
+
+	public void setPreviousShareCapital(int previousShareCapital) {
+		this.previousShareCapital = previousShareCapital;
+	}
+
+	public int getPreviousSharePremiumAccount() {
+		return previousSharePremiumAccount;
+	}
+
+	public void setPreviousSharePremiumAccount(int previousSharePremiumAccount) {
+		this.previousSharePremiumAccount = previousSharePremiumAccount;
+	}
+
+	public int getPreviousRevaluationReserve() {
+		return previousRevaluationReserve;
+	}
+
+	public void setPreviousRevaluationReserve(int previousRevaluationReserve) {
+		this.previousRevaluationReserve = previousRevaluationReserve;
+	}
+
+	public int getPreviousOtherReserves() {
+		return previousOtherReserves;
+	}
+
+	public void setPreviousOtherReserves(int previousOtherReserves) {
+		this.previousOtherReserves = previousOtherReserves;
+	}
+
+	public int getPreviousTotalShareholdersFunds() {
+		return previousTotalShareholdersFunds;
+	}
+
+	public void setPreviousTotalShareholdersFunds(int previousTotalShareholdersFunds) {
+		this.previousTotalShareholdersFunds = previousTotalShareholdersFunds;
+	}
+
+	private int currentShareCapital;
+	private int currentSharePremiumAccount;
+	private int currentRevaluationReserve;
+	private int currentOtherReserves;
+	private int currentProfitAndLoss;
+	private int currentTotalShareholdersFunds;
+				
+	private int previousShareCapital;
+	private int previousSharePremiumAccount;
+	private int previousRevaluationReserve;
+	private int previousOtherReserves;
+	private int previousProfitAndLoss;
+	private int previousTotalShareholdersFunds;
+	
 	
 	public BalanceSheet(){}
 	

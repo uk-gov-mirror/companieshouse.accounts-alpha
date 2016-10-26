@@ -7,6 +7,11 @@ $(function() {
 	// Current assets 
 	attachOnChangeListener([$('#stocks-current'),  $('#debtors-current'),  $('#cash-at-bank-and-in-hand-current'), $('#investments-current-assets-current')], 'total-current-assets-current' )
 	attachOnChangeListener([$('#stocks-previous'),  $('#debtors-previous'),  $('#cash-at-bank-and-in-hand-previous'), $('#investments-current-assets-previous')], 'total-current-assets-previous' )
+	
+	//Capital and reserves
+	attachOnChangeListener([$('#called-up-share-capital-current'),  $('#share-premium-account-current'),  $('#revaluation-reserve-current'), $('#other-reserves-current'), $('#profit-and-loss-account-current')], 'total-shareholders-funds-current' )
+	attachOnChangeListener([$('#called-up-share-capital-previous'),  $('#share-premium-account-previous'),  $('#revaluation-reserve-previous'), $('#other-reserves-previous'), $('#profit-and-loss-account-previous')], 'total-shareholders-funds-previous' )
+    
 	}
 );
 

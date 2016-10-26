@@ -14,6 +14,7 @@
     <p th:text="': ' + ${balanceSheet.currentTangibleAssets}" />
     <p th:text="': ' + ${balanceSheet.currentInvestments}" />
     <p th:text="': ' + ${balanceSheet.currentTotalFixedAssets}" />
+    
     <p th:text="': ' + ${balanceSheet.previousIntangibleAssets}" />
  	<p th:text="': ' + ${balanceSheet.previousTangibleAssets}" />
     <p th:text="': ' + ${balanceSheet.previousInvestments}" />
@@ -32,7 +33,20 @@
     <p th:text="': ' + ${balanceSheet.previousInvestments}" />
     <p th:text="': ' + ${balanceSheet.previousTotalAssets}" />
     
-     
+    <h1>CAPITAL AND RESERVES </h1>
+    <p th:text="': ' + ${balanceSheet.currentShareCapital}" /> 
+    <p th:text="': ' + ${balanceSheet.currentSharePremiumAccount}" />
+    <p th:text="': ' + ${balanceSheet.currentRevaluationReserve}" />
+    <p th:text="': ' + ${balanceSheet.currentOtherReserves}" />
+    <p th:text="': ' + ${balanceSheet.currentProfitAndLoss}" />
+    <p th:text="': ' + ${balanceSheet.currentTotalShareholdersFunds}" />
+    
+    <p th:text="': ' + ${balanceSheet.previousShareCapital}" /> 
+    <p th:text="': ' + ${balanceSheet.previousSharePremiumAccount}" />
+    <p th:text="': ' + ${balanceSheet.previousRevaluationReserve}" />
+    <p th:text="': ' + ${balanceSheet.previousOtherReserves}" />
+    <p th:text="': ' + ${balanceSheet.previousProfitAndLoss}" />
+    <p th:text="': ' + ${balanceSheet.previousTotalShareholdersFunds}" />
     
 </div>
 <div layout:fragment="page-scripts">
