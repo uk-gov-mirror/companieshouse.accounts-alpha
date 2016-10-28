@@ -10,6 +10,30 @@
 
 <h1 class="heading-xlarge">Balance sheet</h1>
 
+
+<form action="/balanceSheet" th:action="@{/balanceSheet}"  th:object="${balanceSheet}" method="post" class="form" id="balance-sheet">
+
+<div th:if="${#fields.hasErrors('*')}">
+<div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+  <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    There are errors on the page which need to be resolved before you can continue.
+  </h2>
+
+
+<ul class="error-summary-list">
+    <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
+        <a th:if="${e.fieldName == 'currentShareCapital'}" th:href="'#' + called-up-share-capital-current" th:text="${e.message}" ></a>
+        <a th:if="${e.fieldName == 'previousShareCapital'}" th:href="'#' + called-up-share-capital-previous" th:text="${e.message}" ></a>
+        <a th:if="${e.fieldName == 'currentBalanced'}" th:href="'#' + total-net-assets-liabilities-current" th:text="${e.message}" ></a>
+        <a th:if="${e.fieldName == 'previousBalanced'}" th:href="'#' + total-net-assets-liabilities-previous" th:text="${e.message}" ></a>
+    </li>
+</ul>
+
+</div>
+</div>
+
+
   <div class="grid-row" id="accounts-header">
     <div class="column-half">
       &nbsp;
@@ -22,9 +46,6 @@
     </div>
   </div>
 
-
-
-<form action="/balanceSheet" th:action="@{/balanceSheet}"  th:object="${balanceSheet}" method="post" class="form" id="balance-sheet">
 
 <!--  FIXED ASSETS BEGINNING -->
 
@@ -547,7 +568,7 @@
                <details role="group">
                  <summary role="button" aria-controls="details-content-18" aria-expanded="false"><span class="summary">Other reserves</span></summary>
                  <div class="panel panel-border-narrow" id="details-content-18" aria-hidden="true">
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at dolor eu turpis hendrerit vulputate sollicitudin quis dui. In posuere nibh sed eros sollicitudin, in congue ipsum aliquam.</p>
+                   <p>Any  other reserves that are not covered by revaluation reserve or profit and loss account reserve.</p>
                  </div>
                </details>
            </div>
