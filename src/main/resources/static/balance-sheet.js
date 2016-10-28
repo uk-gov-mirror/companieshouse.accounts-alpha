@@ -67,7 +67,14 @@ function validate(evt) {
 	  var key = theEvent.keyCode || theEvent.which;
 	  key = String.fromCharCode( key );
 	  var regex = /^[0-9]{0,7}$/;
-	  var element = document.getElementById(theEvent.target.id)	  
+	  
+	  var element = document.getElementById(theEvent.target.id);
+	  
+	  var $this = $("#" + element.id);
+	  
+	  if($this.hasClass("can-be-negative")){
+		  regex = /^-?[0-9]{0,7}$/;
+	  }
 	  
 	  if( !regex.test(element.value) || !regex.test(key)) {		  
 		  theEvent.returnValue = false;
