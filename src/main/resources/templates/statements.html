@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="baseLayout"> 
+
+<head>
+<title>Balance Sheet Statements</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+<div class="text">
+
+
+<h1 class="heading-xlarge">Balance sheet statements</h1>
+
+<form action="/statements" th:action="@{/statements}"  th:object="${statementsPage}" method="post" class="form" id="confirmation-form">
+
+<div th:if="${#fields.hasErrors('*')}">
+<div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+ <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+   There are errors on the page which need to be resolved before you can continue.
+ </h2>
+
+
+<ul class="error-summary-list">
+   <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
+       <a th:if="${e.fieldName == 'confirmation'}" th:href="'#' + confirmation" th:text="${e.message}" ></a>
+   </li>
+</ul>
+
+</div>
+</div>
+
+<div class="notice">
+      <p>
+        <i class="icon icon-important"><span class="visuallyhidden">Warning</span></i>
+        <strong class="bold-small">You’re legally required to include statements describing your accounts with your balance sheet.</strong>
+      </p>
+      </div>
+
+
+        <ul class="list list-bullet">
+          <li>For the year ending 31 March 2016 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</li>
+          <li>The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.</li>
+          <li>The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.</li>
+          <li>These accounts have been prepared in accordance with the provisions applicable to companies subject to the small companies regime.</li>
+          <li>The members have agreed to the preparation of abridged accounts for this accounting period in accordance with Section 444(2A).</li>
+        </ul>
+
+      <h2 class="heading-medium">Confirmation</h2>
+      
+      
+      <div class="form-group">
+      <fieldset>
+		
+        <legend class="visuallyhidden">Confirmation</legend>
+		
+		
+		
+        <label class="block-label" for="confirmation">
+          <input type="checkbox" id="confirmation" value="agree" name="confirmation" th:field="*{confirmation}" />
+          
+           I agree to the legal statements - include them with my balance sheet.
+        </label>
+        <span><font color="red" th:if="${#fields.hasErrors('confirmation')}" th:errors="*{confirmation}">Balance sheet error</font></span>
+
+
+      </fieldset>
+      </div>
+
+	 <div class="form-group">
+            <input type="submit" class="button"
+                value="Continue to balance sheet statements" />
+        </div>
+        </form>
+        
+</div>
+</div>
+
+</body>
+</html>
