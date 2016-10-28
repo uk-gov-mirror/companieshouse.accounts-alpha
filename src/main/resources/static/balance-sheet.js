@@ -23,6 +23,12 @@ $(function() {
     //Capital and reserves
 	attachOnChangeListener([$('#called-up-share-capital-current'),  $('#share-premium-account-current'),  $('#revaluation-reserve-current'), $('#other-reserves-current'), $('#profit-and-loss-account-current')], 'total-shareholders-funds-current' )
 	attachOnChangeListener([$('#called-up-share-capital-previous'),  $('#share-premium-account-previous'),  $('#revaluation-reserve-previous'), $('#other-reserves-previous'), $('#profit-and-loss-account-previous')], 'total-shareholders-funds-previous' )
+
+	$(".grid-row").focusin(function() {	
+		var $this = $(this);
+		$('details').removeAttr('open');
+		$this.find('details').attr('open', 'true')
+		})
 });
 
 
