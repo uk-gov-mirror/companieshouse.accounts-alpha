@@ -1,5 +1,8 @@
 package accounts.filing;
 
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class BalanceSheet {
     
@@ -44,7 +47,7 @@ public class BalanceSheet {
 	private Integer previousTotalNetAssetsLiabilities;
 	
 	// Capital and reserves
-
+	@NotNull( message="Please enter current called up share capital")
 	private Integer currentShareCapital;
 	private Integer currentSharePremiumAccount;
 	private Integer currentRevaluationReserve;
@@ -52,6 +55,7 @@ public class BalanceSheet {
 	private Integer currentProfitAndLoss;
 	private Integer currentTotalShareholdersFunds;
 				
+	@NotNull( message="Please enter previous called up share capital")
 	private Integer previousShareCapital;
 	private Integer previousSharePremiumAccount;
 	private Integer previousRevaluationReserve;
@@ -59,6 +63,22 @@ public class BalanceSheet {
 	private Integer previousProfitAndLoss;
 	private Integer previousTotalShareholdersFunds;
 	
+	
+	@AssertTrue(message = "Current total net assets or liabilities must match current total shareholders' funds") 
+	public boolean isCurrentBalanced(){
+		if (currentTotalNetAssetsLiabilities != null && currentTotalShareholdersFunds != null) {
+			return currentTotalNetAssetsLiabilities.equals(currentTotalShareholdersFunds);
+		}
+		return false;
+	}
+	
+	@AssertTrue(message = "Previous total net assets or liabilities must match previous total shareholders' funds") 
+	public boolean isPreviousBalanced(){
+		if (previousTotalNetAssetsLiabilities != null && previousTotalShareholdersFunds != null) {
+			return previousTotalNetAssetsLiabilities.equals(previousTotalShareholdersFunds);
+		}
+		return false;
+	}
 	
 	public BalanceSheet(){}
 	

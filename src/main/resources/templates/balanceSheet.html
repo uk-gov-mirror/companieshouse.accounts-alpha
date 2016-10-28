@@ -43,7 +43,8 @@
     <div class="column-quarter">
       <div class="form-group">
         <label for="intangible-assets-current"><span class="mobile-only-label">Intangible assets (2016)</span>
-           <input type="number" placeholder="0"  onkeypress='validate(event)' class="form-control" id="intangible-assets-current" th:field="*{currentIntangibleAssets}" />
+           <input type="number" placeholder="0"  onkeypress='validate(event)' class="form-control" id="intangible-assets-current" th:field="*{currentIntangibleAssets}"  />
+           <span th:if="${#fields.hasErrors('currentIntangibleAssets')}" th:errors="*{currentIntangibleAssets}">Age Error</span>
         </label>
       </div>
     </div>
@@ -437,6 +438,7 @@
            <div class="form-group">
              <label class="form-label-bold" for="total-net-assets-liabilities-current"><span class="mobile-only-label">Total net assets (liabilities) (2016)</span>
                <input type="number" placeholder="0" class="form-control" id="total-net-assets-liabilities-current" readonly="readonly" th:field="*{currentTotalNetAssetsLiabilities}" />
+               <span><font color="red" th:if="${#fields.hasErrors('currentBalanced')}" th:errors="*{currentBalanced}">Balance sheet error</font></span>
              </label>
            </div>
          </div>
@@ -444,6 +446,7 @@
            <div class="form-group">
              <label class="form-label-bold" for="total-net-assets-liabilities-previous"><span class="mobile-only-label">Total net assets (liabilities) (2015)</span>
                <input type="number" placeholder="0" class="form-control" id="total-net-assets-liabilities-previous" readonly="readonly" th:field="*{previousTotalNetAssetsLiabilities}" />
+               <span><font color="red" th:if="${#fields.hasErrors('previousBalanced')}" th:errors="*{previousBalanced}">Balance sheet error</font></span>
              </label>
            </div>
          </div>
@@ -470,6 +473,7 @@
              <div class="form-group">
                <label for="called-up-share-capital-current"><span class="mobile-only-label">Called up share capital (2016)</span>
                  <input type="number" placeholder="0" class="form-control" id="called-up-share-capital-current" onkeypress='validate(event)' th:field="*{currentShareCapital}" />
+                 <span><font color="red" th:if="${#fields.hasErrors('currentShareCapital')}" th:errors="*{currentShareCapital}">Balance sheet error</font></span>
                </label>
              </div>
            </div>
@@ -477,6 +481,7 @@
              <div class="form-group">
                <label for="called-up-share-capital-current"><span class="mobile-only-label">Called up share capital (2015)</span>
                  <input type="number" placeholder="0" class="form-control" id="called-up-share-capital-previous" onkeypress='validate(event)' th:field="*{previousShareCapital}" />
+                 <span><font color="red" th:if="${#fields.hasErrors('previousShareCapital')}" th:errors="*{previousShareCapital}">Balance sheet error</font></span>
                </label>
              </div>
            </div>
@@ -488,7 +493,7 @@
                <details role="group">
                  <summary role="button" aria-controls="details-content-16" aria-expanded="false"><span class="summary">Share premium account</span></summary>
                  <div class="panel panel-border-narrow" id="details-content-16" aria-hidden="true">
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at dolor eu turpis hendrerit vulputate sollicitudin quis dui. In posuere nibh sed eros sollicitudin, in congue ipsum aliquam.</p>
+                   <p>Additional amount shareholders paid for their issued shares that was in excess of the value of the shares.</p>
                  </div>
                </details>
            </div>
@@ -596,7 +601,7 @@
              <details role="group">
                <summary role="button" aria-controls="details-content-20" aria-expanded="false"><span class="summary">Total shareholders' funds</span></summary>
                <div class="panel panel-border-narrow" id="details-content-20" aria-hidden="true">
-                 <p><strong>Calculation:</strong> 'Called up share capital' plus 'revaluation reserve' plus 'profit and loss account'. This must match 'total net assets or liabilities'.</p>
+                 <p><strong>Calculation:</strong> 'Called up share capital' plus share premium account plus  'revaluation reserve' plus ‘other reserves' plus ‘profit and loss account'. This must match 'Total net assets/ liabilities'.</p>
                </div>
              </details>
            </div>
@@ -605,6 +610,7 @@
              <div class="form-group">
                <label class="form-label-bold" for="total-shareholders-funds-current"><span class="mobile-only-label"> Total shareholders' funds (2016)</span>
                  <input type="number" placeholder="0" class="form-control" id="total-shareholders-funds-current" onkeypress='validate(event)' readonly="readonly" th:field="*{currentTotalShareholdersFunds}" />
+                 <span><font color="red" th:if="${#fields.hasErrors('currentBalanced')}" th:errors="*{currentBalanced}">Balance sheet error</font></span>
                </label>
              </div>
            </div>
@@ -612,19 +618,25 @@
              <div class="form-group">
                <label class="form-label-bold" for="total-shareholders-funds-previous"><span class="mobile-only-label"> Total shareholders' funds (2015)</span>
                  <input type="number" placeholder="0" class="form-control" id="total-shareholders-funds-previous" onkeypress='validate(event)' readonly="readonly" th:field="*{previousTotalShareholdersFunds}" />
+                 <span><font color="red" th:if="${#fields.hasErrors('previousBalanced')}" th:errors="*{previousBalanced}">Balance sheet error</font></span>
                </label>
              </div>
            </div>
          </div>
      
-     <!-- END of CAPITAL AND RESERVES -->
+     <!-- END of CAPITAL AND RESERVES -->			
 
-      <div class="form-group">
-        <input type="submit" class="button" value="Continue to Balance sheet statements" />
-      </div>
+		<div class="form-group">
+			<input type="submit" class="button"
+				value="Continue to balance sheet statements" />
+		</div>
+
+				
+
+
+      
 </form>
 <!--  href="cato-style-balance-sheet-statements" -->
-
 
 </div>
 <div layout:fragment="page-scripts">

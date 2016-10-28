@@ -18,7 +18,7 @@ $(function() {
 	
 	// Total net assets (liabilities)
 	attachOnChangeListener([$('#total-assets-less-current-liabilities-current'),  $('#creditors-amounts-falling-due-after-more-than-one-year-current'), $('#provision-for-liabilities-current')], 'total-net-assets-liabilities-current', true )
-	attachOnChangeListener([$('#total-assets-less-current-liabilities-previous'),  $('#creditors-amounts-falling-due-after-more-than-one-year-previous'), $('#provision-for-liabilities-previous')], 'total-net-assets-liabilities-current', true )	
+	attachOnChangeListener([$('#total-assets-less-current-liabilities-previous'),  $('#creditors-amounts-falling-due-after-more-than-one-year-previous'), $('#provision-for-liabilities-previous')], 'total-net-assets-liabilities-previous', true )	
 
     //Capital and reserves
 	attachOnChangeListener([$('#called-up-share-capital-current'),  $('#share-premium-account-current'),  $('#revaluation-reserve-current'), $('#other-reserves-current'), $('#profit-and-loss-account-current')], 'total-shareholders-funds-current' )
