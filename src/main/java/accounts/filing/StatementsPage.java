@@ -24,7 +24,6 @@ public class StatementsPage {
 		this.confirmation = confirmation;
 	}
 	
-	
 
 }
 

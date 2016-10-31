@@ -20,10 +20,9 @@ public class StatementsPageController {
 	}
 	@RequestMapping(value="/statements", method = RequestMethod.POST)
 	public String submitStatementsPage(@ModelAttribute @Valid StatementsPage statementsPage, BindingResult result){
-		System.out.println("Joe");
 		if (result.hasErrors()){
 			return "statements";
-		}
+		} 
 		return "result2";
 	}
  
