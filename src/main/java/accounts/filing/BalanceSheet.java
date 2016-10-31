@@ -62,7 +62,7 @@ public class BalanceSheet {
 	private Integer previousProfitAndLoss;
 	private Integer previousTotalShareholdersFunds;
 	
-	
+
 	@AssertTrue(message = "Current total net assets or liabilities must match current total shareholders' funds") 
 	public boolean isCurrentBalanced(){
 		if (currentTotalNetAssetsLiabilities != null && currentTotalShareholdersFunds != null) {

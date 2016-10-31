@@ -25,7 +25,7 @@ public class BalanceSheetController {
 	}
     
     @RequestMapping(value="/balanceSheet",method = RequestMethod.POST)
-	public String submitBalanceSheet(@ModelAttribute @Valid BalanceSheet balanceSheet, BindingResult result, Model model){
+	public String submitBalanceSheet(@ModelAttribute @Valid BalanceSheet balanceSheet, BindingResult result){
     	if ( result.hasErrors()){
 
     		return "balanceSheet";
@@ -34,4 +34,3 @@ public class BalanceSheetController {
 	}
 
 }
-
