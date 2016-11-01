@@ -74,6 +74,11 @@ function validate(evt) {
 	  key = String.fromCharCode( key );
 	  var regex = /^[0-9]{0,7}$/;
 	  
+	  if (theEvent.keyCode == 8 || theEvent.keyCode == 46
+			  || theEvent.keyCode == 37 || theEvent.keyCode == 39) {
+			     return true;
+			 }
+	  
 	  var element = document.getElementById(theEvent.target.id);
 	  
 	  var $this = $("#" + element.id);
@@ -83,8 +88,7 @@ function validate(evt) {
 	  }
 	  
 	  if( !regex.test(element.value) || !regex.test(key)) {		  
-		  theEvent.returnValue = false;
-		  if(theEvent.preventDefault) theEvent.preventDefault();
+		  return false;
 	  }	  
 }
 
