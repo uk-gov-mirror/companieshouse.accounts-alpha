@@ -25,7 +25,7 @@ public class StatementsPageController {
 		if (result.hasErrors()){
 			return "statements";
 		} 
-		return "result2";
+		return "redirect:/balance-sheet-notes";
 	}
  
 	
