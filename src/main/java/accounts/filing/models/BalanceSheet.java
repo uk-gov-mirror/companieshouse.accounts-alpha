@@ -63,7 +63,7 @@ public class BalanceSheet {
 	private Integer previousTotalShareholdersFunds;
 	
 
-	@AssertTrue(message = "Current total net assets or liabilities must match current total shareholders' funds") 
+	@AssertTrue(message = "Please ensure Total net assets (liabilities) matches Total shareholders' funds for the current period.") 
 	public boolean isCurrentBalanced(){
 		if (currentTotalNetAssetsLiabilities != null && currentTotalShareholdersFunds != null) {
 			return currentTotalNetAssetsLiabilities.equals(currentTotalShareholdersFunds);
@@ -71,7 +71,7 @@ public class BalanceSheet {
 		return false;
 	}
 	
-	@AssertTrue(message = "Previous total net assets or liabilities must match previous total shareholders' funds") 
+	@AssertTrue(message = "Please ensure Total net assets (liabilities) matches Total shareholders' funds for the previous period.") 
 	public boolean isPreviousBalanced(){
 		if (previousTotalNetAssetsLiabilities != null && previousTotalShareholdersFunds != null) {
 			return previousTotalNetAssetsLiabilities.equals(previousTotalShareholdersFunds);
