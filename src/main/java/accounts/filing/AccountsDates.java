@@ -15,7 +15,5 @@ public class AccountsDates {
 	public void setDateConfirmation(String dateConfirmation) {
 		this.dateConfirmation = dateConfirmation;
 	}
-	
-	
-	
+
 }
