@@ -21,34 +21,9 @@ public class AccountsDatesController {
 		return "result3";
 	}
 	
-	/*(public class JavaDateAddSubtract {
+	
+	
+	
 
-	 public static void main(String[] args) {
-		 
-	 }
-	 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-	 Date d = sdf.parse("31/03/2016");
-	 
-	  System.out.println("31st March"+date.toString());
-	  //test addDays method
-	  
-	  int i=1;
-	  while(i<=7){
-	   Date newDate = addDays(date, i);
-	   System.out.println("Date after adding "+i+" days: "+newDate.toString());
-	   i+=1;
-	  }
-	  
-	  System.out.println("\n\n");
-	  //test subtractDays method
-	  i=1;
-	  while(i<=7){
-	   Date newDate = subtractDays(date, i);
-	   System.out.println("Date after subtracting "+i+" days: "+newDate.toString());
-	   i+=1;
-	  }
-
-}
-}*/
 	
 }

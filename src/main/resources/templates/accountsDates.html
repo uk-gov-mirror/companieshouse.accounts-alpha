@@ -11,12 +11,20 @@
  <div layout:fragment="content">
 <div class="text">
 <h1 class="heading-xlarge">Confirm your company account dates</h1>
-      
-      
+
+ <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+   There is a problem with this page that needs to be resolved before you can continue.
+ </h2>
+ 
+ <ul class="error-summary-list">
+   <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
+       <a th:if="${e.fieldName == 'confirmation'}" th:href="'#' + confirmation" th:text="${e.message}" ></a>
+   </li>
+</ul>
+        
       <p>Our records show you need to file accounts for for the period:</p>
       <span class="heading-medium">1 April 2015 to 31 March 2016</span>
       <p class="form-hint">These should be the dates you have prepared your accounts to.</p>
-      
       
       
       <h2 class="heading-medium">Are these the dates you want to file your accounts for?</h2>
@@ -99,6 +107,7 @@
                      <input id="7-april-2016" type="radio" name="change-date" value="7 April 2016" />
                      7 April 2016
                    </label>
+                   
               </fieldset>
             </div><!--form-group-->
             <p>To change this date by more than 7 days, or to change the start date of the period you want to file for, you need to file a <a href="javascript:void(0)">Change of accounting reference date</a> form.</p>
@@ -113,7 +122,7 @@
         </div>
     </form>
 
-   </div>
+  </div>
 </div>
 
 <div layout:fragment="page-scripts">

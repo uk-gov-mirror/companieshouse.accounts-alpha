@@ -1,7 +1,7 @@
 package accounts.filing;
 
 public class AccountsDates {
-
+	
 	private String dateConfirmation = "Yes";
 	
 	public AccountsDates() {
@@ -15,5 +15,6 @@ public class AccountsDates {
 	public void setDateConfirmation(String dateConfirmation) {
 		this.dateConfirmation = dateConfirmation;
 	}
+	
 
 }
