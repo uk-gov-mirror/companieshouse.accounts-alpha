@@ -2,7 +2,7 @@ package accounts.filing;
 
 public class AccountsDates {
 	
-	private String dateConfirmation = "Yes";
+	private String dateConfirmation = "";
 	
 	public AccountsDates() {
 		

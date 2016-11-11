@@ -27,7 +27,7 @@
       <p class="form-hint">These should be the dates you have prepared your accounts to.</p>
       
       
-      <h2 class="heading-medium">Are these the dates you want to file your accounts for?</h2>
+      <h2 class="heading-medium">Do you want to change your company account dates?</h2>
       
       <form action="/accountsDates" th:action="@{/accountsDates}"  th:object="${accountsDates}" method="post" class="form" id="confirmation-form">
       
@@ -37,17 +37,17 @@
 
         <div class="form-group">
 
-          <label class="block-label" for="dates-yes">
-            <input id="dates-yes" type="radio" name="confirm-dates" value="Yes" th:field="*{dateConfirmation}" checked="checked" />
+          <label class="block-label" data-target="dates-yes-reveal" for="dates-yes">
+            <input id="dates-yes" type="radio" name="confirm-dates" value="Yes" th:field="*{dateConfirmation}" />
             Yes
           </label>
 
-          <label class="block-label" data-target="dates-no-reveal" for="dates-no">
+          <label class="block-label"  for="dates-no">
             <input id="dates-no" type="radio" name="confirm-dates" value="No" th:field="*{dateConfirmation}" />
             No
             
           </label>
-          <div class="panel panel-border-narrow js-hidden" id="dates-no-reveal">
+          <div class="panel panel-border-narrow js-hidden" id="dates-yes-reveal">
             <p>You can change the end date of the period you're filing for by up to 7 days.</p>
             <div class="form-group">
               <fieldset>
