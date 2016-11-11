@@ -1,8 +1,11 @@
 package accounts.filing;
 
+import javax.validation.constraints.NotNull;
+
 public class AccountsDates {
 	
-	private String dateConfirmation = "";
+	@NotNull(message = "Please agree to the legal statements")
+	private String dateConfirmation;
 	
 	public AccountsDates() {
 		

@@ -12,15 +12,23 @@
 <div class="text">
 <h1 class="heading-xlarge">Confirm your company account dates</h1>
 
+<form action="/accountsDates" th:action="@{/accountsDates}"  th:object="${accountsDates}" method="post" class="form" id="confirmation-form">
+
+<div th:if="${#fields.hasErrors('*')}">
+<div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
  <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
    There is a problem with this page that needs to be resolved before you can continue.
  </h2>
  
  <ul class="error-summary-list">
    <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
-       <a th:if="${e.fieldName == 'confirmation'}" th:href="'#' + confirmation" th:text="${e.message}" ></a>
+       <a th:if="${e.fieldName == 'dateConfirmation'}" th:href="'#' + dateConfirmation" th:text="${e.message}" ></a>
    </li>
 </ul>
+
+  </div>
+</div>
         
       <p>Our records show you need to file accounts for for the period:</p>
       <span class="heading-medium">1 April 2015 to 31 March 2016</span>
@@ -29,9 +37,7 @@
       
       <h2 class="heading-medium">Do you want to change your company account dates?</h2>
       
-      <form action="/accountsDates" th:action="@{/accountsDates}"  th:object="${accountsDates}" method="post" class="form" id="confirmation-form">
-      
-      <fieldset class="inline">
+      <fieldset class="inline" id="dateConfirmation">
 
         <legend class="visuallyhidden">Are these the dates you want to file your accounts for?</legend>
 
@@ -47,6 +53,8 @@
             No
             
           </label>
+          
+          
           <div class="panel panel-border-narrow js-hidden" id="dates-yes-reveal">
             <p>You can change the end date of the period you're filing for by up to 7 days.</p>
             <div class="form-group">
@@ -112,8 +120,12 @@
             </div><!--form-group-->
             <p>To change this date by more than 7 days, or to change the start date of the period you want to file for, you need to file a <a href="javascript:void(0)">Change of accounting reference date</a> form.</p>
           </div>
+          
         </div>
+        <span><font color="red" th:if="${#fields.hasErrors('dateConfirmation')}" th:errors="*{dateConfirmation}">Balance sheet error</font></span>
+        
       </fieldset>
+      
       
 
       <div class="form-group">
@@ -124,6 +136,7 @@
 
   </div>
 </div>
+
 
 <div layout:fragment="page-scripts">
 <script th:src="@{accounts-dates.js}"></script>
