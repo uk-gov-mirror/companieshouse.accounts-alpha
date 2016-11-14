@@ -12,18 +12,21 @@ public class AccountingPolicies {
 	public AccountingPolicies() {
 	}	
 
-	public AccountingPolicies(String preparationStatement) {
-		this.preparationStatement = preparationStatement;
-	}
+//	@AssertTrue(message = "Please ensure you choose the statement that reflects the way your accounts were prepared.") 
+//	public boolean isPreparationStatementSelected(){
+//		return preparationStatement != null && !preparationStatement.isEmpty(); 
+//	}
 	
 	@AssertTrue(message = "Please ensure you choose the statement that reflects the way your accounts were prepared.") 
-	public boolean isPreparationStatementSelected(){
-		return preparationStatement != null && !preparationStatement.isEmpty(); 
-	}
-	
-	@AssertTrue(message = "Please ensure you choose the statement that reflects the way your accounts were prepared.") 
-	public boolean isOtherStatementNotEmpty(){		
-		return (preparationStatement.isEmpty() || preparationStatement == null) && otherPreparation.isEmpty() ? false : true;
+	public boolean isPreparationStatementSelected(){		
+		if (preparationStatement == null || preparationStatement.isEmpty())
+		{
+			if(otherPreparation == null || otherPreparation.isEmpty()){
+				return false;
+			}
+				return true;
+		}
+		return true;
 	}
 
 	public void setPreparationStatement(String preparationStatement){
