@@ -4,7 +4,7 @@ import javax.validation.constraints.NotNull;
 
 public class AccountsDates {
 	
-	@NotNull(message = "Please agree to the legal statements")
+	@NotNull(message = "Please confirm the dates that you have prepared your accounts to.")
 	private String dateConfirmation;
 	
 	public AccountsDates() {
