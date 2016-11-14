@@ -38,6 +38,8 @@ public class NotesController {
 			System.out.println("Ruth other preparation value:" + accountingPolicies.getOtherPreparation());
 			return "notes/accountingPoliciesNote";
 		}
+		
+		accountingPolicies.cleanupPreparationStatement();
 		System.out.println("Ruth preparation statement value:" + accountingPolicies.getPreparationStatement());
 		System.out.println("Ruth other preparation value:" + accountingPolicies.getOtherPreparation());
 		return "notesHomepage";
