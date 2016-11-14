@@ -22,7 +22,8 @@
 
 <ul class="error-summary-list">
    <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
-       <a th:if="${e.fieldName == 'preparationStatement'}" th:href="'#' + preparationStatement" th:text="${e.message}" ></a>
+       <a th:if="${e.fieldName == 'preparationStatementSelected'}" th:href="'#' + preparationStatementSelected" th:text="${e.message}" ></a>
+       <a th:if="${e.fieldName == 'otherStatementNotEmpty'}" th:href="'#' + otherStatementNotEmpty" th:text="${e.message}" ></a>
    </li>
 </ul>
 
@@ -55,13 +56,13 @@
           <input type="radio" id="prepared-not-standard-102" value="" name="basis-of-preparation" aria-controls="micro" aria-expanded="false" th:field="*{preparationStatement}"/>
           These accounts have been prepared in accordance with another standard
         </label>
-        <span><font color="red" th:if="${#fields.hasErrors('preparationStatement')}" th:errors="*{preparationStatement}">Please ensure you choose the statement that reflects the way your accounts were prepared.</font></span>
+        <span><font color="red" th:if="${#fields.hasErrors('preparationStatementSelected')}" th:errors="*{preparationStatementSelected}">Please ensure you choose the statement that reflects the way your accounts were prepared.</font></span>
         <div id="other-policy-text" class="panel panel-border-narrow js-hidden" aria-hidden="true">
           <label class="visuallyhidden" for="2-textarea"></label>
           Enter the basis of measurement and preparation for your accounts:
           <textarea id="2-textarea" class="form-control" rows="10" th:field="*{otherPreparation}"></textarea>
         </div>
-
+ <span><font color="red" th:if="${#fields.hasErrors('otherStatementNotEmpty')}" th:errors="*{otherStatementNotEmpty}">Please ensure you choose the statement that reflects the way your accounts were prepared.</font></span>
       </fieldset>
       </div>
 
