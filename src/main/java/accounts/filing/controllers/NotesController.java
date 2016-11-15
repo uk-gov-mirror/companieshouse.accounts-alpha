@@ -36,8 +36,7 @@ public class NotesController {
 		if(result.hasErrors()){
 			return "notes/accountingPoliciesNote";
 		}
-		
-		accountingPolicies.cleanupPreparationStatement();
+		accountingPolicies.cleanupPreparationStatement();		
 		return "notesHomepage";
 	}
 	

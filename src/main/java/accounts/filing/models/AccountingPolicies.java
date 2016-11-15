@@ -82,8 +82,11 @@ public class AccountingPolicies {
 	}
 	
 	public void cleanupPreparationStatement(){
-		if (this.preparationStatement == null || this.preparationStatement.isEmpty()){
+		if (this.preparationStatement.equals("custom")){
 			this.preparationStatement = this.customStatement;
+		}
+		else{
+			this.customStatement = null;
 		}
 	}
 
