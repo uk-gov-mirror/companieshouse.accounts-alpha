@@ -24,6 +24,9 @@ public class AccountsDatesController {
 		if (result.hasErrors()){
 			return "accountsDates";
 		} 
+		
+		accountsDates.cleanupDatesSelection();
+		
 		return "result3";
 	}
  

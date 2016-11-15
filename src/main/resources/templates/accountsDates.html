@@ -23,7 +23,7 @@
  
  <ul class="error-summary-list">
    <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
-       <a th:if="${e.fieldName == 'dateConfirmation'}" th:href="'#' + dateConfirmation" th:text="${e.message}" ></a>
+       <a th:if="${e.fieldName == 'validDateSelection'}" th:href="'#' + deafultDateConfirmation" th:text="${e.message}" ></a>
    </li>
 </ul>
 
@@ -37,21 +37,20 @@
       
       <h2 class="heading-medium">Do you want to change your company account dates?</h2>
       
-      <fieldset class="inline" id="dateConfirmation">
+      <fieldset class="inline" id="customDateConfirmation">
 
         <legend class="visuallyhidden">Are these the dates you want to file your accounts for?</legend>
 
         <div class="form-group">
 
           <label class="block-label" data-target="dates-yes-reveal" for="dates-yes">
-            <input id="dates-yes" type="radio" name="confirm-dates" value="Yes" th:field="*{dateConfirmation}" />
+            <input id="dates-yes" type="radio" name="confirm-dates" value="Yes" th:field="*{defaultDateConfirmation}" />
             Yes
           </label>
 
           <label class="block-label"  for="dates-no">
-            <input id="dates-no" type="radio" name="confirm-dates" value="No" th:field="*{dateConfirmation}" />
+            <input id="dates-no" type="radio" name="confirm-dates" value="31 March 2016" th:field="*{defaultDateConfirmation}" />
             No
-            
           </label>
           
           
@@ -59,71 +58,71 @@
             <p>You can change the end date of the period you're filing for by up to 7 days.</p>
             <div class="form-group">
               <fieldset>
-                <label class="block-label" for="24-march-2016">
-                     <input id="24-march-2016" type="radio" name="change-date" value="24 March 2016" />
+                <label class="block-label" for="date-7">
+                     <input id="date-7" type="radio" name="change-date" value="24 March 2016" th:field="*{customDateConfirmation}" />
                      24 March 2016
                    </label>
-                   <label class="block-label" for="1-april-2016">
-                     <input id="1-april-2016" type="radio" name="change-date" value="1 April 2016" />
+                   <label class="block-label" for="date+1">
+                     <input id="date+1" type="radio" name="change-date" value="1 April 2016" th:field="*{customDateConfirmation}" />
                      1 April 2016
                    </label>
-                   <label class="block-label" for="25-march-2016">
-                     <input id="25-march-2016" type="radio" name="change-date" value="25 March 2016" />
+                   <label class="block-label" for="date-6">
+                     <input id="date-6" type="radio" name="change-date" value="25 March 2016" th:field="*{customDateConfirmation}" />
                      25 March 2016
                    </label>
-                   <label class="block-label" for="2-april-2016">
-                     <input id="2-april-2016" type="radio" name="change-date" value="2 April 2016" />
+                   <label class="block-label" for="date+2">
+                     <input id="date+2" type="radio" name="change-date" value="2 April 2016" th:field="*{customDateConfirmation}" />
                      2 April 2016
                    </label>
-                   <label class="block-label" for="26-march-2016">
-                     <input id="26-march-2016" type="radio" name="change-date" value="26 March 2016" />
+                   <label class="block-label" for="date-5">
+                     <input id="date-5" type="radio" name="change-date" value="26 March 2016" th:field="*{customDateConfirmation}" />
                      26 March 2016
                    </label>
-                   <label class="block-label" for="3-april-2016">
-                     <input id="3-april-2016" type="radio" name="change-date" value="3 April 2016" />
+                   <label class="block-label" for="date+3">
+                     <input id="date+3" type="radio" name="change-date" value="3 April 2016" th:field="*{customDateConfirmation}" />
                      3 April 2016
                    </label>
-                   <label class="block-label" for="27-march-2016">
-                     <input id="27-march-2016" type="radio" name="change-date" value="27 March 2016" />
+                   <label class="block-label" for="date-4">
+                     <input id="date-4" type="radio" name="change-date" value="27 March 2016" th:field="*{customDateConfirmation}" />
                      27 March 2016
                    </label>
-                   <label class="block-label" for="4-april-2016">
-                     <input id="4-april-2016" type="radio" name="change-date" value="4 April 2016" />
+                   <label class="block-label" for="date+4">
+                     <input id="date+4" type="radio" name="change-date" value="4 April 2016" th:field="*{customDateConfirmation}" />
                      4 April 2016
                    </label>
-                   <label class="block-label" for="28-march-2016">
-                     <input id="28-march-2016" type="radio" name="change-date" value="28 March 2016" />
+                   <label class="block-label" for="date-3">
+                     <input id="date-3" type="radio" name="change-date" value="28 March 2016" th:field="*{customDateConfirmation}" />
                      28 March 2016
                    </label>
-                   <label class="block-label" for="5-april-2016">
-                     <input id="5-april-2016" type="radio" name="change-date" value="5 April 2016" />
+                   <label class="block-label" for="date+5">
+                     <input id="date+5" type="radio" name="change-date" value="5 April 2016" th:field="*{customDateConfirmation}" />
                      5 April 2016
                    </label>
-                   <label class="block-label" for="29-march-2016">
-                     <input id="29-march-2016" type="radio" name="change-date" value="29 March 2016" />
+                   <label class="block-label" for="date-2">
+                     <input id="date-2" type="radio" name="change-date" value="29 March 2016" th:field="*{customDateConfirmation}" />
                      29 March 2016
                    </label>
-                   <label class="block-label" for="6-april-2016">
-                     <input id="6-april-2016" type="radio" name="change-date" value="6 April 2016" />
+                   <label class="block-label" for="date+6">
+                     <input id="date+6" type="radio" name="change-date" value="6 April 2016" th:field="*{customDateConfirmation}" />
                      6 April 2016
                    </label>
-                   <label class="block-label" for="30-march-2016">
-                     <input id="30-march-2016" type="radio" name="change-date" value="30 March 2016" />
+                   <label class="block-label" for="date-1">
+                     <input id="date-1" type="radio" name="change-date" value="30 March 2016" th:field="*{customDateConfirmation}" />
                      30 March 2016
                    </label>
-                   <label class="block-label" for="7-april-2016">
-                     <input id="7-april-2016" type="radio" name="change-date" value="7 April 2016" />
+                   <label class="block-label" for="date+7">
+                     <input id="date+7" type="radio" name="change-date" value="7 April 2016" th:field="*{customDateConfirmation}" />
                      7 April 2016
                    </label>
                    
               </fieldset>
             </div><!--form-group-->
             <p>To change this date by more than 7 days, or to change the start date of the period you want to file for, you need to file a <a href="javascript:void(0)">Change of accounting reference date</a> form.</p>
-          </div>
-          
+         
+          </div>      
         </div>
-        <span><font color="red" th:if="${#fields.hasErrors('dateConfirmation')}" th:errors="*{dateConfirmation}">Balance sheet error</font></span>
-        
+         <span><font color="red" th:if="${#fields.hasErrors('validDateSelection')}" th:errors="*{validDateSelection}">Accounts dates error</font></span>
+      <!--<p style="margin-left:5em"></p>-->
       </fieldset>
       
       
