@@ -52,7 +52,7 @@
           These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102
         </label>
         <label data-target="2-reveal" class="block-label" for="prepared-not-standard-102">
-          <input type="radio" id="prepared-not-standard-102" value="" name="basis-of-preparation" aria-controls="micro" aria-expanded="false" th:field="*{preparationStatement}"/>
+          <input type="radio" id="prepared-not-standard-102" value="custom" name="basis-of-preparation" aria-controls="micro" aria-expanded="false" th:field="*{preparationStatement}"/>
           These accounts have been prepared in accordance with another standard
         </label>
        
@@ -97,7 +97,7 @@
               </details>
               <legend class="visuallyhidden">Turnover policy</legend>
               <label class="visuallyhidden" for="other-1"></label>
-              <textarea type="text" id="other-1" class="form-control" rows="5"></textarea>
+              <textarea type="text" id="other-1" class="form-control" rows="5" th:field="*{turnoverPolicy}"></textarea>
 
             </fieldset>
             </div>
@@ -115,7 +115,7 @@
               </details>
               <legend class="visuallyhidden">Tangible assets depreciation policy</legend>
               <label class="visuallyhidden" for="other-2"></label>
-              <textarea type="text" id="other-2" class="form-control" rows="5"></textarea>
+              <textarea type="text" id="other-2" class="form-control" rows="5" th:field="*{assetsDepreciationPolicy}"></textarea>
 
             </fieldset>
             </div>
@@ -133,7 +133,7 @@
               </details>
               <legend class="visuallyhidden">Intangible assets amortisation policy</legend>
               <label class="visuallyhidden" for="other-3"></label>
-              <textarea type="text" id="other-3" class="form-control" rows="5"></textarea>
+              <textarea type="text" id="other-3" class="form-control" rows="5" th:field="*{assetsAmortisationPolicy}"></textarea>
 
             </fieldset>
             </div>
@@ -151,7 +151,7 @@
               </details>
               <legend class="visuallyhidden">Valuation information policy</legend>
               <label class="visuallyhidden" for="other-4"></label>
-              <textarea type="text" id="other-4" class="form-control" rows="5"></textarea>
+              <textarea type="text" id="other-4" class="form-control" rows="5" th:field="*{valuationInformationPolicy}"></textarea>
 
             </fieldset>
             </div>
@@ -173,7 +173,7 @@
               </details>
               <legend class="visuallyhidden">Other policy</legend>
               <label class="visuallyhidden" for="other-5"></label>
-              <textarea type="text" id="other-5" class="form-control" rows="5"></textarea>
+              <textarea type="text" id="other-5" class="form-control" rows="5" th:field="*{otherAccountingPolicies}"></textarea>
 
             </fieldset>
             </div>

@@ -34,14 +34,10 @@ public class NotesController {
 	@RequestMapping(value="/accounting-policies", method = RequestMethod.POST)
 	public String submitAccountingPoliciesNote(@ModelAttribute @Valid AccountingPolicies accountingPolicies, BindingResult result){
 		if(result.hasErrors()){
-			System.out.println("Ruth preparation statement value:" + accountingPolicies.getPreparationStatement());
-			System.out.println("Ruth other preparation value:" + accountingPolicies.getOtherPreparation());
 			return "notes/accountingPoliciesNote";
 		}
 		
 		accountingPolicies.cleanupPreparationStatement();
-		System.out.println("Ruth preparation statement value:" + accountingPolicies.getPreparationStatement());
-		System.out.println("Ruth other preparation value:" + accountingPolicies.getOtherPreparation());
 		return "notesHomepage";
 	}
 	
