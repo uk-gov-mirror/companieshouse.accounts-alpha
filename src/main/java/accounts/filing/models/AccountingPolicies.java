@@ -19,9 +19,9 @@ public class AccountingPolicies {
 	public boolean isPreparationStatementSelected(){		
 		if (preparationStatement == null || ( preparationStatement.equals("custom") && customStatement.isEmpty()))
 		{		
-				return false;
+			return false;
 		}	
-	return true;
+		return true;
 	}
 	
 
@@ -84,8 +84,7 @@ public class AccountingPolicies {
 	public void cleanupPreparationStatement(){
 		if (this.preparationStatement.equals("custom")){
 			this.preparationStatement = this.customStatement;
-		}
-		else{
+		} else {
 			this.customStatement = null;
 		}
 	}
