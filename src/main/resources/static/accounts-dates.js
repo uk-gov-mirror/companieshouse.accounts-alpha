@@ -1,8 +1,12 @@
 $(document).ready(function(){
-	    $('#dates-yes').click(function(){
-	        $('#dates-yes-reveal').removeClass('js-hidden');
+	if ($('#dates-yes').is(':checked')){
+		$('#dates-yes-reveal').removeClass('js-hidden');
+	}
+			$('#dates-yes').click(function(){
+				$('#dates-yes-reveal').removeClass('js-hidden');
+			});
 	        $('#dates-no').click(function(){
-	        $('#dates-yes-reveal').addClass('js-hidden');
-	    });
-	});
-  });
+	        	$('#dates-yes-reveal').addClass('js-hidden');
+			});
+});
+

@@ -27,7 +27,7 @@ public class AccountsDatesController {
 		
 		accountsDates.cleanupDatesSelection();
 		
-		return "result3";
+		return "redirect:/balanceSheet";
 	}
  
 	

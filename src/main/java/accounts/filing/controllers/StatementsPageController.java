@@ -1,4 +1,4 @@
- package accounts.filing;
+package accounts.filing.controllers;
 
 import javax.validation.Valid;
 
@@ -8,6 +8,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import accounts.filing.models.StatementsPage;
 
 
 @Controller
@@ -23,7 +25,7 @@ public class StatementsPageController {
 		if (result.hasErrors()){
 			return "statements";
 		} 
-		return "result2";
+		return "redirect:/balance-sheet-notes";
 	}
  
 	

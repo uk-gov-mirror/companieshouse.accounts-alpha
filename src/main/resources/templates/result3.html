@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="baseLayout"> 
+
+<head>
+<title>Accounts Dates</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+     <h1>ACCOUNTS DATES </h1>
+    <p th:text="': ' + ${accountsDates.defaultDateConfirmation}" />
+    <p th:text="': ' + ${accountsDates.customDateConfirmation}" />
+    
+</div>
+<div layout:fragment="page-scripts">
+<script th:src="@{accountsDates.html}"></script>
+</div>
+
+</body>
+</html>
