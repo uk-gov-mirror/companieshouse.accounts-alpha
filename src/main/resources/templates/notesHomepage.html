@@ -29,7 +29,11 @@
     <tr id="accounting-policies-note">
       <td>Accounting policies</td>
       <td></td>
-      <td class="change-answer"><a href="">Add note<span class="visuallyhidden">Accounting policies</span></a></td>
+      <td class="change-answer"><a th:href="@{/accounting-policies}">
+       <span th:if="${accountingPolicies} == null">Add note</span>
+       <span th:if="${accountingPolicies} != null">Change note</span> 
+       
+      <span class="visuallyhidden">Accounting policies</span></a></td>
     </tr>
       <tr id="intangible-assets-note" th:if="${balanceSheet.currentIntangibleAssets}!=null and ${balanceSheet.currentIntangibleAssets}!=0">
         <td>Intangible assets</td>
