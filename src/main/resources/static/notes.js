@@ -1,5 +1,9 @@
 $(function() {
-		
+	
+			if($('#prepared-not-standard-102').is(":checked")){
+				$('#other-policy-text').removeClass('js-hidden')
+			}
+	
 			$('#prepared-not-standard-102').click(function(){ 
 				$('#other-policy-text').removeClass('js-hidden')
 			})

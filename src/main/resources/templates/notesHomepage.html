@@ -30,9 +30,9 @@
       <td>Accounting policies</td>
       <td></td>
       <td class="change-answer"><a th:href="@{/accounting-policies}">
-      <!-- <span th:if="${accountingPolicies.preparationStatement} == null">Add note</span>
-       <span th:if="${accountingPolicies.preparationStatement} != null">Change note</span> -->
-       Add Note
+       <span th:if="${accountingPolicies} == null">Add note</span>
+       <span th:if="${accountingPolicies} != null">Change note</span> 
+       
       <span class="visuallyhidden">Accounting policies</span></a></td>
     </tr>
       <tr id="intangible-assets-note" th:if="${balanceSheet.currentIntangibleAssets}!=null and ${balanceSheet.currentIntangibleAssets}!=0">
