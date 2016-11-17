@@ -10,12 +10,6 @@ public class StatementsPage {
 	public StatementsPage() {
 	}
 
-	public StatementsPage(boolean confirmation) {
-		super();
-		this.confirmation = confirmation;
-	}
-
-
 	public boolean isConfirmation() {
 		return confirmation;
 	}
