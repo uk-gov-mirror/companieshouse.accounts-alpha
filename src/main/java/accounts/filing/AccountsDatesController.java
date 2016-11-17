@@ -20,7 +20,7 @@ public class AccountsDatesController {
 	}
 
 	@RequestMapping(value="/accountsDates", method = RequestMethod.POST)
-	public String submitStatementsPage(@ModelAttribute @Valid AccountsDates accountsDates, BindingResult result){
+	public String submitAccountsDates(@ModelAttribute @Valid AccountsDates accountsDates, BindingResult result){
 		if (result.hasErrors()){
 			return "accountsDates";
 		} 

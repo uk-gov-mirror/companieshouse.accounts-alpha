@@ -4,7 +4,7 @@
 
 <head>
     <title>
-   Confirm your company account dates
+   Accounting Dates
 </title>
   </head>
   <body>
@@ -23,7 +23,7 @@
  
  <ul class="error-summary-list">
    <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
-       <a th:if="${e.fieldName == 'validDateSelection'}" th:href="'#' + deafultDateConfirmation" th:text="${e.message}" ></a>
+       <a th:if="${e.fieldName == 'validDateSelection'}" th:href="'#' + errorMessage" th:text="${e.message}" ></a>
    </li>
 </ul>
 
@@ -121,8 +121,7 @@
          
           </div>      
         </div>
-         <span><font color="red" th:if="${#fields.hasErrors('validDateSelection')}" th:errors="*{validDateSelection}">Accounts dates error</font></span>
-      <!--<p style="margin-left:5em"></p>-->
+         <span><font id="errorMessage" color="red" th:if="${#fields.hasErrors('validDateSelection')}" th:errors="*{validDateSelection}" >Accounts dates error</font></span>
       </fieldset>
       
 
