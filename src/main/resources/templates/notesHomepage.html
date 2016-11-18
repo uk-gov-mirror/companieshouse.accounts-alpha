@@ -82,17 +82,17 @@
         <td><!--£15--></td>
         <td class="change-answer"><a href="">Add note<span class="visuallyhidden">Current assets investments</span></a></td>
       </tr>
-      <tr id="debtors-note">
+      <tr id="debtors-note" th:if="${balanceSheet.currentDebtors} != null and ${balanceSheet.currentDebtors} != 0">
         <td>Debtors</td>
         <td><!--£15--></td>
         <td class="change-answer"><a href="">Add note<span class="visuallyhidden">Debtors</span></a></td>
       </tr>
-      <tr id="creditors-within-year-note">
+      <tr id="creditors-within-year-note" th:if="${balanceSheet.currentCreditorsOneYear} != null and ${balanceSheet.currentCreditorsOneYear} != 0">
         <td>Creditors - amounts falling due within one year</td>
         <td><!--£10--></td>
         <td class="change-answer"><a href="">Add note<span class="visuallyhidden">Creditors - amounts falling due within one year</span></a></td>
       </tr>
-      <tr id="creditors-more-than-one-year-note">
+      <tr id="creditors-more-than-one-year-note" th:if="${balanceSheet.currentCreditorsMoreYears} != null and ${balanceSheet.currentCreditorsMoreYears} != 0">
         <td>Creditors - amounts falling due after more than one year</td>
         <td><!--£5--></td>
         <td class="change-answer"><a href="">Add note<span class="visuallyhidden">Creditors - amounts falling due after more than one year</span></a></td>
