@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="baseLayout"> 
+
+<head>
+<title>File abridged accounts</title>
+</head>
+<body>
+<div layout:fragment="content">
+<div class="text">
+<h1 class="heading-xlarge">File abridged accounts</h1>
+
+        <p class="lede">Use this service to file prepared and approved abridged accounts.</p>
+
+        <p> There are 7 sections to complete:</p>
+
+          <ol class="list example-icon-list">
+            <li><i class="icon icon-step-1"></i>  Confirm your company account dates</li>
+            <li><i class="icon icon-step-2"></i>  Balance sheet</li>
+            <li><i class="icon icon-step-3"></i>  Balance sheet statements</li>
+            <li><i class="icon icon-step-4"></i>  Notes to the accounts</li>
+            <li><i class="icon icon-step-5"></i>  Review</li>
+            <li><i class="icon icon-step-6"></i>  Approval</li>
+            <li><i class="icon icon-step-7"></i>  Submission</li>
+          </ol>
+
+	  <div class="form-group">
+        <a th:href="@{/accountsDates}" class="button button-start" id="start-now">Start now</a>
+      </div>
+
+</div>
+</div>
+
+</body>
+</html>
