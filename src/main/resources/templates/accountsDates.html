@@ -12,7 +12,7 @@
 <div class="text">
 <h1 class="heading-xlarge">Confirm your company account dates</h1>
 
-<form action="/accountsDates" th:action="@{/accountsDates}"  th:object="${accountsDates}" method="post" class="form" id="confirmation-form">
+<form action="/accounts-dates" th:action="@{/accounts-dates}"  th:object="${accountsDates}" method="post" class="form" id="confirmation-form">
 
 <div th:if="${#fields.hasErrors('*')}">
 <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
@@ -136,7 +136,7 @@
 
 
 <div layout:fragment="page-scripts">
-<script th:src="@{accounts-dates.js}"></script>
+<script th:src="@{accountsDates.js}"></script>
 </div>
 
   </body>

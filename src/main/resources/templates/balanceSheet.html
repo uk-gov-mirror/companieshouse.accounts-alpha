@@ -11,7 +11,7 @@
 <h1 class="heading-xlarge">Balance sheet</h1>
 
 
-<form action="/balanceSheet" th:action="@{/balanceSheet}"  th:object="${balanceSheet}" method="post" class="form" id="balance-sheet">
+<form action="/balance-sheet" th:action="@{/balance-sheet}"  th:object="${balanceSheet}" method="post" class="form" id="balance-sheet">
 
 <div th:if="${#fields.hasErrors('*')}">
 <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
@@ -663,7 +663,7 @@
 
 </div>
 <div layout:fragment="page-scripts">
-<script th:src="@{balance-sheet.js}"></script>
+<script th:src="@{balanceSheet.js}"></script>
 </div>
 
 </body>
