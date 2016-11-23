@@ -21,7 +21,7 @@ import accounts.filing.models.BalanceSheet;
 public class BalanceSheetController {
     
 
-    @RequestMapping(value="/balanceSheet",method = RequestMethod.GET)
+    @RequestMapping(value="/balance-sheet",method = RequestMethod.GET)
 	public String showBalanceSheetPage(Model model){
     	model.addAttribute("balanceSheet", new BalanceSheet());
     	
@@ -29,7 +29,7 @@ public class BalanceSheetController {
 		
 	}
     
-    @RequestMapping(value="/balanceSheet",method = RequestMethod.POST)
+    @RequestMapping(value="/balance-sheet",method = RequestMethod.POST)
 	public String submitBalanceSheet(@ModelAttribute @Valid BalanceSheet balanceSheet, BindingResult result, ModelMap model){
     	if ( result.hasErrors()){
 
