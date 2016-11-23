@@ -1,4 +1,4 @@
-package accounts.filing;
+package accounts.filing.models;
 
 import javax.validation.constraints.AssertTrue;
 
