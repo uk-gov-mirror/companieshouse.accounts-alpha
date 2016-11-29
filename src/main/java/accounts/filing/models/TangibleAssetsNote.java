@@ -2,8 +2,6 @@ package accounts.filing.models;
 
 
 public class TangibleAssetsNote {
-    
-	// TODO FIELD VALIDATION & NOTE VALIDATION
 	
 	private Integer costAtStart;
 	private Integer additions;
@@ -195,22 +193,6 @@ public class TangibleAssetsNote {
 	public void setAdditionalInfo(String additionalInfo) {
 		this.additionalInfo = additionalInfo;
 	}
-
-
-
-	@Override
-	public String toString() {
-		return "TangibleAssets [costAtStart=" + costAtStart + ", additions=" + additions + ", disposals=" + disposals
-				+ ", revaluations=" + revaluations + ", transfers=" + transfers + ", costAtEnd=" + costAtEnd
-				+ ", depreciationAtStart=" + depreciationAtStart + ", chargeForYear=" + chargeForYear + ", onDisposals="
-				+ onDisposals + ", otherAdjustments=" + otherAdjustments + ", depreciationAtEnd=" + depreciationAtEnd
-				+ ", netBookValueStart=" + netBookValueStart + ", netBookValueEnd=" + netBookValueEnd
-				+ ", additionalInfo=" + additionalInfo + "]";
-	}
-
-
-
-
 
 
 }
