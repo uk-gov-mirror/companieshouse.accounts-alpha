@@ -15,11 +15,11 @@ public class CrossValidator {
 	{
 		
 		if (balanceSheet.getCurrentTangibleAssets() != tangibleAssetsNote.getNetBookValueEnd()){
-			result.rejectValue("netBookValueEnd", "tangibleAssetsNote", "Make sure the net book value for the period you are filing for matches tangible assets for that period.");
+			result.rejectValue("netBookValueEnd", "tangibleAssetsNote", "Make sure the net book value for the current period matches tangible assets value.");
 		}
 		
 		if (balanceSheet.getPreviousTangibleAssets() != tangibleAssetsNote.getNetBookValueStart()){
-			result.rejectValue("netBookValueStart", "tangibleAssetsNote", "Make sure the net book value for the period you are filing for matches tangible assets for that period.");
+			result.rejectValue("netBookValueStart", "tangibleAssetsNote", "Make sure the net book value for the previous period matches tangible assets value.");
 		}
 
 	}
