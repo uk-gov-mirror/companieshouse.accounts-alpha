@@ -1,18 +1,18 @@
 function attachOnChangeListener(arr1, arr2, total){
 	for(var i=0;i<arr1.length;i++){
 		arr1[i].on('change', function() {
-			addAndSubstract(arr1, arr2, total)			
+			calculate(arr1, arr2, total)			
 		});
 	}
 	for(var i=0;i<arr2.length;i++){
 		arr2[i].on('change', function() {
-			addAndSubstract(arr1, arr2, total)			
+			calculate(arr1, arr2, total)			
 		});
 	}
 }
 
 
-function addAndSubstract(sumArr, subArr, totalField){
+function calculate(sumArr, subArr, totalField){
     var tot=0;
     for(var i=0;i<sumArr.length;i++){
         if(parseInt(sumArr[i].val()))

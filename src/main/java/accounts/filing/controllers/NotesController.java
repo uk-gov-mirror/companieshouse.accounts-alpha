@@ -1,5 +1,6 @@
 package accounts.filing.controllers;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import accounts.filing.helpers.CrossValidator;
 import accounts.filing.models.AccountingPolicies;
 import accounts.filing.models.BalanceSheet;
 import accounts.filing.models.TangibleAssetsNote;
@@ -21,6 +23,9 @@ import accounts.filing.models.TangibleAssetsNote;
 @Controller
 @SessionAttributes("balanceSheet")
 public class NotesController {
+	
+	@Inject
+	private CrossValidator crossValidator;	
     
 	@RequestMapping(value="/balance-sheet-notes", method = RequestMethod.GET)
 	public String showNotesHomepage(){
@@ -52,15 +57,9 @@ public class NotesController {
 	@RequestMapping(value="/tangible-assets", method = RequestMethod.POST)
 	public String submitTangibleAssetsNote(@ModelAttribute @Valid TangibleAssetsNote tangibleAssetsNote, BindingResult result, HttpSession session){
 		
-		BalanceSheet balancesheet = (BalanceSheet) session.getAttribute("balanceSheet");
+		BalanceSheet balanceSheet = (BalanceSheet) session.getAttribute("balanceSheet");		
 		
-		if (balancesheet.getCurrentTangibleAssets() != tangibleAssetsNote.getNetBookValueEnd()){
-			result.rejectValue("netBookValueEnd", "tangibleAssetsNote", "Make sure the net book value for the period you are filing for matches tangible assets for that period.");
-		}
-		
-		if (balancesheet.getPreviousTangibleAssets() != tangibleAssetsNote.getNetBookValueStart()){
-			result.rejectValue("netBookValueStart", "tangibleAssetsNote", "Make sure the net book value for the period you are filing for matches tangible assets for that period.");
-		}		
+		crossValidator.tangibleAssetsNoteValidate(result, balanceSheet, tangibleAssetsNote);			
 		
 		if(result.hasErrors()){
 			return "notes/tangibleAssetsNote";
