@@ -25,16 +25,18 @@
     </tr>
   </thead>
   <tbody>
-  
 
     <tr id="accounting-policies-note">
       <td>Accounting policies</td>
       <td></td>
       <td class="change-answer"><a th:href="@{/accounting-policies}">
-       <span th:if="${accountingPolicies} == null">Add note</span>
-       <span th:if="${accountingPolicies} != null">Change note</span> 
+       <span th:if="${ accountingPolicies == null }">Add note</span>
+       <span th:if="${ accountingPolicies != null and #strings.isEmpty(accountingPolicies.preparationStatement) == true  }">Add note</span>
+       <span th:if="${ accountingPolicies != null and #strings.isEmpty(accountingPolicies.preparationStatement) != true }">Change note</span> 
        
       <span class="visuallyhidden">Accounting policies</span></a></td>
+
+       
     </tr>
       <tr id="intangible-assets-note" th:if="${balanceSheet.currentIntangibleAssets} !=null and ${balanceSheet.currentIntangibleAssets} !=0" >
         <td>Intangible assets</td>
@@ -47,7 +49,8 @@
         <td></td>
       <td class="change-answer"><a th:href="@{/tangible-assets}">
        <span th:if="${tangibleAssetsNote} == null">Add note</span>
-       <span th:if="${tangibleAssetsNote} != null">Change note</span>  
+       <span th:if="${tangibleAssetsNote != null and tangibleAssetsNote.netBookValueEnd == null }">Add note</span>
+       <span th:if="${tangibleAssetsNote != null and tangibleAssetsNote.netBookValueEnd != null}">Change note</span>  
        <span class="visuallyhidden">Tangible Assets</span></a></td>
       </tr>
       

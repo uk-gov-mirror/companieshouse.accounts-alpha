@@ -21,7 +21,7 @@ import accounts.filing.models.TangibleAssetsNote;
 
 
 @Controller
-@SessionAttributes("balanceSheet")
+@SessionAttributes({"balanceSheet", "accountingPolicies", "tangibleAssetsNote"})
 public class NotesController {
 	
 	@Inject
