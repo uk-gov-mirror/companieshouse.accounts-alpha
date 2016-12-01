@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="baseLayout">
+
+<head>
+<title>Tangible assets note</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<form th:action="@{/tangible-assets}"
+			th:object="${tangibleAssetsNote}" method="post" class="form"
+			action="">
+			<div class="text">
+				<h1 class="heading-xlarge">Tangible assets note</h1>
+
+
+				<div th:if="${#fields.hasErrors('*')}">
+					<div class="error-summary" role="group"
+						aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+						<h2 class="heading-medium error-summary-heading"
+							id="error-summary-heading-example-1">There is a problem with
+							this page that needs to be resolved before you can continue.</h2>
+
+
+						<ul class="error-summary-list">
+							<li th:each="e : ${#fields.detailedErrors()}"
+								th:class="${e.global}? globalerr : fielderr">
+								<a th:if="${e.fieldName == 'netBookValueEnd'}"	th:href="'#' + tangible-net-book-value-end"	th:text="${e.message}"></a>
+								<a th:if="${e.fieldName == 'netBookValueStart'}"	th:href="'#' + tangible-net-book-value-start"	th:text="${e.message}"></a>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+
+				<p>Use the notes on this page to describe the methods and
+					measurements you've used to prepare your company accounts.</p>
+				<p>Some accounting policies notes are optional - complete any
+					that are included in your accounts.</p>
+			</div>
+
+
+
+
+      <div class="grid-row form-hint" id="accounts-header">
+        <div class="column-half">
+          &nbsp;
+        </div>
+        <div class="column-quarter">
+          <h2 class="heading-small">2015 to 2016</h2>
+        </div>
+        <div class="column-quarter">
+          <h2 class="heading-small">2014 to 2015</h2>
+        </div>
+      </div>
+      <p class="form-hint"><strong>These are the figures you entered on the balance sheet:</strong></p>
+
+      <!--Start tangible assets-->
+      <div class="grid-row">
+        <div class="column-half form-hint">Tangible assets</div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label for="tangible-assets-current"><span class="mobile-only-label">Tangible assets (2016)</span>
+              <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control read-only" id="tangible-assets-current" th:value="${balanceSheet.currentTangibleAssets}" readonly="readonly" />
+            </label>
+          </div>
+        </div>
+        <div class="column-quarter">
+          <div class="form-group">
+            <label class="form-label" for="tangible-assets-previous"><span class="mobile-only-label">Tangible assets (2015)</span>
+              <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control read-only" id="tangible-assets-previous" th:value="${balanceSheet.previousTangibleAssets}" readonly="readonly" />
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--End tangible assets-->
+
+
+  <h2 class="heading-medium">Cost</h2>
+
+  <!--Start Cost at start-->
+  <div class="grid-row accounts-row-spacer">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Cost at 1 April 2015</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The total cost or valuation of all intangible assets at the start of the period you're filing for.</p>
+          </div>
+        </details>
+    </div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-cost-at-start"><span class="visuallyhidden">Cost at 1 April 2015</span>
+          <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="tangible-cost-at-start" th:field="*{costAtStart}" />
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End Cost at start-->
+
+  <!--Start Additions  -->
+  <div class="grid-row">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Additions</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The cost of all intangible assets acquired during the period you're filing for.</p>
+          </div>
+        </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-cost-additions"><span class="visuallyhidden">Additions</span>
+          <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="tangible-cost-additions" th:field="*{additions}" />
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Additions  -->
+
+  <!--Start Disposals-->
+  <div class="grid-row">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Disposals</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The cost or valuation (at the date of disposal) of all intangible assets that were disposed of (for example, sold) during the period you're filing for.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-cost-disposals"><span class="visuallyhidden">Disposals</span>
+          <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="tangible-cost-disposals" th:field="*{disposals}" />
+        </label>
+      </div>
+    </div>
+  </div>
+  <!-- End Disposals -->
+
+  <!-- Start Revaluations -->
+  <div class="grid-row">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Revaluations</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The valuation figure of all assets revalued during the financial period.</p>
+          <p>If the revaluation results in a reduction in the value of the asset, then enter a negative figure using a minus sign.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-cost-revaluations"><span class="visuallyhidden">Revaluations</span>
+          <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control can-be-negative" id="tangible-cost-revaluations" th:field="*{revaluations}" />
+        </label>
+      </div>
+    </div>
+  </div>
+  <!-- End Revaluations -->
+
+  <!--Start Transfers-->
+  <div class="grid-row">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Transfers</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The cost or valuation of all intangible assets that have been transferred during the period you're filing for. If the asset is being transferred out, enter a negative figure using a minus sign.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-cost-transfers"><span class="visuallyhidden">Transfers</span>
+          <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control can-be-negative" id="tangible-cost-transfers" th:field="*{transfers}" />
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Transfers-->
+
+  <!--Start Cost at end -->
+  <div class="grid-row accounts-total">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Cost at 31 March 2016</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The total cost or valuation of all intangible assets at the end of the period you're filing for. This is calculated by adding additions, revaluations and transfers to the cost or valuation of the assets at the start of the period, then subtracting any disposals.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-cost-at-end"><span class="visuallyhidden">Cost at 31 March 2016</span>
+          <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="tangible-cost-at-end" readonly="readonly" th:field="*{costAtEnd}" />
+        </label>
+      </div>
+    </div>
+  </div>
+  <!-- End Cost at end -->
+
+
+
+
+  <h2 class="heading-medium">Depreciation
+    <span class="subheading text">Depreciation is the reduction in value of an asset over its useful lifetime.</span>
+  </h2>
+
+
+  <!--Start Depreciation at start-->
+  <div class="grid-row accounts-row-spacer">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Depreciation at 1 April 2015</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>The total depreciation value of all tangible assets at the start of the period you're filing for.</p>
+          </div>
+        </details>
+    </div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-depreciation-at-start"><span class="visuallyhidden">Depreciation at 1 April 2015</span>
+          <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="tangible-depreciation-at-start" th:field="*{depreciationAtStart}" />
+        </label>
+      </div>
+    </div>
+
+  </div>
+  <!--End Depreciation at start-->
+
+
+  <!--Start Charge for year-->
+  <div class="grid-row">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Charge for year</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The total depreciation charged against your profit for the period.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-depreciation-charge-for-year"><span class="visuallyhidden">Charge for year</span>
+          <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="tangible-depreciation-charge-for-year" th:field="*{chargeForYear}" />
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Charge for year -->
+
+
+
+  <!--Start On disposals-->
+  <div class="grid-row">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">On disposals</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The total depreciation value of all tangible assets that were disposed of (for example, sold) during the period you're filing for. This is the depreciation from the date each asset was acquired to the date of its disposal.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-depreciation-on-disposals"><span class="visuallyhidden">On disposals</span>
+          <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="tangible-depreciation-on-disposals" th:field="*{onDisposals}" />
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End On disposals-->
+
+  <!--Start Other adjustments-->
+  <div class="grid-row">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Other adjustments</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Any other depreciation adjustment on all tangible assets.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-depreciation-other-adjustments"><span class="visuallyhidden">Other adjustments</span>
+          <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control can-be-negative" id="tangible-depreciation-other-adjustments" th:field="*{otherAdjustments}" />
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--End Other adjustments -->
+
+  <!-- Start depreciation at end -->
+  <div class="grid-row accounts-total">
+    <div class="column-half">
+      <details>
+        <summary><span class="summary">Depreciation at 31 March 2016</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>The total depreciation value of all tangible assets at the end of the period you're filing for. This is calculated by adding tangible assets provided during the period, other adjustments and the depreciation value at the start of the period, then subtracting any disposals.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="tangible-depreciation-at-end"><span class="visuallyhidden">Depreciation at 31 March 2016</span>
+          <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="tangible-depreciation-at-end" th:field="*{depreciationAtEnd}" readonly="readonly" />
+        </label>
+      </div>
+    </div>
+  </div>
+  <!-- End depreciation at end -->
+
+
+      <h2 class="heading-medium">Net book value
+        <span class="subheading text">Net book value is the original cost of an asset minus any depreciation</span>
+      </h2>
+
+
+    <!--Start depreciation at start-->
+    <div class="grid-row  accounts-total accounts-row-spacer">
+      <div class="column-half">
+          <details>
+            <summary><span class="summary">Net book value at 31 March 2016</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>The net book value of all tangible assets at the end of the period you're filing for. This is the total cost or valuation of all tangible assets at the end of the period, minus the total depreciation value of all tangible assets at the end of the previous period.</p>
+            </div>
+          </details>
+      </div>
+
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="tangible-net-book-value-end"><span class="visuallyhidden">Net book value at 31 March 2016</span>
+            <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="tangible-net-book-value-end" th:field="*{netBookValueEnd}" readonly="readonly" />
+            <span><font color="red" th:if="${#fields.hasErrors('netBookValueEnd')}" th:errors="*{netBookValueEnd}">Balance sheet error</font></span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <!--End depreciation at start-->
+
+    <!--Start Additions  -->
+    <div class="grid-row accounts-total">
+      <div class="column-half">
+          <details>
+            <summary><span class="summary">Net book value at 31 March 2015</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>The net book value of all tangible assets at the start of the period you're filing for. This is the total cost or valuation of all tangible assets at the start of the period, minus the total depreciation value of all tangible assets at the end of the previous period.</p>
+              </div>
+          </details>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label for="tangible-net-book-value-start"><span class="visuallyhidden">Net book value at 31 March 2015</span>
+            <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="tangible-net-book-value-start" th:field="*{netBookValueStart}" readonly="readonly" />
+            <span><font color="red" th:if="${#fields.hasErrors('netBookValueStart')}" th:errors="*{netBookValueStart}">Balance sheet error</font></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--End Additions  -->
+
+    <details class="accounts-row-spacer text">
+      <summary><span class="summary">Add additional information? (optional) </span></summary>
+      <div class="panel panel-border-narrow">
+        <label class="visuallyhidden" for="textarea">Add additional information? (optional)</label>
+        <textarea type="text" id="textarea" class="form-control" rows="10" th:field="*{additionalInfo}"></textarea>
+      </div>
+    </details>
+
+		<div class="form-group">
+			<input id="save-continue" class="button" type="submit"
+				value="Save and continue" />
+		</div>
+	</form>
+
+	</div>
+	<div layout:fragment="page-scripts">
+		<script th:src="@{tangibleAssetsNote.js}" type="text/javascript"></script>
+	</div>
+</body>
+</html>

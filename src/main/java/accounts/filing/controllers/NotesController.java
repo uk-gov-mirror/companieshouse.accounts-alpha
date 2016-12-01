@@ -1,5 +1,7 @@
 package accounts.filing.controllers;
 
+import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -10,14 +12,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import accounts.filing.helpers.CrossValidator;
 import accounts.filing.models.AccountingPolicies;
+import accounts.filing.models.BalanceSheet;
+import accounts.filing.models.TangibleAssetsNote;
 
 
 
 
 @Controller
-@SessionAttributes("balanceSheet")
+@SessionAttributes({"balanceSheet", "accountingPolicies", "tangibleAssetsNote"})
 public class NotesController {
+	
+	@Inject
+	private CrossValidator crossValidator;	
     
 	@RequestMapping(value="/balance-sheet-notes", method = RequestMethod.GET)
 	public String showNotesHomepage(){
@@ -37,6 +45,26 @@ public class NotesController {
 			return "notes/accountingPoliciesNote";
 		}
 		accountingPolicies.cleanupPreparationStatement();		
+		return "notesHomepage";
+	}
+	
+	@RequestMapping(value="/tangible-assets", method = RequestMethod.GET)
+	public String showTangibleAssetsNote(ModelMap model){
+		model.addAttribute("tangibleAssetsNote", new TangibleAssetsNote());
+		return "notes/tangibleAssetsNote";
+	}
+	
+	@RequestMapping(value="/tangible-assets", method = RequestMethod.POST)
+	public String submitTangibleAssetsNote(@ModelAttribute @Valid TangibleAssetsNote tangibleAssetsNote, BindingResult result, HttpSession session){
+		
+		BalanceSheet balanceSheet = (BalanceSheet) session.getAttribute("balanceSheet");		
+		
+		crossValidator.tangibleAssetsNoteValidate(result, balanceSheet, tangibleAssetsNote);			
+		
+		if(result.hasErrors()){
+			return "notes/tangibleAssetsNote";
+		}
+	
 		return "notesHomepage";
 	}
 	
