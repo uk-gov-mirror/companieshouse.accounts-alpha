@@ -1,89 +1,73 @@
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="baseLayout">
-
-<head>
-<title>Approval</title>
-</head>
-<body>
-<div layout:fragment="content">
-<div class="text">
-
-<form action="/approval" th:action="@{/approval}"  th:object="${approval}" method="post" class="form" id="approval-page">
-
-			<h1 class="heading-xlarge">Approve your accounts</h1>
-			
-			<div th:if="${#fields.hasErrors('*')}">
-<div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
-
- <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-   There is a problem with this page that needs to be resolved before you can continue.
- </h2>
-
-
-<ul class="error-summary-list">
-   <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
-       <a th:if="${e.fieldName == 'directorConfirmation'}" th:href="'#' + directorConfirmation" th:text="${e.message}" ></a>
-       <a th:if="${e.fieldName == 'dayConfirmation'}" th:href="'#' + dayConfirmation" th:text="${e.message}" ></a>
-   </li>
-</ul>
-
-
-</div>
-</div>
-			
-			<h2 class="heading-medium">Who approved the accounts?</h2>
-			<!--<p class="form-hint">If the company has only one director, enter their name here.</p>-->
-			<p class="form-hint">
-				If the company has two or more directors, you should enter one director authorised to act on their behalf.
-			</p>
-			
-			<div id="directorConfirmation" class="panel panel-border-narrow" aria-hidden="false">
-          <label class="visuallyhidden" for="2-textarea"></label>
-          <textarea type="text" class="form-control" rows="1" th:field="*{directorConfirmation}"></textarea>
-         <span><font color="red" th:if="${#fields.hasErrors('directorConfirmation')}" th:errors="*{directorConfirmation}">Director error</font></span>
-        </div>
-			
-			<h2 class="heading-medium">When were the accounts approved?</h2>
-			<div class="form-group">
-			<fieldset>
-				<legend class="visuallyhidden">When were the accounts approved?</legend>
-					<div id= "dateConfirmation" class="form-date">
-						<p class="form-hint" id="dob-hint">
-							This is the date the accounts were approved by the director. For example, 31 03 2016
-						</p>
-						<div class="form-group form-group-day">
-							<label for="dob-day">Day</label>
-							<input class="form-control" id="dob-day" onkeypress='return validate(event)' name="dob-day" type="text" aria-describedby="dob-hint" th:field="*{dayConfirmation}"/>
-						</div>					
-						<div id="monthConfirmation" class="form-group form-group-month">
-							<label for="dob-month">Month</label>
-							<input class="form-control" id="dob-month" onkeypress='return validate(event)' name="dob-month" type="text" th:field="*{monthConfirmation}"/>
-						</div>
-						<div id="yearConfirmation" class="form-group form-group-year">
-							<label for="dob-year">Year</label>
-							<input class="form-control" id="dob-year" onkeypress='return validate(event)' name="dob-year" type="text" th:field="*{yearConfirmation}"/>
-						</div>				
-					</div>	
-				</fieldset>	
-		 		<span><font color="red" th:if="${#fields.hasErrors('dateValid')}" th:errors="*{dateValid}">Balance sheet error</font></span>
-			</div>
-			<p>
-				&nbsp;
-			</p>
-			
-			<h2 class="heading-medium">Now submit your abridged accounts</h2>
-			<p class="text">
-				By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
-			</p>
-
-			<div class="form-group">
-            <input type="submit" class="button" id="submit"
-                value="Continue " />
-        </div>
-        
-	</form>
-	</div>
-</div>
-</body>
+   <head>
+      <title>Approval</title>
+   </head>
+   <body>
+      <div layout:fragment="content">
+         <div class="text">
+            <form action="/approval" th:action="@{/approval}"  th:object="${approval}" method="post" class="form" id="approval-page">
+               <h1 class="heading-xlarge">Approve your accounts</h1>
+               <div th:if="${#fields.hasErrors('*')}">
+                  <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+                     <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+                        There is a problem with this page that needs to be resolved before you can continue.
+                     </h2>
+                     <ul class="error-summary-list">
+                        <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
+                           <a th:if="${e.fieldName == 'directorConfirmation'}" th:href="'#' + directorConfirmation" th:text="${e.message}" ></a>
+                           <a th:if="${e.fieldName == 'dayConfirmation'}" th:href="'#' + dayConfirmation" th:text="${e.message}" ></a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <h2 class="heading-medium">Who approved the accounts?</h2>
+               <!--<p class="form-hint">If the company has only one director, enter their name here.</p>-->
+               <p class="form-hint">
+                  If the company has two or more directors, you should enter one director authorised to act on their behalf.
+               </p>
+               <div id="directorConfirmation" class="panel panel-border-narrow" aria-hidden="false">
+                  <label class="visuallyhidden" for="2-textarea"></label>
+                  <textarea type="text" class="form-control" rows="1" th:field="*{directorConfirmation}"></textarea>
+                  <span><font color="red" th:if="${#fields.hasErrors('directorConfirmation')}" th:errors="*{directorConfirmation}">Director error</font></span>
+               </div>
+               <h2 class="heading-medium">When were the accounts approved?</h2>
+               <div class="form-group">
+                  <fieldset>
+                     <legend class="visuallyhidden">When were the accounts approved?</legend>
+                     <div id= "dateConfirmation" class="form-date">
+                        <p class="form-hint" id="dob-hint">
+                           This is the date the accounts were approved by the director. For example, 31 03 2016
+                        </p>
+                        <div class="form-group form-group-day">
+                           <label for="dob-day">Day</label>
+                           <input class="form-control" id="dob-day" onkeypress='return validate(event)' name="dob-day" type="text" aria-describedby="dob-hint" th:field="*{dayConfirmation}" />
+                        </div>
+                        <div id="monthConfirmation" class="form-group form-group-month">
+                           <label for="dob-month">Month</label>
+                           <input class="form-control" id="dob-month" onkeypress='return validate(event)' name="dob-month" type="text" th:field="*{monthConfirmation}" />
+                        </div>
+                        <div id="yearConfirmation" class="form-group form-group-year">
+                           <label for="dob-year">Year</label>
+                           <input class="form-control" id="dob-year" onkeypress='return validate(event)' name="dob-year" type="text" th:field="*{yearConfirmation}" />
+                        </div>
+                     </div>
+                  </fieldset>
+                  <span><font color="red" th:if="${#fields.hasErrors('dateValid')}" th:errors="*{dateValid}">Date Error</font></span>
+               </div>
+               <p>
+                  &nbsp;
+               </p>
+               <h2 class="heading-medium">Now submit your abridged accounts</h2>
+               <p class="text">
+                  By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+               </p>
+               <div class="form-group">
+                  <input type="submit" class="button" id="submit"
+                     value="Continue " />
+               </div>
+            </form>
+         </div>
+      </div>
+   </body>
 </html>

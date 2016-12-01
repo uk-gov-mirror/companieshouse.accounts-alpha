@@ -21,10 +21,10 @@ public class ApprovalPageController {
 		return "approval";
 	}
 
-@RequestMapping(value="/approval", method = RequestMethod.POST)
-public String submitApprovalPage(@ModelAttribute @Valid Approval approval, BindingResult result){
-	if (result.hasErrors()){
-		return "approval";
+	@RequestMapping(value="/approval", method = RequestMethod.POST)
+	public String submitApprovalPage(@ModelAttribute @Valid Approval approval, BindingResult result){
+		if (result.hasErrors()){
+			return "approval";
 	} 
 	return "redirect:/summary-page";
 }
