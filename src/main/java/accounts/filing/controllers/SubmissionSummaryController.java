@@ -6,12 +6,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-public class SummaryPageController {
+public class SubmissionSummaryController {
     
-	@RequestMapping(value="/summary-page", method = RequestMethod.GET)
+	@RequestMapping(value="/submission-summary", method = RequestMethod.GET)
 	public String showLandingPage(){
-		return "summaryPage";
+		return "submissionSummary";
 	}
- 
 
 }
