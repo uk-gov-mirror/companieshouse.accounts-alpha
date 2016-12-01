@@ -1,5 +1,6 @@
 package accounts.filing.models;
 
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -9,25 +10,27 @@ public class Approval {
 	
 	@Size(min=1, max=120, message="Please provide name details of accounts approver(s)")
 	@NotNull(message="Please provide name details of accounts approver(s)")
-
 	private String directorConfirmation;
 	
-	@Min(value = 1, message="Please provide the valid date when the accounts were approved")
-	@Max(value = 31, message="Please provide the valid date when the accounts were approved")
-	@NotNull(message="Please provide the valid date when the accounts were approved")
 	private Integer dayConfirmation;
-	
-	@Min(value = 1, message="Please provide the valid date when the accounts were approved")
-	@Max(value = 12, message="Please provide the valid date when the accounts were approved")
-	@NotNull(message="Please provide the valid date when the accounts were approved")
 	private Integer monthConfirmation;
-	
-	@Min(value = 2015, message="Please provide the valid date when the accounts were approved")
-	@Max(value = 2018, message="Please provide the valid date when the accounts were approved")
-	@NotNull(message="Please provide the valid date when the accounts were approved")
 	private Integer yearConfirmation;
-
-
+	
+	
+	@AssertTrue(message = "Please provide the valid date when the accounts were approved") 
+	public boolean isDateValid(){
+		if(dayConfirmation != null && (dayConfirmation < 1 || dayConfirmation > 31)) {
+			return false;
+		}
+			else if (monthConfirmation != null && (monthConfirmation < 1 || monthConfirmation > 12)) {
+				return false;
+			}
+			else if (yearConfirmation != null && (yearConfirmation < 2015 || yearConfirmation > 2018)) {
+				return false;
+			}
+			return true;	
+		
+	}
 	public Approval() {
     }
 

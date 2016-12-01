@@ -54,25 +54,19 @@
 						</p>
 						<div class="form-group form-group-day">
 							<label for="dob-day">Day</label>
-							<input class="form-control" id="dob-day" name="dob-day" type="text" aria-describedby="dob-hint" th:field="*{dayConfirmation}"/>
+							<input class="form-control" id="dob-day" onkeypress='return validate(event)' name="dob-day" type="text" aria-describedby="dob-hint" th:field="*{dayConfirmation}"/>
 						</div>					
 						<div id="monthConfirmation" class="form-group form-group-month">
 							<label for="dob-month">Month</label>
-							<input class="form-control" id="dob-month" name="dob-month" type="text" th:field="*{monthConfirmation}"/>
+							<input class="form-control" id="dob-month" onkeypress='return validate(event)' name="dob-month" type="text" th:field="*{monthConfirmation}"/>
 						</div>
 						<div id="yearConfirmation" class="form-group form-group-year">
 							<label for="dob-year">Year</label>
-							<input class="form-control" id="dob-year" name="dob-year" type="text" th:field="*{yearConfirmation}"/>
+							<input class="form-control" id="dob-year" onkeypress='return validate(event)' name="dob-year" type="text" th:field="*{yearConfirmation}"/>
 						</div>				
 					</div>	
 				</fieldset>	
-				<span><font color="red" th:if="${#fields.hasErrors('dayConfirmation') or #fields.hasErrors('monthConfirmation') or #fields.hasErrors('yearConfirmation')}" th:text="${#fields.errors('*')[0]}">Balance sheet error</font></span>
-				
-				
-					
-				<!-- <span><font color="red" th:if="${#fields.hasErrors('*')}" th:errors="${#strings.indexOf(dayConfirmation, 0)}">Day error</font></span>
-				<span><font color="red" th:if="${#fields.hasErrors('monthConfirmation')}" th:errors="*{monthConfirmation}">Month error</font></span>	
-				<span><font color="red" th:if="${#fields.hasErrors('yearConfirmation')}" th:errors="*{yearConfirmation}">Year error</font></span>	 -->				
+		 		<span><font color="red" th:if="${#fields.hasErrors('dateValid')}" th:errors="*{dateValid}">Balance sheet error</font></span>
 			</div>
 			<p>
 				&nbsp;
