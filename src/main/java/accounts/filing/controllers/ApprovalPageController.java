@@ -25,8 +25,8 @@ public class ApprovalPageController {
 	public String submitApprovalPage(@ModelAttribute @Valid Approval approval, BindingResult result){
 		if (result.hasErrors()){
 			return "approval";
-	} 
-	return "redirect:/summary-page";
-}
+			} 
+		return "redirect:/summary-page";
+	}
 }
 	

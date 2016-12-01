@@ -20,15 +20,18 @@ public class Approval {
 		if(dayConfirmation != null && (dayConfirmation < 1 || dayConfirmation > 31)) {
 			return false;
 		}
-			else if (monthConfirmation != null && (monthConfirmation < 1 || monthConfirmation > 12)) {
-				return false;
-			}
-			else if (yearConfirmation != null && (yearConfirmation < 2015 || yearConfirmation > 2018)) {
-				return false;
-			}
-			return true;	
-		
+		else if (monthConfirmation != null && (monthConfirmation < 1 || monthConfirmation > 12)) {
+			return false;
+		}
+		else if (yearConfirmation != null && (yearConfirmation < 2015 || yearConfirmation > 2018)) {
+			return false;
+		}
+		else if (dayConfirmation == null || monthConfirmation == null || yearConfirmation == null ) {
+			return false;
+		}
+		return true;	
 	}
+	
 	public Approval() {
     }
 
