@@ -26,7 +26,7 @@ public class ApprovalPageController {
 		if (result.hasErrors()){
 			return "approval";
 			} 
-		return "redirect:/summary-page";
+		return "redirect:/submission-summary";
 	}
 }
 	
