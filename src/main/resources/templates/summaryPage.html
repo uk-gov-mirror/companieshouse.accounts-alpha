@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="baseLayout"> 
+
+<head>
+    <title>
+   Review your filing
+</title>
+  </head>
+  <body>
+ <div layout:fragment="content">
+<div class="text">
+<h1 class="heading-xlarge">Review your abridged accounts</h1>
+
+<form action="/summary" th:action="@{/summary}"  th:object="${summaryPage}" method="post" class="form" id="review-form">
+
+<table class="check-your-answers">
+  <caption class="visuallyhidden">Review your abridged accounts</caption>
+    <thead>
+      <tr>
+        <th class="check-your-answers-section"><h2 class="heading-medium">Balance sheet</h2></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <details>
+            <summary><span class="summary">Balance sheet figures</span></summary>
+            <div class="review-reveal">
+              <div class="grid-row">
+                <div class="column-one-half">&nbsp;
+                </div>
+                <div class="column-one-quarter">
+                  <p><strong>2015 to 2016</strong></p>
+                </div>
+                <div class="column-one-quarter">
+                  <p><strong>2014 to 2015</strong></p>
+                </div>
+              </div><!--grid-row-->
+
+              <h3 class="heading-medium" style="margin-top:0.5em;">Fixed assets</h3>
+
+
+            <div class="grid-row">
+              <div class="column-one-half">
+                <p>Tangible assets</p>
+              </div>
+              <div class="column-one-quarter">
+                <p>£37,440</p>
+              </div>
+              <div class="column-one-quarter">
+                <p>£30,740</p>
+              </div>
+            </div><!--grid-row-->
+            <div class="grid-row">
+              <div class="column-one-half">
+                <p class=""><strong>Total fixed assets</strong></p>
+              </div>
+              <div class="column-one-quarter">
+                <p><strong>£37,440</strong></p>
+              </div>
+              <div class="column-one-quarter">
+                <p><strong>£30,740</strong></p>
+              </div>
+            </div><!--grid-row-->
+
+
+
+
+          <h3 class="heading-medium" style="margin-top:0.5em;">Current assets</h3>
+        <div class="grid-row">
+          <div class="column-one-half">
+            <p>Debtors</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>£32,175</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>£16,000</p>
+          </div>
+        </div><!--grid-row-->
+        <div class="grid-row">
+          <div class="column-one-half">
+            <p>Cash at bank and in hand</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>£35,455</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>£7,000</p>
+          </div>
+        </div><!--grid-row-->
+        <div class="grid-row">
+          <div class="column-one-half">
+            <p class=""><strong>Total current assets</strong></p>
+          </div>
+          <div class="column-one-quarter">
+            <p><strong>£67,630</strong></p>
+          </div>
+          <div class="column-one-quarter">
+            <p><strong>£23,000</strong></p>
+          </div>
+        </div><!--grid-row-->
+      
+        <div class="grid-row">
+          <div class="column-one-half">
+            <p>Creditors - amounts falling due within one year</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>£36,500</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>£16,700</p>
+          </div>
+        </div><!--grid-row-->
+        <div class="grid-row">
+          <div class="column-one-half">
+            <p><strong>Net current assets (liabilities)</strong></p>
+          </div>
+          <div class="column-one-quarter">
+            <p><strong>£31,130</strong></p>
+          </div>
+          <div class="column-one-quarter">
+            <p><strong>£6,300</strong></p>
+          </div>
+        </div><!--grid-row-->
+              <br></br>
+        <div class="grid-row">
+          <div class="column-one-half">
+            <p><strong>Total assets less current liabilities</strong></p>
+          </div>
+          <div class="column-one-quarter">
+            <p><strong>£68,570</strong></p>
+          </div>
+          <div class="column-one-quarter">
+            <p><strong>£37,040</strong></p>
+          </div>
+        </div><!--grid-row-->
+        <br></br>
+
+        <div class="grid-row">
+          <div class="column-one-half">
+            <p>Creditors - amounts falling due after more than one year</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>£2,100</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>£1,000</p>
+          </div>
+        </div><!--grid-row-->
+        <div class="grid-row">
+          <div class="column-one-half">
+            <p>Provision for liabilities</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>£2,400</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>£700</p>
+          </div>
+        </div><!--grid-row-->
+        <div class="grid-row">
+          <div class="column-one-half">
+            <p><strong>Total net assets (liabilities)</strong></p>
+          </div>
+          <div class="column-one-quarter">
+            <p><strong>£64,070</strong></p>
+          </div>
+          <div class="column-one-quarter">
+            <p><strong>£35,340</strong></p>
+          </div>
+        </div><!--grid-row-->
+
+
+        <h3 class="heading-medium" style="margin-top:0.5em;">Capital and reserves</h3>
+        <div class="grid-row">
+          <div class="column-one-half">
+            <p>Called up share capital</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>£24,900</p>
+          </div>
+          <div class="column-one-quarter">
+            <p>£23,840</p>
+          </div>
+        </div><!--grid-row-->
+      <div class="grid-row">
+        <div class="column-one-half">
+          <p>Retained earnings</p>
+        </div>
+        <div class="column-one-quarter">
+          <p>£39,170</p>
+        </div>
+        <div class="column-one-quarter">
+          <p>£11,500</p>
+        </div>
+      </div><!--grid-row-->
+      <div class="grid-row">
+        <div class="column-one-half">
+          <p class=""><strong>Total shareholders' funds</strong></p>
+        </div>
+        <div class="column-one-quarter">
+          <p><strong>£64,070</strong></p>
+        </div>
+        <div class="column-one-quarter">
+          <p><strong>£35,340</strong></p>
+        </div>
+      </div><!--grid-row-->
+
+      <p><a th:href="@{/balance-sheet}" class="button" id="amend-balance-sheet">Amend balance sheet figures</a></p>
+          </div><!--review-reveal-->
+          
+          </details>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <details>
+            <summary><span class="summary">Balance sheet statements</span></summary>
+            <div class="review-reveal">
+            <ul class="list list-bullet">
+              <li>For the year ending 31 March 2016 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</li>
+              <li>The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.</li>
+              <li>The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.</li>
+              <li>These accounts have been prepared and delivered in accordance with the provisions applicable to companies subject to the small companies regime.</li>
+              <li>The members have agreed to the preparation of abridged accounts for this accounting period in accordance with Section 444(2A).</li>
+            </ul>
+          </div><!--review-reveal-->
+          </details>
+        </td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th class="check-your-answers-section"><h2 class="heading-medium">Balance sheet notes</h2></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <details>
+            <summary><span class="summary">Accounting policies note</span></summary>
+            <div class="review-reveal">
+              <ul class="list list-bullet">
+                <li>These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102.</li>
+              </ul>
+              <p><a href="javascript:void(0)" class="button">Amend accounting policies note</a></p>
+            </div><!--review-reveal-->
+          </details>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <details>
+            <summary><span class="summary">Tangible assets note</span></summary>
+            <div class="review-reveal">
+              <h3 class="heading-medium" style="margin-top:0.5em;">Cost</h3>
+              <div class="grid-row">
+                <div class="column-one-half">
+                  <p>Cost at 1 April 2015</p>
+                </div>
+                <div class="column-one-quarter">
+                  <p>£41,260</p>
+                </div>
+              </div><!--grid-row-->
+            <div class="grid-row">
+              <div class="column-one-half">
+                <p>Additions</p>
+              </div>
+              <div class="column-one-quarter">
+                <p>£11,180</p>
+              </div>
+            </div><!--grid-row-->
+            <div class="grid-row">
+              <div class="column-one-half">
+                <p class="">Disposals</p>
+              </div>
+              <div class="column-one-quarter">
+                <p class="">£11,280</p>
+              </div>
+            </div><!--grid-row-->
+            <div class="grid-row">
+              <div class="column-one-half">
+                <p class="">Transfers</p>
+              </div>
+              <div class="column-one-quarter">
+                <p class="">£8,600</p>
+              </div>
+            </div><!--grid-row-->
+            <div class="grid-row">
+              <div class="column-one-half">
+                <p class=""><strong>Cost at 31 March 2016</strong></p>
+              </div>
+              <div class="column-one-quarter">
+                <p class=""><strong>£72,230</strong></p>
+              </div>
+            </div><!--grid-row-->
+
+
+              <h3 class="heading-medium" style="margin-top:0.5em;">Depreciation</h3>
+              <div class="grid-row">
+                <div class="column-one-half">
+                  <p>Depreciation at 1 April 2015</p>
+                </div>
+                <div class="column-one-quarter">
+                  <p>£10,520</p>
+                </div>
+              </div><!--grid-row-->
+            <div class="grid-row">
+              <div class="column-one-half">
+                <p>Charge for year</p>
+              </div>
+              <div class="column-one-quarter">
+                <p>£19,500</p>
+              </div>
+            </div><!--grid-row-->
+            <div class="grid-row">
+              <div class="column-one-half">
+                <p class="">On disposals</p>
+              </div>
+              <div class="column-one-quarter">
+                <p class="">£4,860</p>
+              </div>
+            </div><!--grid-row-->
+            <div class="grid-row">
+              <div class="column-one-half">
+                <p class=""><strong>Depreciation at 31 March 2016</strong></p>
+              </div>
+              <div class="column-one-quarter">
+                <p class=""><strong>£34,480</strong></p>
+              </div>
+            </div><!--grid-row-->
+
+
+              <h3 class="heading-medium" style="margin-top:0.5em;">Net book value</h3>
+              <div class="grid-row">
+                <div class="column-one-half">
+                  <p><strong>Net book value at 31 March 2016</strong></p>
+                </div>
+                <div class="column-one-quarter">
+                  <p><strong>£37,440</strong></p>
+                </div>
+              </div><!--grid-row-->
+            <div class="grid-row">
+              <div class="column-one-half">
+                <p><strong>Net book value at 31 March 2015</strong></p>
+              </div>
+              <div class="column-one-quarter">
+                <p><strong>£30,740</strong></p>
+              </div>
+            </div><!--grid-row-->
+            <p><a href="javascript:void(0)" class="button">Amend tangible assets note</a></p>
+          </div><!--review-reveal-->
+          </details>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <details>
+            <summary><span class="summary">Employees note</span></summary>
+            <div class="review-reveal">
+              <div class="grid-row">
+                <div class="column-one-half">
+                <p>Average number of employees</p>
+                </div>
+                <div class="column-one-quarter">
+                <p>1</p>
+                </div>
+              </div><!--grid-row-->
+              <p><a href="javascript:void(0)" class="button">Amend employees note</a></p>
+            </div><!--review-reveal-->
+          </details>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 class="heading-medium">Print or save your accounts before filing (optional)</h2>
+
+  <p>You can print or save your draft accounts to review them before filing.</p>
+
+  <ul class="fa-ul">
+    <li><i class="fa-li fa fa-print"></i><a id="" href="/public/pdf/abridged-accounts-sample.pdf" target="_blank">Print your draft accounts</a>
+    <span class="form-hint">(Opens PDF document in a new tab or window)</span></li>
+    <li><i class="fa-li fa fa-file-text"></i><a id="" href="/a-test-company">Save your draft accounts in HTML </a>
+    <span class="form-hint"> (You'll be asked where to save the file, or it will download to a folder on your computer)</span></li>
+  </ul>
+
+  <div class="form-group">
+    <p><a href="cato-style-approval" class="button">Continue to Approval</a></p>
+  </div>
+  <div class="form-group">
+            <input type="submit" class="button"
+                value="Continue" />
+        </div>
+        
+<div layout:fragment="page-scripts"></div>
+</form>
+  </div>
+</div>
+  </body>
+</html>
