@@ -28,7 +28,7 @@
                </p>
                <div id="directorConfirmation" class="panel panel-border-narrow" aria-hidden="false">
                   <label class="visuallyhidden" for="2-textarea"></label>
-                  <textarea type="text" class="form-control" id="director-confirmation" rows="1" th:field="*{directorConfirmation}"></textarea>
+                  <textarea type="text" class="form-control" id="director-confirmation" onkeypress='return validateText(event)' oncopy="return false" onpaste="return false" rows="1" th:field="*{directorConfirmation}"></textarea>
                   <span><font color="red" th:if="${#fields.hasErrors('directorConfirmation')}" th:errors="*{directorConfirmation}">Director error</font></span>
                </div>
                <h2 class="heading-medium">When were the accounts approved?</h2>
@@ -69,5 +69,10 @@
             </form>
          </div>
       </div>
+     
+    <div layout:fragment="page-scripts">
+		<script th:src="@{approvalPage.js}"></script>
+	</div>
+      
    </body>
 </html>
