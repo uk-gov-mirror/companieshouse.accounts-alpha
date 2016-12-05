@@ -387,14 +387,10 @@
     <li><i class="fa-li fa fa-file-text"></i><a id="" href="/a-test-company">Save your draft accounts in HTML </a>
     <span class="form-hint"> (You'll be asked where to save the file, or it will download to a folder on your computer)</span></li>
   </ul>
-
-  <div class="form-group">
-    <p><a href="cato-style-approval" class="button">Continue to Approval</a></p>
-  </div>
-  <div class="form-group">
-            <input type="submit" class="button"
-                value="Continue" />
-        </div>
+  
+ 	  <div class="form-group">
+        <a th:href="@{/approval}" class="button button-start"  id="start-button">Continue to Approval</a>
+      </div>
         
 <div layout:fragment="page-scripts"></div>
 </form>
