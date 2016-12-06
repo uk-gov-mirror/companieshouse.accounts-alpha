@@ -29,7 +29,7 @@
                <div id="directorConfirmation" class="panel panel-border-narrow" aria-hidden="false">
                   <label class="visuallyhidden" for="2-textarea"></label>
                   <textarea type="text" class="form-control" id="director-confirmation" onkeypress='return validateText(event)' oncopy="return false" onpaste="return false" rows="1" th:field="*{directorConfirmation}"></textarea>
-                  <span><font color="red" th:if="${#fields.hasErrors('directorConfirmation')}" th:errors="*{directorConfirmation}">Director error</font></span>
+                  <span><font id="director-name-error" color="red" th:if="${#fields.hasErrors('directorConfirmation')}" th:errors="*{directorConfirmation}">Director error</font></span>
                </div>
                <h2 class="heading-medium">When were the accounts approved?</h2>
                <div class="form-group">
@@ -53,7 +53,7 @@
                         </div>
                      </div>
                   </fieldset>
-                  <span><font color="red" th:if="${#fields.hasErrors('dateValid')}" th:errors="*{dateValid}">Date Error</font></span>
+                  <span><font id="date-error" color="red" th:if="${#fields.hasErrors('dateValid')}" th:errors="*{dateValid}">Date Error</font></span>
                </div>
                <p>
                   &nbsp;

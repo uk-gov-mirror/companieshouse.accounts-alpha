@@ -7,6 +7,7 @@ import javax.validation.constraints.Size;
 public class Approval {
 	
 	@NotNull(message="Please provide name details of accounts approver(s)")
+	@Size(min=1, max=120, message="Please provide name details of accounts approver(s)")
 	private String directorConfirmation;
 	
 	private Integer dayConfirmation;
