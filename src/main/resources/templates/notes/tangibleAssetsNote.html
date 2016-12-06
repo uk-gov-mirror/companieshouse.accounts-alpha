@@ -338,7 +338,7 @@
         <div class="form-group">
           <label for="tangible-net-book-value-end"><span class="visuallyhidden">Net book value at 31 March 2016</span>
             <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="tangible-net-book-value-end" th:field="*{netBookValueEnd}" readonly="readonly" />
-            <span><font color="red" th:if="${#fields.hasErrors('netBookValueEnd')}" th:errors="*{netBookValueEnd}">Balance sheet error</font></span>
+            <span><font id="net-book-value-end-error" color="red" th:if="${#fields.hasErrors('netBookValueEnd')}" th:errors="*{netBookValueEnd}">Balance sheet error</font></span>
           </label>
         </div>
       </div>
@@ -360,7 +360,7 @@
         <div class="form-group">
           <label for="tangible-net-book-value-start"><span class="visuallyhidden">Net book value at 31 March 2015</span>
             <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="tangible-net-book-value-start" th:field="*{netBookValueStart}" readonly="readonly" />
-            <span><font color="red" th:if="${#fields.hasErrors('netBookValueStart')}" th:errors="*{netBookValueStart}">Balance sheet error</font></span>
+            <span><font id="net-book-value-end-start" color="red" th:if="${#fields.hasErrors('netBookValueStart')}" th:errors="*{netBookValueStart}">Balance sheet error</font></span>
           </label>
         </div>
       </div>
