@@ -134,7 +134,7 @@
     </tbody>
   </table>
   
-  <div class="form-group" th:if="${accountingPolicies} != null">
+  <div class="form-group" th:if="${accountingPolicies} != null and ${tangibleAssetsNote} != null">
     <p><a th:href="@{/approval}" class="button" id="continue-button" >Continue to Review</a></p>
   </div>
   
