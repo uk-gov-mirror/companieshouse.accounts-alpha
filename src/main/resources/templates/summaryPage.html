@@ -22,7 +22,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+<tr>
         <td>
           <details>
             <summary><span class="summary">Balance sheet figures</span></summary>
@@ -36,7 +36,7 @@
                 <div class="column-one-quarter">
                   <p><strong>2014 to 2015</strong></p>
                 </div>
-              </div><!--grid-row-->
+              </div>grid-row
 
               <h3 class="heading-medium" style="margin-top:0.5em;">Fixed assets</h3>
 
@@ -46,23 +46,23 @@
                 <p>Tangible assets</p>
               </div>
               <div class="column-one-quarter">
-                <p>private Integer currentTangibleAssets;</p>
+                <p><span th:text="${balanceSheet.currentTangibleAssets}">Current Tangible Assets</span></p>
               </div>
               <div class="column-one-quarter">
-                <p>private Integer previousTangibleAssets;</p>
+                 <p><span th:text="${balanceSheet.previousTangibleAssets}">Previous Tangible Assets</span></p>
               </div>
-            </div><!--grid-row-->
+            </div>grid-row
             <div class="grid-row">
               <div class="column-one-half">
                 <p class=""><strong>Total fixed assets</strong></p>
               </div>
               <div class="column-one-quarter">
-                <p><strong>private Integer currentTotalFixedAssets;</strong></p>
+                <p><strong><span th:text="${balanceSheet.currentTotalFixedAssets}">Current Total Fixed Assets</span></strong></p>
               </div>
               <div class="column-one-quarter">
-                <p><strong>private Integer previousTotalFixedAssets;</strong></p>
+               <p><strong><span th:text="${balanceSheet.previousTotalFixedAssets}">Previous Total Fixed Assets</span></strong></p>
               </div>
-            </div><!--grid-row-->
+            </div>grid-row
 
 
 
@@ -73,69 +73,69 @@
             <p>Debtors</p>
           </div>
           <div class="column-one-quarter">
-            <p>private Integer currentDebtors;</p>
+            <p><span th:text="${balanceSheet.currentDebtors}">Current Debtors</span></p>
           </div>
           <div class="column-one-quarter">
-            <p>private Integer previousDebtors;</p>
+            <p><span th:text="${balanceSheet.previousDebtors}">Current Debtors</span></p>
           </div>
-        </div><!--grid-row-->
+        </div>grid-row
         <div class="grid-row">
           <div class="column-one-half">
             <p>Cash at bank and in hand</p>
           </div>
           <div class="column-one-quarter">
-            <p>private Integer currentCash;</p>
+            <p><span th:text="${balanceSheet.currentCash}">Current Cash</span></p>
           </div>
           <div class="column-one-quarter">
-            <p>private Integer previousCash;</p>
+            <p><span th:text="${balanceSheet.previousCash}">Previous Cash</span></p>
           </div>
-        </div><!--grid-row-->
+        </div>grid-row
         <div class="grid-row">
           <div class="column-one-half">
             <p class=""><strong>Total current assets</strong></p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>private Integer currentTotalAssets;</strong></p>
+            <p><strong><span th:text="${balanceSheet.currentTotalAssets}">Current Total Assets</span></strong></p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>private Integer previousTotalAssets;</strong></p>
+            <p><strong><span th:text="${balanceSheet.previousTotalAssets}">Previous Total Assets</span></strong></p>
           </div>
-        </div><!--grid-row-->
+        </div>grid-row
       
         <div class="grid-row">
           <div class="column-one-half">
             <p>Creditors - amounts falling due within one year</p>
           </div>
           <div class="column-one-quarter">
-            <p>private Integer currentCreditorsOneYear</p>
+            <p><span th:text="${balanceSheet.currentCreditorsOneYear}">Current Creditors One Year</span></p>
           </div>
           <div class="column-one-quarter">
-            <p>private Integer previousCreditorsOneYear;</p>
+            <p><span th:text="${balanceSheet.previousCreditorsOneYear}">Previous Creditors One Year</span></p>
           </div>
-        </div><!--grid-row-->
+        </div>grid-row
         <div class="grid-row">
           <div class="column-one-half">
             <p><strong>Net current assets (liabilities)</strong></p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>private Integer currentNetAssets;</strong></p>
+            <p><strong><span th:text="${balanceSheet.currentNetAssets}">Current Net Assets</span></strong></p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>private Integer previousNetAssets;</strong></p>
+            <p><strong><span th:text="${balanceSheet.previousNetAssets}">Previous Net Assets</span></strong></p>
           </div>
-        </div><!--grid-row-->
+        </div>grid-row
               <br></br>
         <div class="grid-row">
           <div class="column-one-half">
             <p><strong>Total assets less current liabilities</strong></p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>private Integer currentTotalAssetsMinusCurrentLiabilities;</strong></p>
+            <p><strong><span th:text="${balanceSheet.currentTotalAssetsMinusCurrentLiabilities}">Current Total Assets Minus Current Liabilities</span></strong></p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>private Integer previousTotalAssetsMinusCurrentLiabilities;</strong></p>
+            <p><strong><span th:text="${balanceSheet.previousTotalAssetsMinusCurrentLiabilities}">Previous Total Assets Minus Current Liabilities</span></strong></p>
           </div>
-        </div><!--grid-row-->
+        </div>grid-row
         <br></br>
 
         <div class="grid-row">
@@ -143,34 +143,34 @@
             <p>Creditors - amounts falling due after more than one year</p>
           </div>
           <div class="column-one-quarter">
-            <p>private Integer currentCreditorsMoreYears;</p>
+            <p><span th:text="${balanceSheet.currentCreditorsMoreYears}">Current Creditors More Years</span></p>
           </div>
           <div class="column-one-quarter">
-            <p>private Integer previousCreditorsMoreYears;</p>
+            <p><span th:text="${balanceSheet.previousCreditorsMoreYears}">Previous Creditors More Years</span></p>
           </div>
-        </div><!--grid-row-->
+        </div>grid-row
         <div class="grid-row">
           <div class="column-one-half">
             <p>Provision for liabilities</p>
           </div>
           <div class="column-one-quarter">
-            <p>private Integer currentProvisionLiabilities;</p>
+            <p><span th:text="${balanceSheet.currentProvisionLiabilities}">Current Provision Liabilities</span></p>
           </div>
           <div class="column-one-quarter">
-            <p>private Integer previousProvisionLiabilities;</p>
+            <p><span th:text="${balanceSheet.previousProvisionLiabilities}">Previous Provision Liabilities</span></p>
           </div>
-        </div><!--grid-row-->
+        </div>grid-row
         <div class="grid-row">
           <div class="column-one-half">
             <p><strong>Total net assets (liabilities)</strong></p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>private Integer currentTotalNetAssetsLiabilities;</strong></p>
+            <p><strong><span th:text="${balanceSheet.currentTotalNetAssetsLiabilities}">Current Total Net Assets Liabilities</span></strong></p>
           </div>
           <div class="column-one-quarter">
-            <p><strong>private Integer previousTotalNetAssetsLiabilities;</strong></p>
+            <p><strong><span th:text="${balanceSheet.previousTotalNetAssetsLiabilities}">Previous Total Net Assets Liabilities</span></strong></p>
           </div>
-        </div><!--grid-row-->
+        </div>grid-row
 
 
         <h3 class="heading-medium" style="margin-top:0.5em;">Capital and reserves</h3>
@@ -179,37 +179,37 @@
             <p>Called up share capital</p>
           </div>
           <div class="column-one-quarter">
-            <p>private Integer currentShareCapital;</p>
+            <p><span th:text="${balanceSheet.currentShareCapital}">Current Share Capital</span></p>
           </div>
           <div class="column-one-quarter">
-            <p>private Integer previousShareCapital;</p>
+            <p><span th:text="${balanceSheet.previousShareCapital}">Previous Share Capital</span></p>
           </div>
-        </div><!--grid-row-->
+        </div>grid-row
       <div class="grid-row">
         <div class="column-one-half">
           <p>Profit and loss account</p>
         </div>
         <div class="column-one-quarter">
-          <p>private Integer currentProfitAndLoss;</p>
+          <p><span th:text="${balanceSheet.currentProfitAndLoss}">Current Profit And Loss</span></p>
         </div>
         <div class="column-one-quarter">
-          <p>private Integer previousProfitAndLoss;</p>
+          <p><span th:text="${balanceSheet.previousProfitAndLoss}">Previous Profit And Loss</span></p>
         </div>
-      </div><!--grid-row-->
+      </div>grid-row
       <div class="grid-row">
         <div class="column-one-half">
           <p class=""><strong>Total shareholders' funds</strong></p>
         </div>
         <div class="column-one-quarter">
-          <p><strong>private Integer currentTotalShareholdersFunds;</strong></p>
+          <p><strong><span th:text="${balanceSheet.currentTotalShareholdersFunds}">Current Total Shareholders Funds</span></strong></p>
         </div>
         <div class="column-one-quarter">
-          <p><strong>private Integer previousTotalShareholdersFunds;</strong></p>
+          <p><strong><span th:text="${balanceSheet.previousTotalShareholdersFunds}">Previous Total Shareholders Funds</span></strong></p>
         </div>
-      </div><!--grid-row-->
+      </div>grid-row
 
       <p><a th:href="@{/balance-sheet}" class="button" id="amend-balance-sheet">Amend balance sheet figures</a></p>
-          </div><!--review-reveal-->
+          </div>review-reveal
           
           </details>
         </td>
@@ -262,41 +262,42 @@
                   <p>Cost at 1 April 2015</p>
                 </div>
                 <div class="column-one-quarter">
-                  <p>£41,260</p>
+                  <p>costAtStart</p>
+                  <p><span th:text="${tangibleAssetsNote.costAtStart}">Cost at 1 April 2015</span></p>
                 </div>
-              </div><!--grid-row-->
+              </div>grid-row
             <div class="grid-row">
               <div class="column-one-half">
                 <p>Additions</p>
               </div>
               <div class="column-one-quarter">
-                <p>£11,180</p>
+                <p><span th:text="${tangibleAssetsNote.additions}">Additions</span></p>
               </div>
-            </div><!--grid-row-->
+            </div>grid-row
             <div class="grid-row">
               <div class="column-one-half">
                 <p class="">Disposals</p>
               </div>
               <div class="column-one-quarter">
-                <p class="">£11,280</p>
+                <p><span th:text="${tangibleAssetsNote.disposals}">Disposals</span></p>
               </div>
-            </div><!--grid-row-->
+            </div>grid-row
             <div class="grid-row">
               <div class="column-one-half">
                 <p class="">Transfers</p>
               </div>
               <div class="column-one-quarter">
-                <p class="">£8,600</p>
+                <p><span th:text="${tangibleAssetsNote.transfers}">Transfers</span></p>
               </div>
-            </div><!--grid-row-->
+            </div>grid-row
             <div class="grid-row">
               <div class="column-one-half">
                 <p class=""><strong>Cost at 31 March 2016</strong></p>
               </div>
               <div class="column-one-quarter">
-                <p class=""><strong>£72,230</strong></p>
+                <p><strong><span th:text="${tangibleAssetsNote.costAtEnd}">Cost at 31 March 2016</span></strong></p>
               </div>
-            </div><!--grid-row-->
+            </div>grid-row
 
 
               <h3 class="heading-medium" style="margin-top:0.5em;">Depreciation</h3>
@@ -305,33 +306,33 @@
                   <p>Depreciation at 1 April 2015</p>
                 </div>
                 <div class="column-one-quarter">
-                  <p>£10,520</p>
+                  <p><span th:text="${tangibleAssetsNote.depreciationAtStart}">Depreciation at 1 April 2015</span></p>
                 </div>
-              </div><!--grid-row-->
+              </div>grid-row
             <div class="grid-row">
               <div class="column-one-half">
-                <p>Charge for year</p>
+                <p>Charge for Year</p>
               </div>
               <div class="column-one-quarter">
-                <p>£19,500</p>
+                <p><span th:text="${tangibleAssetsNote.chargeForYear}">Charge for Year</span></p>
               </div>
-            </div><!--grid-row-->
+            </div>grid-row
             <div class="grid-row">
               <div class="column-one-half">
                 <p class="">On disposals</p>
               </div>
               <div class="column-one-quarter">
-                <p class="">£4,860</p>
+                <p><span th:text="${tangibleAssetsNote.onDisposals}">On disposals</span></p>
               </div>
-            </div><!--grid-row-->
+            </div>grid-row
             <div class="grid-row">
               <div class="column-one-half">
                 <p class=""><strong>Depreciation at 31 March 2016</strong></p>
               </div>
               <div class="column-one-quarter">
-                <p class=""><strong>£34,480</strong></p>
+                <p><strong><span th:text="${tangibleAssetsNote.depreciationAtEnd}">Depreciation at 31 March 2016</span></strong></p>
               </div>
-            </div><!--grid-row-->
+            </div>grid-row
 
 
               <h3 class="heading-medium" style="margin-top:0.5em;">Net book value</h3>
@@ -340,23 +341,22 @@
                   <p><strong>Net book value at 31 March 2016</strong></p>
                 </div>
                 <div class="column-one-quarter">
-                  <p><strong>£37,440</strong></p>
+                  <p><strong><span th:text="${tangibleAssetsNote.netBookValueEnd}">Net book value at 31 March 2016</span></strong></p>
                 </div>
-              </div><!--grid-row-->
+              </div>grid-row
             <div class="grid-row">
               <div class="column-one-half">
                 <p><strong>Net book value at 31 March 2015</strong></p>
               </div>
               <div class="column-one-quarter">
-                <p><strong>£30,740</strong></p>
+               <p><strong><span th:text="${tangibleAssetsNote.netBookValueStart}">Net book value at 31 March 2015</span></strong></p>
               </div>
-            </div><!--grid-row-->
+            </div>grid-row
             <p><a th:href="@{/tangible-assets}" class="button">Amend tangible assets note</a></p>
-          </div><!--review-reveal-->
+          </div><!-- review-reveal -->
           </details>
         </td>
       </tr>
-
  <!-- <tr>
         <td>
           <details>
