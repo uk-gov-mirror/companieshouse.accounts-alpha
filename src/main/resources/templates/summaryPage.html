@@ -9,7 +9,6 @@
   </head>
   <body>
  <div layout:fragment="content">
-<div class="text">
 <h1 class="heading-xlarge">Review your abridged accounts</h1>
 
 <form action="/summary" th:action="@{/summary}"  th:object="${summaryPage}" method="post" class="form" id="review-form">
@@ -27,189 +26,286 @@
           <details>
             <summary><span class="summary">Balance sheet figures</span></summary>
             <div class="review-reveal">
+            
               <div class="grid-row">
-                <div class="column-one-half">&nbsp;
+                <div class="column-half">&nbsp;
                 </div>
-                <div class="column-one-quarter">
+                <div class="column-quarter">
                   <p><strong>2015 to 2016</strong></p>
                 </div>
-                <div class="column-one-quarter">
+                <div class="column-quarter">
                   <p><strong>2014 to 2015</strong></p>
                 </div>
-              </div>grid-row
+              </div>
 
               <h3 class="heading-medium" style="margin-top:0.5em;">Fixed assets</h3>
-
-
-            <div class="grid-row">
-              <div class="column-one-half">
+   
+            <div class="grid-row" th:if="${balanceSheet.currentIntangibleAssets != null or balanceSheet.previousIntangibleAssets != null}" >
+              <div class="column-half">
+                <p>Intangible assets</p>
+              </div>
+              <div class="column-quarter">
+                <p><span th:if="${balanceSheet.currentIntangibleAssets} != null"  th:text="'£' + ${balanceSheet.currentIntangibleAssets}">Current Intangible Assets</span></p>
+              </div>
+              <div class="column-quarter">
+                 <p><span th:if="${balanceSheet.previousIntangibleAssets} != null"  th:text="'£' + ${balanceSheet.previousIntangibleAssets}">Previous Intangible Assets</span></p>
+              </div>
+            </div>
+            
+            <div class="grid-row" th:if="${balanceSheet.currentTangibleAssets != null or balanceSheet.previousTangibleAssets != null}">
+              <div class="column-half">
                 <p>Tangible assets</p>
               </div>
-              <div class="column-one-quarter">
-                <p><span th:text="${balanceSheet.currentTangibleAssets}">Current Tangible Assets</span></p>
+              <div class="column-quarter">
+                <p><span th:if="${balanceSheet.currentTangibleAssets} != null" th:text="'£' + ${balanceSheet.currentTangibleAssets}">Current Tangible Assets</span></p>
               </div>
-              <div class="column-one-quarter">
-                 <p><span th:text="${balanceSheet.previousTangibleAssets}">Previous Tangible Assets</span></p>
+              <div class="column-quarter">
+                 <p><span th:if="${balanceSheet.previousTangibleAssets} != null" th:text="'£' + ${balanceSheet.previousTangibleAssets}">Previous Tangible Assets</span></p>
               </div>
-            </div>grid-row
-            <div class="grid-row">
-              <div class="column-one-half">
+            </div>
+            
+            <div class="grid-row" th:if="${balanceSheet.currentFixedInvestments != null or balanceSheet.previousFixedInvestments != null}">
+              <div class="column-half">
+                <p>Investments</p>
+              </div>
+              <div class="column-quarter">
+                <p><span th:if="${balanceSheet.currentFixedInvestments} != null"  th:text="'£' + ${balanceSheet.currentFixedInvestments}">Current Investments</span></p>
+              </div>
+              <div class="column-quarter">
+                 <p><span th:if="${balanceSheet.previousFixedInvestments} != null"  th:text="'£' + ${balanceSheet.previousFixedInvestments}">Previous Investments</span></p>
+              </div>
+            </div>
+            
+            
+            <div class="grid-row" th:if="${balanceSheet.currentTotalFixedAssets != null or balanceSheet.previousTotalFixedAssets != null}">
+              <div class="column-half">
                 <p class=""><strong>Total fixed assets</strong></p>
               </div>
-              <div class="column-one-quarter">
-                <p><strong><span th:text="${balanceSheet.currentTotalFixedAssets}">Current Total Fixed Assets</span></strong></p>
+              <div class="column-quarter">
+                <p><strong><span th:if="${balanceSheet.currentTotalFixedAssets} != null"  th:text="'£' + ${balanceSheet.currentTotalFixedAssets}">Current Total Fixed Assets</span></strong></p>
               </div>
-              <div class="column-one-quarter">
-               <p><strong><span th:text="${balanceSheet.previousTotalFixedAssets}">Previous Total Fixed Assets</span></strong></p>
+              <div class="column-quarter">
+               <p><strong><span th:if="${balanceSheet.previousTotalFixedAssets} != null"  th:text="'£' + ${balanceSheet.previousTotalFixedAssets}">Previous Total Fixed Assets</span></strong></p>
               </div>
-            </div>grid-row
+            </div>
 
 
 
 
-          <h3 class="heading-medium" style="margin-top:0.5em;">Current assets</h3>
-        <div class="grid-row">
-          <div class="column-one-half">
+        <h3 class="heading-medium" style="margin-top:0.5em;">Current assets</h3>
+         
+        <div class="grid-row" th:if="${balanceSheet.currentStocks != null or balanceSheet.previousStocks != null}">
+          <div class="column-half">
+            <p>Stocks</p>
+          </div>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.currentStocks} != null"  th:text="'£' + ${balanceSheet.currentStocks}">Current Stocks</span></p>
+          </div>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.previousStocks} != null"  th:text="'£' + ${balanceSheet.previousStocks}">Previous Stocks</span></p>
+          </div>
+        </div>
+          
+        <div class="grid-row" th:if="${balanceSheet.currentDebtors != null or balanceSheet.previousDebtors != null}">
+          <div class="column-half">
             <p>Debtors</p>
           </div>
-          <div class="column-one-quarter">
-            <p><span th:text="${balanceSheet.currentDebtors}">Current Debtors</span></p>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.currentDebtors} != null"  th:text="'£' + ${balanceSheet.currentDebtors}">Current Debtors</span></p>
           </div>
-          <div class="column-one-quarter">
-            <p><span th:text="${balanceSheet.previousDebtors}">Current Debtors</span></p>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.previousDebtors} != null"  th:text="'£' + ${balanceSheet.previousDebtors}">Previous Debtors</span></p>
           </div>
-        </div>grid-row
-        <div class="grid-row">
-          <div class="column-one-half">
+        </div>
+        
+        <div class="grid-row" th:if="${balanceSheet.currentCash != null or balanceSheet.previousCash != null}">
+          <div class="column-half">
             <p>Cash at bank and in hand</p>
           </div>
-          <div class="column-one-quarter">
-            <p><span th:text="${balanceSheet.currentCash}">Current Cash</span></p>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.currentCash} != null"  th:text="'£' + ${balanceSheet.currentCash}">Current Cash</span></p>
           </div>
-          <div class="column-one-quarter">
-            <p><span th:text="${balanceSheet.previousCash}">Previous Cash</span></p>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.previousCash} != null"  th:text="'£' + ${balanceSheet.previousCash}">Previous Cash</span></p>
           </div>
-        </div>grid-row
-        <div class="grid-row">
-          <div class="column-one-half">
+        </div>
+        
+        <div class="grid-row" th:if="${balanceSheet.currentInvestments != null or balanceSheet.previousInvestments != null}">
+          <div class="column-half">
+            <p>Investments</p>
+          </div>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.currentInvestments} != null"  th:text="'£' + ${balanceSheet.currentInvestments}">Current Investments</span></p>
+          </div>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.previousInvestments} != null"  th:text="'£' + ${balanceSheet.previousInvestments}">Previous Investments</span></p>
+          </div>
+        </div>
+        
+        <div class="grid-row" th:if="${balanceSheet.currentTotalAssets != null or balanceSheet.previousTotalAssets != null}">
+          <div class="column-half">
             <p class=""><strong>Total current assets</strong></p>
           </div>
-          <div class="column-one-quarter">
-            <p><strong><span th:text="${balanceSheet.currentTotalAssets}">Current Total Assets</span></strong></p>
+          <div class="column-quarter">
+            <p><strong><span th:if="${balanceSheet.currentTotalAssets} != null"  th:text="'£' + ${balanceSheet.currentTotalAssets}">Current Total Assets</span></strong></p>
           </div>
-          <div class="column-one-quarter">
-            <p><strong><span th:text="${balanceSheet.previousTotalAssets}">Previous Total Assets</span></strong></p>
+          <div class="column-quarter">
+            <p><strong><span th:if="${balanceSheet.previousTotalAssets} != null"  th:text="'£' + ${balanceSheet.previousTotalAssets}">Previous Total Assets</span></strong></p>
           </div>
-        </div>grid-row
+        </div>
       
-        <div class="grid-row">
-          <div class="column-one-half">
+      <!-- Creditors -->
+        <div class="grid-row" th:if="${balanceSheet.currentCreditorsOneYear != null or balanceSheet.previousCreditorsOneYear != null}">
+          <div class="column-half">
             <p>Creditors - amounts falling due within one year</p>
           </div>
-          <div class="column-one-quarter">
-            <p><span th:text="${balanceSheet.currentCreditorsOneYear}">Current Creditors One Year</span></p>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.currentCreditorsOneYear} != null"  th:text="'£' + ${balanceSheet.currentCreditorsOneYear}">Current Creditors One Year</span></p>
           </div>
-          <div class="column-one-quarter">
-            <p><span th:text="${balanceSheet.previousCreditorsOneYear}">Previous Creditors One Year</span></p>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.previousCreditorsOneYear} != null"  th:text="'£' + ${balanceSheet.previousCreditorsOneYear}">Previous Creditors One Year</span></p>
           </div>
-        </div>grid-row
-        <div class="grid-row">
-          <div class="column-one-half">
+        </div>
+        
+        <div class="grid-row" th:if="${balanceSheet.currentNetAssets != null or balanceSheet.previousNetAssets != null}">
+          <div class="column-half">
             <p><strong>Net current assets (liabilities)</strong></p>
           </div>
-          <div class="column-one-quarter">
-            <p><strong><span th:text="${balanceSheet.currentNetAssets}">Current Net Assets</span></strong></p>
+          <div class="column-quarter">
+            <p><strong><span th:if="${balanceSheet.currentNetAssets} != null"  th:text="'£' + ${balanceSheet.currentNetAssets}">Current Net Assets</span></strong></p>
           </div>
-          <div class="column-one-quarter">
-            <p><strong><span th:text="${balanceSheet.previousNetAssets}">Previous Net Assets</span></strong></p>
+          <div class="column-quarter">
+            <p><strong><span th:if="${balanceSheet.previousNetAssets} != null"  th:text="'£' + ${balanceSheet.previousNetAssets}">Previous Net Assets</span></strong></p>
           </div>
-        </div>grid-row
-              <br></br>
-        <div class="grid-row">
-          <div class="column-one-half">
+        </div>
+        <br />
+        
+        <div class="grid-row" th:if="${balanceSheet.currentTotalAssetsMinusCurrentLiabilities != null or balanceSheet.previousTotalAssetsMinusCurrentLiabilities != null}">
+          <div class="column-half">
             <p><strong>Total assets less current liabilities</strong></p>
           </div>
-          <div class="column-one-quarter">
-            <p><strong><span th:text="${balanceSheet.currentTotalAssetsMinusCurrentLiabilities}">Current Total Assets Minus Current Liabilities</span></strong></p>
+          <div class="column-quarter">
+            <p><strong><span th:if="${balanceSheet.currentTotalAssetsMinusCurrentLiabilities} != null"  th:text="'£' + ${balanceSheet.currentTotalAssetsMinusCurrentLiabilities}">Current Total Assets Minus Current Liabilities</span></strong></p>
           </div>
-          <div class="column-one-quarter">
-            <p><strong><span th:text="${balanceSheet.previousTotalAssetsMinusCurrentLiabilities}">Previous Total Assets Minus Current Liabilities</span></strong></p>
+          <div class="column-quarter">
+            <p><strong><span th:if="${balanceSheet.previousTotalAssetsMinusCurrentLiabilities} != null"  th:text="'£' + ${balanceSheet.previousTotalAssetsMinusCurrentLiabilities}">Previous Total Assets Minus Current Liabilities</span></strong></p>
           </div>
-        </div>grid-row
+        </div>
         <br></br>
 
-        <div class="grid-row">
-          <div class="column-one-half">
+        <div class="grid-row" th:if="${balanceSheet.currentCreditorsMoreYears != null or balanceSheet.previousCreditorsMoreYears != null}">
+          <div class="column-half">
             <p>Creditors - amounts falling due after more than one year</p>
           </div>
-          <div class="column-one-quarter">
-            <p><span th:text="${balanceSheet.currentCreditorsMoreYears}">Current Creditors More Years</span></p>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.currentCreditorsMoreYears} != null"  th:text="'£' + ${balanceSheet.currentCreditorsMoreYears}">Current Creditors More Years</span></p>
           </div>
-          <div class="column-one-quarter">
-            <p><span th:text="${balanceSheet.previousCreditorsMoreYears}">Previous Creditors More Years</span></p>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.previousCreditorsMoreYears} != null"  th:text="'£' + ${balanceSheet.previousCreditorsMoreYears}">Previous Creditors More Years</span></p>
           </div>
-        </div>grid-row
-        <div class="grid-row">
-          <div class="column-one-half">
+        </div>
+        
+        <div class="grid-row" th:if="${balanceSheet.currentProvisionLiabilities != null or balanceSheet.previousProvisionLiabilities != null}">
+          <div class="column-half">
             <p>Provision for liabilities</p>
           </div>
-          <div class="column-one-quarter">
-            <p><span th:text="${balanceSheet.currentProvisionLiabilities}">Current Provision Liabilities</span></p>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.currentProvisionLiabilities} != null"  th:text="'£' + ${balanceSheet.currentProvisionLiabilities}">Current Provision Liabilities</span></p>
           </div>
-          <div class="column-one-quarter">
-            <p><span th:text="${balanceSheet.previousProvisionLiabilities}">Previous Provision Liabilities</span></p>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.previousProvisionLiabilities} != null"  th:text="'£' + ${balanceSheet.previousProvisionLiabilities}">Previous Provision Liabilities</span></p>
           </div>
-        </div>grid-row
-        <div class="grid-row">
-          <div class="column-one-half">
+        </div>
+        
+        <div class="grid-row" th:if="${balanceSheet.currentTotalNetAssetsLiabilities != null or balanceSheet.previousTotalNetAssetsLiabilities != null}">
+          <div class="column-half">
             <p><strong>Total net assets (liabilities)</strong></p>
           </div>
-          <div class="column-one-quarter">
-            <p><strong><span th:text="${balanceSheet.currentTotalNetAssetsLiabilities}">Current Total Net Assets Liabilities</span></strong></p>
+          <div class="column-quarter">
+            <p><strong><span th:if="${balanceSheet.currentTotalNetAssetsLiabilities} != null"  th:text="'£' + ${balanceSheet.currentTotalNetAssetsLiabilities}">Current Total Net Assets Liabilities</span></strong></p>
           </div>
-          <div class="column-one-quarter">
-            <p><strong><span th:text="${balanceSheet.previousTotalNetAssetsLiabilities}">Previous Total Net Assets Liabilities</span></strong></p>
+          <div class="column-quarter">
+            <p><strong><span th:if="${balanceSheet.previousTotalNetAssetsLiabilities} != null"  th:text="'£' + ${balanceSheet.previousTotalNetAssetsLiabilities}">Previous Total Net Assets Liabilities</span></strong></p>
           </div>
-        </div>grid-row
+        </div>
 
 
         <h3 class="heading-medium" style="margin-top:0.5em;">Capital and reserves</h3>
-        <div class="grid-row">
-          <div class="column-one-half">
+        
+        <div class="grid-row" th:if="${balanceSheet.currentShareCapital != null or balanceSheet.previousShareCapital != null}">
+          <div class="column-half">
             <p>Called up share capital</p>
           </div>
-          <div class="column-one-quarter">
-            <p><span th:text="${balanceSheet.currentShareCapital}">Current Share Capital</span></p>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.currentShareCapital} != null"  th:text="'£' + ${balanceSheet.currentShareCapital}">Current Share Capital</span></p>
           </div>
-          <div class="column-one-quarter">
-            <p><span th:text="${balanceSheet.previousShareCapital}">Previous Share Capital</span></p>
+          <div class="column-quarter">
+            <p><span th:if="${balanceSheet.previousShareCapital} != null"  th:text="'£' + ${balanceSheet.previousShareCapital}">Previous Share Capital</span></p>
           </div>
-        </div>grid-row
-      <div class="grid-row">
-        <div class="column-one-half">
+        </div>
+        
+      <div class="grid-row" th:if="${balanceSheet.currentSharePremiumAccount != null or balanceSheet.previousSharePremiumAccount != null}">
+        <div class="column-half">
+          <p>Share premium account</p>
+        </div>
+        <div class="column-quarter">
+          <p><span th:if="${balanceSheet.currentSharePremiumAccount} != null"  th:text="'£' + ${balanceSheet.currentSharePremiumAccount}">Current Share Premium Account</span></p>
+        </div>
+        <div class="column-quarter">
+          <p><span th:if="${balanceSheet.previousSharePremiumAccount} != null"  th:text="'£' + ${balanceSheet.previousSharePremiumAccount}">Previous Share Premium Account</span></p>
+        </div>
+      </div>
+      
+      <div class="grid-row" th:if="${balanceSheet.currentRevaluationReserve != null or balanceSheet.previousRevaluationReserve != null}">
+        <div class="column-half">
+          <p>Revaluation reserve</p>
+        </div>
+        <div class="column-quarter">
+          <p><span th:if="${balanceSheet.currentRevaluationReserve} != null"  th:text="'£' + ${balanceSheet.currentRevaluationReserve}">Current Revaluation reserve</span></p>
+        </div>
+        <div class="column-quarter">
+          <p><span th:if="${balanceSheet.previousRevaluationReserve} != null"  th:text="'£' + ${balanceSheet.previousRevaluationReserve}">Previous Revaluation reserve</span></p>
+        </div>
+      </div>
+      
+      
+      <div class="grid-row" th:if="${balanceSheet.currentOtherReserves != null or balanceSheet.previousOtherReserves != null}">
+        <div class="column-half">
+          <p>Other reserves</p>
+        </div>
+        <div class="column-quarter">
+          <p><span th:if="${balanceSheet.currentOtherReserves} != null"  th:text="'£' + ${balanceSheet.currentOtherReserves}">Current Revaluation reserve</span></p>
+        </div>
+        <div class="column-quarter">
+          <p><span th:if="${balanceSheet.previousOtherReserves} != null"  th:text="'£' + ${balanceSheet.previousOtherReserves}">Previous Revaluation reserve</span></p>
+        </div>
+      </div>
+      
+      <div class="grid-row" th:if="${balanceSheet.currentProfitAndLoss != null or balanceSheet.previousProfitAndLoss != null}">
+        <div class="column-half">
           <p>Profit and loss account</p>
         </div>
-        <div class="column-one-quarter">
-          <p><span th:text="${balanceSheet.currentProfitAndLoss}">Current Profit And Loss</span></p>
+        <div class="column-quarter">
+          <p><span th:if="${balanceSheet.currentProfitAndLoss} != null"  th:text="'£' + ${balanceSheet.currentProfitAndLoss}">Current Profit And Loss</span></p>
         </div>
-        <div class="column-one-quarter">
-          <p><span th:text="${balanceSheet.previousProfitAndLoss}">Previous Profit And Loss</span></p>
+        <div class="column-quarter">
+          <p><span th:if="${balanceSheet.previousProfitAndLoss} != null"  th:text="'£' + ${balanceSheet.previousProfitAndLoss}">Previous Profit And Loss</span></p>
         </div>
-      </div>grid-row
-      <div class="grid-row">
-        <div class="column-one-half">
+      </div>
+      
+      <div class="grid-row" th:if="${balanceSheet.currentTotalShareholdersFunds != null or balanceSheet.previousTotalShareholdersFunds != null}">
+        <div class="column-half">
           <p class=""><strong>Total shareholders' funds</strong></p>
         </div>
-        <div class="column-one-quarter">
-          <p><strong><span th:text="${balanceSheet.currentTotalShareholdersFunds}">Current Total Shareholders Funds</span></strong></p>
+        <div class="column-quarter">
+          <p><strong><span th:if="${balanceSheet.currentTotalShareholdersFunds} != null"  th:text="'£' + ${balanceSheet.currentTotalShareholdersFunds}">Current Total Shareholders Funds</span></strong></p>
         </div>
-        <div class="column-one-quarter">
-          <p><strong><span th:text="${balanceSheet.previousTotalShareholdersFunds}">Previous Total Shareholders Funds</span></strong></p>
+        <div class="column-quarter">
+          <p><strong><span th:if="${balanceSheet.previousTotalShareholdersFunds} != null"  th:text="'£' + ${balanceSheet.previousTotalShareholdersFunds}">Previous Total Shareholders Funds</span></strong></p>
         </div>
-      </div>grid-row
+      </div>
 
-      <p><a th:href="@{/balance-sheet}" class="button" id="amend-balance-sheet">Amend balance sheet figures</a></p>
-          </div>review-reveal
+          </div>
           
           </details>
         </td>
@@ -243,151 +339,152 @@
             <summary><span class="summary">Accounting policies note</span></summary>
             <div class="review-reveal">
               <ul class="list list-bullet">
-                <li>These financial statements have been prepared in accordance with the provisions of Section 1A (Small Entities) of Financial Reporting Standard 102.</li>
+                <li th:text="${accountingPolicies.preparationStatement}" > Text</li>
               </ul>
-              <p><a th:href="@{/accounting-policies}" class="button">Amend accounting policies note</a></p>
-            </div><!--review-reveal-->
+            </div>
           </details>
         </td>
       </tr>
 
-      <tr>
+      <tr th:if="${tangibleAssetsNote != null }">
         <td>
           <details>
             <summary><span class="summary">Tangible assets note</span></summary>
             <div class="review-reveal">
               <h3 class="heading-medium" style="margin-top:0.5em;">Cost</h3>
-              <div class="grid-row">
-                <div class="column-one-half">
+              
+              <div class="grid-row" th:if="${tangibleAssetsNote.costAtStart != null }">
+                <div class="column-half">
                   <p>Cost at 1 April 2015</p>
                 </div>
-                <div class="column-one-quarter">
-                  <p>costAtStart</p>
+                <div class="column-quarter">
                   <p><span th:text="${tangibleAssetsNote.costAtStart}">Cost at 1 April 2015</span></p>
                 </div>
-              </div>grid-row
-            <div class="grid-row">
-              <div class="column-one-half">
+              </div>
+              
+            <div class="grid-row" th:if="${tangibleAssetsNote.additions != null}">
+              <div class="column-half">
                 <p>Additions</p>
               </div>
-              <div class="column-one-quarter">
+              <div class="column-quarter">
                 <p><span th:text="${tangibleAssetsNote.additions}">Additions</span></p>
               </div>
-            </div>grid-row
-            <div class="grid-row">
-              <div class="column-one-half">
+            </div>
+            
+            <div class="grid-row" th:if="${tangibleAssetsNote.disposals != null}">
+              <div class="column-half">
                 <p class="">Disposals</p>
               </div>
-              <div class="column-one-quarter">
+              <div class="column-quarter">
                 <p><span th:text="${tangibleAssetsNote.disposals}">Disposals</span></p>
               </div>
-            </div>grid-row
-            <div class="grid-row">
-              <div class="column-one-half">
+            </div>
+            
+            <div class="grid-row" th:if="${tangibleAssetsNote.revaluations != null}">
+              <div class="column-half">
+                <p class="">Revaluations</p>
+              </div>
+              <div class="column-quarter">
+                <p><span th:text="${tangibleAssetsNote.revaluations}">Revaluations</span></p>
+              </div>
+            </div>
+            
+            <div class="grid-row" th:if="${tangibleAssetsNote.transfers != null}">
+              <div class="column-half">
                 <p class="">Transfers</p>
               </div>
-              <div class="column-one-quarter">
+              <div class="column-quarter">
                 <p><span th:text="${tangibleAssetsNote.transfers}">Transfers</span></p>
               </div>
-            </div>grid-row
-            <div class="grid-row">
-              <div class="column-one-half">
+            </div>
+            
+            <div class="grid-row" th:if="${tangibleAssetsNote.costAtEnd != null}">
+              <div class="column-half">
                 <p class=""><strong>Cost at 31 March 2016</strong></p>
               </div>
-              <div class="column-one-quarter">
+              <div class="column-quarter">
                 <p><strong><span th:text="${tangibleAssetsNote.costAtEnd}">Cost at 31 March 2016</span></strong></p>
               </div>
-            </div>grid-row
+            </div>
+
 
 
               <h3 class="heading-medium" style="margin-top:0.5em;">Depreciation</h3>
-              <div class="grid-row">
-                <div class="column-one-half">
+              <div class="grid-row" th:if="${tangibleAssetsNote.depreciationAtStart != null}">
+                <div class="column-half">
                   <p>Depreciation at 1 April 2015</p>
                 </div>
-                <div class="column-one-quarter">
+                <div class="column-quarter">
                   <p><span th:text="${tangibleAssetsNote.depreciationAtStart}">Depreciation at 1 April 2015</span></p>
                 </div>
-              </div>grid-row
-            <div class="grid-row">
-              <div class="column-one-half">
+              </div>
+              
+            <div class="grid-row" th:if="${tangibleAssetsNote.chargeForYear != null}">
+              <div class="column-half">
                 <p>Charge for Year</p>
               </div>
-              <div class="column-one-quarter">
+              <div class="column-quarter">
                 <p><span th:text="${tangibleAssetsNote.chargeForYear}">Charge for Year</span></p>
               </div>
-            </div>grid-row
-            <div class="grid-row">
-              <div class="column-one-half">
+            </div>
+            
+            <div class="grid-row" th:if="${tangibleAssetsNote.onDisposals != null}">
+              <div class="column-half">
                 <p class="">On disposals</p>
               </div>
-              <div class="column-one-quarter">
+              <div class="column-quarter">
                 <p><span th:text="${tangibleAssetsNote.onDisposals}">On disposals</span></p>
               </div>
-            </div>grid-row
-            <div class="grid-row">
-              <div class="column-one-half">
+            </div>
+            
+            <div class="grid-row" th:if="${tangibleAssetsNote.otherAdjustments != null}">
+              <div class="column-half">
+                <p class="">Other adjustments</p>
+              </div>
+              <div class="column-quarter">
+                <p><span th:text="${tangibleAssetsNote.otherAdjustments}">Other adjustments</span></p>
+              </div>
+            </div>
+            <div class="grid-row" th:if="${tangibleAssetsNote.depreciationAtEnd != null}">
+              <div class="column-half">
                 <p class=""><strong>Depreciation at 31 March 2016</strong></p>
               </div>
-              <div class="column-one-quarter">
+              <div class="column-quarter">
                 <p><strong><span th:text="${tangibleAssetsNote.depreciationAtEnd}">Depreciation at 31 March 2016</span></strong></p>
               </div>
-            </div>grid-row
+            </div>
 
 
               <h3 class="heading-medium" style="margin-top:0.5em;">Net book value</h3>
-              <div class="grid-row">
-                <div class="column-one-half">
+              <div class="grid-row" th:if="${tangibleAssetsNote.netBookValueEnd != null}">
+                <div class="column-half">
                   <p><strong>Net book value at 31 March 2016</strong></p>
                 </div>
-                <div class="column-one-quarter">
+                <div class="column-quarter">
                   <p><strong><span th:text="${tangibleAssetsNote.netBookValueEnd}">Net book value at 31 March 2016</span></strong></p>
                 </div>
-              </div>grid-row
-            <div class="grid-row">
-              <div class="column-one-half">
+              </div>
+              
+            <div class="grid-row" th:if="${tangibleAssetsNote.netBookValueStart != null}">
+              <div class="column-half">
                 <p><strong>Net book value at 31 March 2015</strong></p>
               </div>
-              <div class="column-one-quarter">
+              <div class="column-quarter">
                <p><strong><span th:text="${tangibleAssetsNote.netBookValueStart}">Net book value at 31 March 2015</span></strong></p>
               </div>
-            </div>grid-row
-            <p><a th:href="@{/tangible-assets}" class="button">Amend tangible assets note</a></p>
-          </div><!-- review-reveal -->
+            </div>
+          </div>
           </details>
         </td>
       </tr>
- <!-- <tr>
-        <td>
-          <details>
-            <summary><span class="summary">Employees note</span></summary>
-            <div class="review-reveal">
-              <div class="grid-row">
-                <div class="column-one-half">
-                <p>Average number of employees</p>
-                </div>
-                <div class="column-one-quarter">
-                <p>1</p>
-                </div>
-              </div>
-              <p><a href="javascript:void(0)" class="button">Amend employees note</a></p>
-            </div>
-          </details>
-        </td>
-      </tr> -->
+
       
     </tbody>
   </table>
-  <h2 class="heading-medium">Print or save your accounts before filing (optional)</h2>
-
-  <p>You can print or save your draft accounts to review them before filing.</p>
-
-  <ul class="fa-ul">
-    <li><i class="fa-li fa fa-print"></i><a id="" href="/public/pdf/abridged-accounts-sample.pdf" target="_blank">Print your draft accounts</a>
-    <span class="form-hint">(Opens PDF document in a new tab or window)</span></li>
-    <li><i class="fa-li fa fa-file-text"></i><a id="" href="/a-test-company">Save your draft accounts in HTML </a>
-    <span class="form-hint"> (You'll be asked where to save the file, or it will download to a folder on your computer)</span></li>
-  </ul>
+  <br />
+  <div class="panel panel-border-wide">
+  	<p>You can print or save a copy of your draft accounts on the next page.</p>
+  </div>
   
  	  <div class="form-group">
         <a th:href="@{/approval}" class="button button-start"  id="start-button">Continue to Approval</a>
@@ -396,6 +493,5 @@
 <div layout:fragment="page-scripts"></div>
 </form>
   </div>
-</div>
   </body>
 </html>
