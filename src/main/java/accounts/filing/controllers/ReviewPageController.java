@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @SessionAttributes({"balanceSheet", "accountingPolicies", "tangibleAssetsNote"})
-public class SummaryPageController {
+public class ReviewPageController {
     
-	@RequestMapping(value="/summary", method = RequestMethod.GET)
+	@RequestMapping(value="/review", method = RequestMethod.GET)
 	public String showSummaryPage(){
-		return "summaryPage";
+		return "reviewPage";
 	}
  
 
