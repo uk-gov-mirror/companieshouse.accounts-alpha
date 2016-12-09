@@ -45,7 +45,7 @@ public class NotesController {
 			return "notes/accountingPoliciesNote";
 		}
 		accountingPolicies.cleanupPreparationStatement();		
-		return "notesHomepage";
+		return "redirect:balance-sheet-notes";
 	}
 	
 	@RequestMapping(value="/tangible-assets", method = RequestMethod.GET)
@@ -65,7 +65,7 @@ public class NotesController {
 			return "notes/tangibleAssetsNote";
 		}
 	
-		return "notesHomepage";
+		return "redirect:balance-sheet-notes";
 	}
 	
 	
