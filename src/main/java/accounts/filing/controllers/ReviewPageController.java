@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 public class ReviewPageController {
     
 	@RequestMapping(value="/review", method = RequestMethod.GET)
-	public String showSummaryPage(){
+	public String showReviewPage(){
 		return "reviewPage";
 	}
  
