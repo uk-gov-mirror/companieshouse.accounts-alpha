@@ -18,8 +18,6 @@ import accounts.filing.models.BalanceSheet;
 import accounts.filing.models.TangibleAssetsNote;
 
 
-
-
 @Controller
 @SessionAttributes({"balanceSheet", "accountingPolicies", "tangibleAssetsNote"})
 public class NotesController {
@@ -68,5 +66,8 @@ public class NotesController {
 		return "redirect:balance-sheet-notes";
 	}
 	
-	
+	@RequestMapping(value="/employees-note", method = RequestMethod.GET)
+	public String showEmployeesNote(){
+		return "notes/employeesNote";
+	}
 }

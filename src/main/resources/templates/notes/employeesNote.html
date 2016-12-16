@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="baseLayout"> 
+
+<head>
+<title>File abridged accounts</title>
+</head>
+<body>
+<div layout:fragment="content">
+<form th:action="@{employees-note}" th:object="${employeesNote}" method="post" class="form" id="employees-note">
+<div class="text">
+<h1 class="heading-xlarge">Employees note</h1>
+
+
+<!-- <div th:if="${#fields.hasErrors('*')}">
+<div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+  <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    There are problems with this page which need to be resolved before you can continue.
+  </h2>
+
+<ul class="error-summary-list">
+    <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
+        <a th:if="${e.fieldName == 'numberValid'}" th:href="'#' + employees-current" th:text="${e.message}" ></a>
+        <a th:if="${e.fieldName == 'numberValid'}" th:href="'#' + employees-previous" th:text="${e.message}" ></a>
+    </li>
+</ul>
+
+</div>
+</div> -->
+
+  <div class="grid-row" id="accounts-header">
+    <div class="column-half">
+      &nbsp;
+    </div>
+    <div class="column-quarter">
+      <h2 class="heading-small">2015 to 2016</h2>
+    </div>
+   <div class="column-quarter">
+      <h2 class="heading-small">1 April 2014 to<br/>31 March 2015</h2>
+    </div>
+  </div>
+
+  Start average number of employees
+  <div class="grid-row accounts-row-spacer">
+    <div class="column-half">
+        <details>
+          <summary><span class="summary">Average number of employees</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Enter the average number of people employed by the company in the period you're filing for.</p>
+          </div>
+        </details>
+    </div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="employees-current"><span class="visuallyhidden">Average number of employees  (current year)</span>
+          <input type="number" class="form-control" id="employees-current" onkeypress='return validateEmployee(event)' />
+        </label>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label for="employees-previous"><span class="visuallyhidden">Average number of employees  (previous year)</span>
+          <input type="number" class="form-control" id="employees-previous" onkeypress='return validateEmployee(event)' />
+        </label>
+      </div>
+    </div>
+<!--     <span><font id="number-error" color="red" th:if="${#fields.hasErrors('numberValid')}" th:errors="*{numberValid}">Number Error</font></span> -->
+
+  </div>
+  End average number of employees
+
+
+    <details class="accounts-row-spacer text">
+      <summary><span class="summary">Add additional information? (optional) </span></summary>
+      <div class="panel panel-border-narrow">
+        <label class="visuallyhidden" for="textarea">Additional information (optional)</label>
+      <!--   <p class="form-hint">Scaevola mnesarchum assueverit vis in. Unum novum sententiae cu duo, ex dico modus inimicus mel, justo appetere vel ex</p> -->
+        <textarea type="text" id="textarea" class="form-control" rows="10"></textarea>
+      </div>
+    </details>
+
+    <div class="form-group">
+			<input id="save-continue" class="button" type="submit"
+				value="Save and continue" />
+		</div>
+      </div>
+
+</form>
+
+</div>
+<div layout:fragment="page-scripts">
+<script th:src="@{employeesNote.js}"></script>
+</div>
+
+</body>
+</html>
