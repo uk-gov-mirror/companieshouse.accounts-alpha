@@ -15,11 +15,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import accounts.filing.helpers.CrossValidator;
 import accounts.filing.models.AccountingPolicies;
 import accounts.filing.models.BalanceSheet;
+import accounts.filing.models.EmployeesNote;
 import accounts.filing.models.TangibleAssetsNote;
 
 
 @Controller
-@SessionAttributes({"balanceSheet", "accountingPolicies", "tangibleAssetsNote"})
+@SessionAttributes({"balanceSheet", "accountingPolicies", "tangibleAssetsNote", "employeesNote"})
 public class NotesController {
 	
 	@Inject
@@ -67,7 +68,17 @@ public class NotesController {
 	}
 	
 	@RequestMapping(value="/employees-note", method = RequestMethod.GET)
-	public String showEmployeesNote(){
+	public String showEmployeesNote(ModelMap model){
+		model.addAttribute("employeesNote", new EmployeesNote());
 		return "notes/employeesNote";
+	}
+	
+	@RequestMapping(value="/employees-note", method = RequestMethod.POST)
+	public String submitAccountingPoliciesNote(@ModelAttribute @Valid EmployeesNote employeesNote, BindingResult result){
+		if(result.hasErrors()){
+			return "notes/employeesNote";
+		}
+		employeesNote.cleanupPreparationStatement();		
+		return "redirect:balance-sheet-notes";
 	}
 }
