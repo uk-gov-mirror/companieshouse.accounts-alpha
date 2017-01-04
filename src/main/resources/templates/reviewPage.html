@@ -476,6 +476,45 @@
           </div>
           </details>
         </td>
+        </tr>
+          
+      <tr th:if="${employeesNote != null }">
+        <td>
+          <details>
+            <summary><span class="summary">Employees Note</span></summary>
+            <div class="review-reveal">
+              <h3 class="heading-medium" style="margin-top:0.5em;"></h3>
+              
+              <div class="grid-row" th:if="${employeesNote.employeesCurrent != null }">
+                <div class="column-half">
+                  <p>Current Employees</p>
+                </div>
+                <div class="column-quarter">
+                  <p><span th:text="${employeesNote.employeesCurrent}">Current Employees</span></p>
+                </div>
+              </div>
+              
+              <div class="grid-row" th:if="${employeesNote.employeesPrevious != null }">
+                <div class="column-half">
+                  <p>Previous Employees</p>
+                </div>
+                <div class="column-quarter">
+                  <p><span th:text="${employeesNote.employeesPrevious}">Previous Employees</span></p>
+                </div>
+              </div>
+              
+              <div class="grid-row" th:if="${employeesNote.additionalInfo != null }">
+                <div class="column-half">
+                  <p>Additional Information</p>
+                </div>
+                <div class="column-quarter">
+                  <p><span th:text="${employeesNote.additionalInfo}">Additional Information</span></p>
+                </div>
+              </div>
+              
+              </div>
+          </details>
+        </td>
       </tr>
 
       

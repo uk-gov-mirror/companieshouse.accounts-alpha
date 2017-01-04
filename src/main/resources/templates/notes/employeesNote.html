@@ -54,15 +54,15 @@
 
     <div class="column-quarter">
       <div class="form-group">
-        <label for="employees-current"><span class="visuallyhidden">Average number of employees  (current year)</span>
-          <input type="number" class="form-control" id="employees-current" onkeypress='return validateEmployee(event)' />
+        <label for="employees-current"><span class="visuallyhidden">Average number of employees (current year)</span>
+          <input type="number" class="form-control" id="employees-current" onkeypress='return validateEmployee(event)' th:field="*{employeesCurrent}" />
         </label>
       </div>
     </div>
     <div class="column-quarter">
       <div class="form-group">
-        <label for="employees-previous"><span class="visuallyhidden">Average number of employees  (previous year)</span>
-          <input type="number" class="form-control" id="employees-previous" onkeypress='return validateEmployee(event)' />
+        <label for="employees-previous"><span class="visuallyhidden">Average number of employees (previous year)</span>
+          <input type="number" class="form-control" id="employees-previous" onkeypress='return validateEmployee(event)' th:field="*{employeesPrevious}" />
         </label>
       </div>
     </div>
@@ -77,7 +77,7 @@
       <div class="panel panel-border-narrow">
         <label class="visuallyhidden" for="textarea">Additional information (optional)</label>
       <!--   <p class="form-hint">Scaevola mnesarchum assueverit vis in. Unum novum sententiae cu duo, ex dico modus inimicus mel, justo appetere vel ex</p> -->
-        <textarea type="text" id="textarea" class="form-control" onkeypress='return validateTextBox(event)' rows="10"></textarea>
+        <textarea type="text" id="textarea" class="form-control" onkeypress='return validateTextBox(event)' rows="10" th:field="*{additionalInfo}"></textarea>
       </div>
     </details>
 
