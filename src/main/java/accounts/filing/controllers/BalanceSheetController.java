@@ -23,8 +23,8 @@ public class BalanceSheetController {
 
     @RequestMapping(value="/balance-sheet",method = RequestMethod.GET)
 	public String showBalanceSheetPage(Model model){
+    
     	model.addAttribute("balanceSheet", new BalanceSheet());
-    	
 		return "balanceSheet";
 		
 	}

@@ -491,12 +491,7 @@
            </div>
 
            <div class="column-quarter">
-             <div class="form-group">
-               <label for="called-up-share-capital-current"><span class="mobile-only-label">Called up share capital (2016)</span>
-                 <input type="number" placeholder="0" class="form-control" id="called-up-share-capital-current" onkeypress='return validate(event)' th:field="*{currentShareCapital}" />
-                 <span><font color="red" th:if="${#fields.hasErrors('currentShareCapital')}" th:errors="*{currentShareCapital}">Balance sheet error</font></span>
-               </label>
-             </div>
+             <div th:replace="fragments/_numericInput :: numericInput ('called-up-share-capital-current', 'currentShareCapital', *{currentShareCapital})"></div>
            </div>
            <div class="column-quarter">
              <div class="form-group">
