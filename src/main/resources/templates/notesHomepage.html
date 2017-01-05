@@ -81,6 +81,7 @@
         <td></td>
         <td class="change-answer"><a th:href="@{/employees-note}">
        <span th:if="${employeesNote} == null">Add note</span>
+       <span th:if="${employeesNote != null and (employeesNote.employeesCurrent == null || employeesNote.additionalInfo == null) }">Add note</span>
        <span th:if="${employeesNote != null and (employeesNote.employeesCurrent != null || employeesNote.additionalInfo != null) }">Change note</span>  
         <span class="visuallyhidden">Employees</span></a></td>
       </tr>
