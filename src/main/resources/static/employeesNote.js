@@ -38,6 +38,3 @@ function validateTextBox(evt) {
 		  return false;
 	  }	  
 }
-
-//Regex to allow for a maximum of 10 characters. Check logic works and change to 20,000 characters
-//^.{0,10}$

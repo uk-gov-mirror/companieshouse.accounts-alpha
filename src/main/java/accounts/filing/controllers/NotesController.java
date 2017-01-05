@@ -77,8 +77,7 @@ public class NotesController {
 	public String submitAccountingPoliciesNote(@ModelAttribute @Valid EmployeesNote employeesNote, BindingResult result){
 		if(result.hasErrors()){
 			return "notes/employeesNote";
-		}
-		employeesNote.cleanupPreparationStatement();		
+		}	
 		return "redirect:balance-sheet-notes";
 	}
 }

@@ -11,24 +11,6 @@
 <div class="text">
 <h1 class="heading-xlarge">Employees note</h1>
 
-
-<!-- <div th:if="${#fields.hasErrors('*')}">
-<div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
-
-  <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-    There are problems with this page which need to be resolved before you can continue.
-  </h2>
-
-<ul class="error-summary-list">
-    <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
-        <a th:if="${e.fieldName == 'numberValid'}" th:href="'#' + employees-current" th:text="${e.message}" ></a>
-        <a th:if="${e.fieldName == 'numberValid'}" th:href="'#' + employees-previous" th:text="${e.message}" ></a>
-    </li>
-</ul>
-
-</div>
-</div> -->
-
   <div class="grid-row" id="accounts-header">
     <div class="column-half">
       &nbsp;
@@ -66,7 +48,6 @@
         </label>
       </div>
     </div>
-<!--     <span><font id="number-error" color="red" th:if="${#fields.hasErrors('numberValid')}" th:errors="*{numberValid}">Number Error</font></span> -->
 
   </div>
   <!-- End average number of employees -->
@@ -76,7 +57,6 @@
       <summary><span class="summary">Add additional information? (optional) </span></summary>
       <div class="panel panel-border-narrow">
         <label class="visuallyhidden" for="textarea">Additional information (optional)</label>
-      <!--   <p class="form-hint">Scaevola mnesarchum assueverit vis in. Unum novum sententiae cu duo, ex dico modus inimicus mel, justo appetere vel ex</p> -->
         <textarea type="text" id="textarea" class="form-control" onkeypress='return validateTextBox(event)' rows="10" th:field="*{additionalInfo}"></textarea>
       </div>
     </details>

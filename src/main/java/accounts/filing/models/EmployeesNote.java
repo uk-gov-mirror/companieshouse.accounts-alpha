@@ -43,10 +43,5 @@ public class EmployeesNote {
 		this.additionalInfo = additionalInfo;
 	}
 
-	
-	public void cleanupPreparationStatement() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
