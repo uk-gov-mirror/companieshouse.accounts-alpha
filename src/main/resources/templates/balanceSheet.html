@@ -62,23 +62,22 @@
     </div>
 
     <div class="column-quarter">
-      <div class="form-group">
-        <label for="intangible-assets-current"><span class="mobile-only-label">Intangible assets (2016)</span>
-           <input type="number" placeholder="0"  onkeypress='return validate(event)' class="form-control" id="intangible-assets-current" th:field="*{currentIntangibleAssets}"  />
-           <span th:if="${#fields.hasErrors('currentIntangibleAssets')}" th:errors="*{currentIntangibleAssets}">Age Error</span>
-        </label>
-      </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'intangible-assets-current', 
+             						label = 'Intangible assets (2016)', 
+             						fieldName ='currentIntangibleAssets', 
+             						fieldValue = *{currentIntangibleAssets}
+             						)"></div>
     </div>
     <div class="column-quarter">
-      <div class="form-group">
-        <label for="intangible-assets-previous"><span class="mobile-only-label">Intangible assets (2015)</span>
-           <input type="number" placeholder="0" onkeypress='return validate(event)'  class="form-control" id="intangible-assets-previous" th:field="*{previousIntangibleAssets}" />
-        </label>
-      </div>
-    </div>
-
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'intangible-assets-previous', 
+             						label = 'Intangible assets (2015)', 
+             						fieldName ='previousIntangibleAssets', 
+             						fieldValue = *{previousIntangibleAssets}
+             						)"></div>
   </div>
-
+</div>
   <div class="grid-row">
     <div class="column-half">
 		<details role="group">
@@ -89,18 +88,21 @@
        </details>
     </div>
     <div class="column-quarter">
-      <div class="form-group">
-        <label for="tangible-assets-current"><span class="mobile-only-label">Tangible assets (2016)</span>
-           <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="tangible-assets-current" th:field="*{currentTangibleAssets}" />
-        </label>
-      </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'tangible-assets-current', 
+             						label = 'Tangible assets (2016)', 
+             						fieldName ='currentTangibleAssets', 
+             						fieldValue = *{currentTangibleAssets}
+             						)"></div>
+      
     </div>
     <div class="column-quarter">
-      <div class="form-group">
-        <label class="form-label" for="tangible-assets-previous"><span class="mobile-only-label">Tangible assets (2015)</span>
-           <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="tangible-assets-previous" th:field="*{previousTangibleAssets}" />
-        </label>
-      </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'tangible-assets-previous', 
+             						label = 'Tangible assets (2015)', 
+             						fieldName ='previousTangibleAssets', 
+             						fieldValue = *{previousTangibleAssets}
+             						)"></div>
     </div>
   </div>
   <!--End tangible assets-->
@@ -116,18 +118,20 @@
        </details>
     </div>
     <div class="column-quarter">
-      <div class="form-group">
-        <label for="investments-fixed-assets-current"><span class="mobile-only-label">Investments (fixed assets) (2016)</span>
-           <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="investments-fixed-assets-current" th:field="*{currentFixedInvestments}" />
-        </label>
-      </div>
+      <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'investments-fixed-assets-current', 
+             						label = 'Investments (fixed assets) (2016)', 
+             						fieldName ='currentFixedInvestments', 
+             						fieldValue = *{currentFixedInvestments}
+             						)"></div>
     </div>
     <div class="column-quarter">
-      <div class="form-group">
-        <label class="form-label" for="investments-fixed-assets-previous"><span class="mobile-only-label">Investments (fixed assets) (2015)</span>
-           <input type="number" placeholder="0" onkeypress='return validate(event)' class="form-control" id="investments-fixed-assets-previous" th:field="*{previousFixedInvestments}" />
-        </label>
-      </div>
+      <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'investments-fixed-assets-previous', 
+             						label = 'Investments (fixed assets) (2015)', 
+             						fieldName ='previousFixedInvestments', 
+             						fieldValue = *{previousFixedInvestments}
+             						)"></div>
     </div>
   </div>
   <!--End investments (fixed assets)-->
@@ -143,18 +147,20 @@
      </details>
     </div>
     <div class="column-quarter">
-      <div class="form-group">
-        <label class="form-label-bold" for="total-fixed-assets-current"><span class="mobile-only-label">Total fixed assets (2016)</span>
-           <input type="number" placeholder="0" class="form-control" id="total-fixed-assets-current" readonly="readonly" th:field="*{currentTotalFixedAssets}" />
-        </label>
-      </div>
+      <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'total-fixed-assets-current', 
+             						label = 'Total fixed assets (2016)', 
+             						fieldName ='currentTotalFixedAssets', 
+             						fieldValue = *{currentTotalFixedAssets}
+             						)"></div>
     </div>
     <div class="column-quarter">
-      <div class="form-group">
-        <label class="form-label-bold" for="total-fixed-assets-previous"><span class="mobile-only-label">Total fixed assets (2015)</span>
-           <input type="number" placeholder="0" class="form-control" id="total-fixed-assets-previous" readonly="readonly" th:field="*{previousTotalFixedAssets}" />
-        </label>
-      </div>
+      <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'total-fixed-assets-previous', 
+             						label = 'Total fixed assets (2015)', 
+             						fieldName ='previousTotalFixedAssets', 
+             						fieldValue = *{previousTotalFixedAssets}
+             						)"></div>
     </div>
 
   </div>
@@ -174,18 +180,20 @@
          </details>
      </div>
      <div class="column-quarter">
-       <div class="form-group">
-         <label for="stocks-current"><span class="mobile-only-label">Stocks (2016)</span>
-           <input type="number" placeholder="0" class="form-control" id="stocks-current" onkeypress='return validate(event)' th:field="*{currentStocks}" />
-         </label>
-       </div>
+        <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'stocks-current', 
+             						label = 'Stocks (2016)', 
+             						fieldName ='currentStocks', 
+             						fieldValue = *{currentStocks}
+             						)"></div>
      </div>
      <div class="column-quarter">
-       <div class="form-group">
-         <label for="stocks-current"><span class="mobile-only-label">Stocks (2015)</span>
-           <input type="number" placeholder="0" class="form-control" id="stocks-previous" onkeypress='return validate(event)' th:field="*{previousStocks}" />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'stocks-previous', 
+             						label = 'Stocks (2015)', 
+             						fieldName ='previousStocks', 
+             						fieldValue = *{previousStocks}
+             						)"></div>
      </div>
 
    </div>
@@ -202,18 +210,20 @@
      </div>
 
      <div class="column-quarter">
-       <div class="form-group">
-         <label for="debtors-current"><span class="mobile-only-label">Debtors (2016)</span>
-           <input type="number" placeholder="0" class="form-control" id="debtors-current" onkeypress='return validate(event)' th:field="*{currentDebtors}"  />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'debtors-current', 
+             						label = 'Debtors (2016)', 
+             						fieldName ='currentDebtors', 
+             						fieldValue = *{currentDebtors}
+             						)"></div>
      </div>
      <div class="column-quarter">
-       <div class="form-group">
-         <label class="form-label" for="debtors-previous"><span class="mobile-only-label">Debtors (2015)</span>
-           <input type="number" placeholder="0" class="form-control" id="debtors-previous" onkeypress='return validate(event)' th:field="*{previousDebtors}" />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'debtors-previous', 
+             						label = 'Debtors (2015)', 
+             						fieldName ='previousDebtors', 
+             						fieldValue = *{previousDebtors}
+             						)"></div>
      </div>
    </div>
    
@@ -229,18 +239,20 @@
      </div>
 
      <div class="column-quarter">
-       <div class="form-group">
-         <label for="cash-at-bank-and-in-hand-current"><span class="mobile-only-label">Cash at bank and in hand (2016)</span>
-           <input type="number" placeholder="0" class="form-control" id="cash-at-bank-and-in-hand-current" onkeypress='return validate(event)' th:field="*{currentCash}" />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'cash-at-bank-and-in-hand-current', 
+             						label = 'Cash at bank and in hand (2016)', 
+             						fieldName ='currentCash', 
+             						fieldValue = *{currentCash}
+             						)"></div>
      </div>
      <div class="column-quarter">
-       <div class="form-group">
-         <label class="form-label" for="cash-at-bank-and-in-hand-previous"><span class="mobile-only-label">Cash at bank and in hand (2015)</span>
-           <input type="number" placeholder="0" class="form-control" id="cash-at-bank-and-in-hand-previous" onkeypress='return validate(event)' th:field="*{previousCash}" />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'cash-at-bank-and-in-hand-previous', 
+             						label = 'Cash at bank and in hand (2015)', 
+             						fieldName ='previousCash', 
+             						fieldValue = *{previousCash}
+             						)"></div>
      </div>
    </div>
    
@@ -256,18 +268,20 @@
      </div>
 
      <div class="column-quarter">
-       <div class="form-group">
-         <label for="investments-current-assets-current"><span class="mobile-only-label">Investments (current assets) (2016)</span>
-           <input type="number" placeholder="0" class="form-control" id="investments-current-assets-current" onkeypress='return validate(event)' th:field="*{currentInvestments}" />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'investments-current-assets-current', 
+             						label = 'Investments (current assets) (2016)', 
+             						fieldName ='currentInvestments', 
+             						fieldValue = *{currentInvestments}
+             						)"></div>
      </div>
      <div class="column-quarter">
-       <div class="form-group">
-         <label class="form-label" for="investments-current-assets-previous"><span class="mobile-only-label">Investments (current assets) (2015)</span>
-           <input type="number" placeholder="0" class="form-control" id="investments-current-assets-previous" onkeypress='return validate(event)'  th:field="*{previousInvestments}" />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'investments-current-assets-previous', 
+             						label = 'Investments (current assets) (2015)', 
+             						fieldName ='previousInvestments', 
+             						fieldValue = *{previousInvestments}
+             						)"></div>
      </div>
    </div>
    
@@ -283,18 +297,20 @@
            </div>
 
      <div class="column-quarter">
-       <div class="form-group">
-         <label class="form-label-bold" for="total-fixed-current-current"><span class="mobile-only-label">Total current assets (2016)</span>
-           <input type="number" placeholder="0" class="form-control" id="total-current-assets-current" readonly="readonly" th:field="*{currentTotalAssets}" />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'total-current-assets-current', 
+             						label = 'Total current assets (2016)', 
+             						fieldName ='currentTotalAssets', 
+             						fieldValue = *{currentTotalAssets}
+             						)"></div>
      </div>
      <div class="column-quarter">
-       <div class="form-group">
-         <label class="form-label-bold" for="total-current-assets-previous"><span class="mobile-only-label">Total current assets (2015)</span>
-           <input type="number" placeholder="0" class="form-control" id="total-current-assets-previous" readonly="readonly" th:field="*{previousTotalAssets}" />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'total-current-assets-previous', 
+             						label = 'Total current assets (2015)', 
+             						fieldName ='previousTotalAssets', 
+             						fieldValue = *{previousTotalAssets}
+             						)"></div>
      </div>
    </div>
    
@@ -315,18 +331,20 @@
      </div>
 
      <div class="column-quarter">
-       <div class="form-group">
-         <label for="creditors-amounts-falling-due-within-one-year-current"><span class="mobile-only-label">Creditors - amounts falling due within one year (2016)</span>
-           <input type="number" placeholder="0" class="form-control" id="creditors-amounts-falling-due-within-one-year-current" onkeypress='return validate(event)' th:field="*{currentCreditorsOneYear}" />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'creditors-amounts-falling-due-within-one-year-current', 
+             						label = 'Creditors - amounts falling due within one year (2016)', 
+             						fieldName ='currentCreditorsOneYear', 
+             						fieldValue = *{currentCreditorsOneYear}
+             						)"></div>
      </div>
      <div class="column-quarter">
-       <div class="form-group">
-         <label class="form-label" for="creditors-amounts-falling-due-within-one-year-previous"><span class="mobile-only-label">Creditors - amounts falling due within one year (2015)</span>
-           <input type="number" placeholder="0" class="form-control" value='' id="creditors-amounts-falling-due-within-one-year-previous" onkeypress='return validate(event)' th:field="*{previousCreditorsOneYear}" />
-         </label>
-       </div>
+         <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'creditors-amounts-falling-due-within-one-year-previous', 
+             						label = 'Creditors - amounts falling due within one year (2015)', 
+             						fieldName ='previousCreditorsOneYear', 
+             						fieldValue = *{previousCreditorsOneYear}
+             						)"></div>
      </div>
    </div>
    
@@ -343,18 +361,20 @@
      </div>
 
      <div class="column-quarter">
-       <div class="form-group">
-         <label class="form-label-bold" for="net-current-assets-liabilities-current"><span class="mobile-only-label">Net current assets (liabilities) (2016)</span>
-           <input type="number" placeholder="0" class="form-control" id="net-current-assets-liabilities-current" readonly="readonly" th:field="*{currentNetAssets}" />
-         </label>
-       </div>
+        <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'net-current-assets-liabilities-current', 
+             						label = 'Net current assets (liabilities) (2016)', 
+             						fieldName ='currentNetAssets', 
+             						fieldValue = *{currentNetAssets}
+             						)"></div>
      </div>
      <div class="column-quarter">
-       <div class="form-group">
-         <label class="form-label-bold" for="net-current-assets-liabilities-previous"><span class="mobile-only-label">Net current assets (liabilities) (2015)</span>
-           <input type="number" placeholder="0" class="form-control" id="net-current-assets-liabilities-previous" readonly="readonly" th:field="*{previousNetAssets}" />
-         </label>
-       </div>
+        <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'net-current-assets-liabilities-previous', 
+             						label = 'Net current assets (liabilities) (2015)', 
+             						fieldName ='previousNetAssets', 
+             						fieldValue = *{previousNetAssets}
+             						)"></div>
      </div>
    </div>
    
@@ -371,18 +391,20 @@
      </div>
 
      <div class="column-quarter">
-       <div class="form-group">
-         <label class="form-label-bold" for="total-assets-less-current-liabilities-current"><span class="mobile-only-label">Total assets less current liabilities (2016)</span>
-           <input type="number" placeholder="0" class="form-control" id="total-assets-less-current-liabilities-current" readonly="readonly" th:field="*{currentTotalAssetsMinusCurrentLiabilities}" />
-         </label>
-       </div>
+        <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'total-assets-less-current-liabilities-current', 
+             						label = 'Total assets less current liabilities (2016)', 
+             						fieldName ='currentTotalAssetsMinusCurrentLiabilities', 
+             						fieldValue = *{currentTotalAssetsMinusCurrentLiabilities}
+             						)"></div>
      </div>
      <div class="column-quarter">
-       <div class="form-group">
-         <label class="form-label-bold" for="total-assets-less-current-liabilities-previous"><span class="mobile-only-label">Total assets less current liabilities (2015)</span>
-           <input type="number" placeholder="0" class="form-control" id="total-assets-less-current-liabilities-previous" readonly="readonly" th:field="*{previousTotalAssetsMinusCurrentLiabilities}" />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'total-assets-less-current-liabilities-previous', 
+             						label = 'Total assets less current liabilities (2015)', 
+             						fieldName ='previousTotalAssetsMinusCurrentLiabilities', 
+             						fieldValue = *{previousTotalAssetsMinusCurrentLiabilities}
+             						)"></div>
      </div>
    </div>
    
@@ -400,18 +422,20 @@
      </div>
 
      <div class="column-quarter">
-       <div class="form-group">
-         <label for="creditors-amounts-falling-due-after-more-than-one-year-current"><span class="mobile-only-label">Creditors - amounts falling due within one year (2016)</span>
-           <input type="number" placeholder="0" class="form-control" id="creditors-amounts-falling-due-after-more-than-one-year-current" onkeypress='return validate(event)' th:field="*{currentCreditorsMoreYears}" />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'creditors-amounts-falling-due-after-more-than-one-year-current', 
+             						label = 'Creditors - amounts falling due within one year (2016)', 
+             						fieldName ='currentCreditorsMoreYears', 
+             						fieldValue = *{currentCreditorsMoreYears}
+             						)"></div>
      </div>
      <div class="column-quarter">
-       <div class="form-group">
-         <label class="form-label" for="creditors-amounts-falling-due-after-more-than-one-year-previous"><span class="mobile-only-label">Creditors - amounts falling due within one year (2015)</span>
-           <input type="number" placeholder="0" class="form-control" id="creditors-amounts-falling-due-after-more-than-one-year-previous" onkeypress='return validate(event)' th:field="*{previousCreditorsMoreYears}" />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'creditors-amounts-falling-due-after-more-than-one-year-previous', 
+             						label = 'Creditors - amounts falling due within one year (2015)', 
+             						fieldName ='previousCreditorsMoreYears', 
+             						fieldValue = *{previousCreditorsMoreYears}
+             						)"></div>
      </div>
    </div>
    
@@ -428,18 +452,20 @@
      </div>
 
      <div class="column-quarter">
-       <div class="form-group">
-         <label for="provision-for-liabilities-current"><span class="mobile-only-label">Provision for liabilities (2016)</span>
-           <input type="number" placeholder="0" class="form-control" id="provision-for-liabilities-current" onkeypress='return validate(event)' th:field="*{currentProvisionLiabilities}" />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'provision-for-liabilities-current', 
+             						label = 'Provision for liabilities (2016)', 
+             						fieldName ='currentProvisionLiabilities', 
+             						fieldValue = *{currentProvisionLiabilities}
+             						)"></div>
      </div>
      <div class="column-quarter">
-       <div class="form-group">
-         <label class="form-label" for="provision-for-liabilities-previous"><span class="mobile-only-label">Provision for liabilities (2015)</span>
-           <input type="number" placeholder="0" class="form-control" id="provision-for-liabilities-previous" onkeypress='return validate(event)' th:field="*{previousProvisionLiabilities}" />
-         </label>
-       </div>
+       <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'provision-for-liabilities-previous', 
+             						label = 'Provision for liabilities (2016)', 
+             						fieldName ='previousProvisionLiabilities', 
+             						fieldValue = *{previousProvisionLiabilities}
+             						)"></div>
      </div>
    </div>
    
@@ -456,20 +482,21 @@
          </div>
 
          <div class="column-quarter">
-           <div class="form-group">
-             <label class="form-label-bold" for="total-net-assets-liabilities-current"><span class="mobile-only-label">Total net assets (liabilities) (2016)</span>
-               <input type="number" placeholder="0" class="form-control" id="total-net-assets-liabilities-current" readonly="readonly" th:field="*{currentTotalNetAssetsLiabilities}" />
-               <span><font color="red" th:if="${#fields.hasErrors('currentBalanced')}" th:errors="*{currentBalanced}">Balance sheet error</font></span>
-             </label>
-           </div>
+              <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'total-net-assets-liabilities-current', 
+             						label = 'Total net assets (liabilities) (2016)', 
+             						fieldName ='currentTotalNetAssetsLiabilities', 
+             						fieldValue = *{currentTotalNetAssetsLiabilities}
+             						)"></div>
+      
          </div>
          <div class="column-quarter">
-           <div class="form-group">
-             <label class="form-label-bold" for="total-net-assets-liabilities-previous"><span class="mobile-only-label">Total net assets (liabilities) (2015)</span>
-               <input type="number" placeholder="0" class="form-control" id="total-net-assets-liabilities-previous" readonly="readonly" th:field="*{previousTotalNetAssetsLiabilities}" />
-               <span><font color="red" th:if="${#fields.hasErrors('previousBalanced')}" th:errors="*{previousBalanced}">Balance sheet error</font></span>
-             </label>
-           </div>
+           <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'total-net-assets-liabilities-previous', 
+             						label = 'Total net assets (liabilities) (2015)', 
+             						fieldName ='previousTotalNetAssetsLiabilities', 
+             						fieldValue = *{previousTotalNetAssetsLiabilities}
+             						)"></div>
          </div>
        </div>
 
@@ -491,15 +518,20 @@
            </div>
 
            <div class="column-quarter">
-             <div th:replace="fragments/_numericInput :: numericInput ('called-up-share-capital-current', 'currentShareCapital', *{currentShareCapital})"></div>
+             <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'called-up-share-capital-current', 
+             						label = 'Called up share capital (2016)', 
+             						fieldName ='currentShareCapital', 
+             						fieldValue = *{currentShareCapital}
+             						)"></div>
            </div>
            <div class="column-quarter">
-             <div class="form-group">
-               <label for="called-up-share-capital-current"><span class="mobile-only-label">Called up share capital (2015)</span>
-                 <input type="number" placeholder="0" class="form-control" id="called-up-share-capital-previous" onkeypress='return validate(event)' th:field="*{previousShareCapital}" />
-                 <span><font color="red" th:if="${#fields.hasErrors('previousShareCapital')}" th:errors="*{previousShareCapital}">Balance sheet error</font></span>
-               </label>
-             </div>
+              <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'called-up-share-capital-previous', 
+             						label = 'Called up share capital (2015)', 
+             						fieldName ='previousShareCapital', 
+             						fieldValue = *{previousShareCapital}
+             						)"></div>
            </div>
          </div>
      
@@ -515,18 +547,20 @@
            </div>
 
            <div class="column-quarter">
-             <div class="form-group">
-               <label for="share-premium-account-current"><span class="mobile-only-label">Share premium account (2016)</span>
-                 <input type="number" placeholder="0" class="form-control" id="share-premium-account-current" onkeypress='return validate(event)' th:field="*{currentSharePremiumAccount}" />
-               </label>
-             </div>
+              <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'share-premium-account-current', 
+             						label = 'Share premium account (2016)', 
+             						fieldName ='currentSharePremiumAccount', 
+             						fieldValue = *{currentSharePremiumAccount}
+             						)"></div>
            </div>
            <div class="column-quarter">
-             <div class="form-group">
-               <label class="form-label" for="share-premium-account-previous"><span class="mobile-only-label">Share premium account (2015)</span>
-                 <input type="number" placeholder="0" class="form-control" id="share-premium-account-previous" onkeypress='return validate(event)' th:field="*{previousSharePremiumAccount}" />
-               </label>
-             </div>
+             <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'share-premium-account-previous', 
+             						label = 'Share premium account (2015)', 
+             						fieldName ='previousSharePremiumAccount', 
+             						fieldValue = *{previousSharePremiumAccount}
+             						)"></div>
            </div>
          </div>
      
@@ -542,18 +576,20 @@
            </div>
 
            <div class="column-quarter">
-             <div class="form-group">
-               <label for="revaluation-reserve-current"><span class="mobile-only-label">Revaluation reserve (2016)</span>
-                 <input type="number" placeholder="0" class="form-control can-be-negative" id="revaluation-reserve-current" onkeypress='return validate(event)' th:field="*{currentRevaluationReserve}" />
-               </label>
-             </div>
+              <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'revaluation-reserve-current', 
+             						label = 'Revaluation reserve (2016)', 
+             						fieldName ='currentRevaluationReserve', 
+             						fieldValue = *{currentRevaluationReserve}
+             						)"></div>
            </div>
            <div class="column-quarter">
-             <div class="form-group">
-               <label class="form-label" for="revaluation-reserve-previous"><span class="mobile-only-label">Revaluation reserve (2015)</span>
-                 <input type="number" placeholder="0" class="form-control can-be-negative" id="revaluation-reserve-previous" onkeypress='return validate(event)' th:field="*{previousRevaluationReserve}" />
-               </label>
-             </div>
+             <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'revaluation-reserve-previous', 
+             						label = 'Revaluation reserve (2015)', 
+             						fieldName ='previousRevaluationReserve', 
+             						fieldValue = *{previousRevaluationReserve}
+             						)"></div>
            </div>
          </div>
      
@@ -569,18 +605,20 @@
            </div>
 
            <div class="column-quarter">
-             <div class="form-group">
-               <label for="other-reserves-current"><span class="mobile-only-label">Other reserves (2016)</span>
-                 <input type="number" placeholder="0" class="form-control can-be-negative" id="other-reserves-current" onkeypress='return validate(event)' th:field="*{currentOtherReserves}" />
-               </label>
-             </div>
+             <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'other-reserves-current', 
+             						label = 'Other reserves (2016)', 
+             						fieldName ='currentOtherReserves', 
+             						fieldValue = *{currentOtherReserves}
+             						)"></div>
            </div>
            <div class="column-quarter">
-             <div class="form-group">
-               <label class="form-label" for="other-reserves-previous"><span class="mobile-only-label">Other reserves (2015)</span>
-                 <input type="number" placeholder="0" class="form-control can-be-negative" id="other-reserves-previous" onkeypress='return validate(event)' th:field="*{previousOtherReserves}" />
-               </label>
-             </div>
+              <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'other-reserves-previous', 
+             						label = 'Other reserves (2015)', 
+             						fieldName ='previousOtherReserves', 
+             						fieldValue = *{previousOtherReserves}
+             						)"></div>
            </div>
          </div>
      
@@ -596,18 +634,20 @@
            </div>
 
            <div class="column-quarter">
-             <div class="form-group">
-               <label for="profit-and-loss-account-current"><span class="mobile-only-label">Profit and loss account (2016)</span>
-                 <input type="number" placeholder="0" class="form-control can-be-negative" id="profit-and-loss-account-current" onkeypress='return validate(event)' th:field="*{currentProfitAndLoss}" />
-               </label>
-             </div>
+             <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'profit-and-loss-account-current', 
+             						label = 'Profit and loss account (2016)', 
+             						fieldName ='currentProfitAndLoss', 
+             						fieldValue = *{currentProfitAndLoss}
+             						)"></div>
            </div>
            <div class="column-quarter">
-             <div class="form-group">
-               <label class="form-label" for="profit-and-loss-account-previous"><span class="mobile-only-label">Profit and loss account (2015)</span>
-                 <input type="number" placeholder="0" class="form-control can-be-negative" id="profit-and-loss-account-previous" onkeypress='return validate(event)' th:field="*{previousProfitAndLoss}" />
-               </label>
-             </div>
+              <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'profit-and-loss-account-previous', 
+             						label = 'Profit and loss account (2015)', 
+             						fieldName ='previousProfitAndLoss', 
+             						fieldValue = *{previousProfitAndLoss}
+             						)"></div>
            </div>
          </div>
      
@@ -623,20 +663,20 @@
            </div>
 
            <div class="column-quarter">
-             <div class="form-group">
-               <label class="form-label-bold" for="total-shareholders-funds-current"><span class="mobile-only-label"> Total shareholders' funds (2016)</span>
-                 <input type="number" placeholder="0" class="form-control" id="total-shareholders-funds-current" readonly="readonly" th:field="*{currentTotalShareholdersFunds}" />
-                 <span><font color="red" th:if="${#fields.hasErrors('currentBalanced')}" th:errors="*{currentBalanced}">Balance sheet error</font></span>
-               </label>
-             </div>
+             <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'total-shareholders-funds-current', 
+             						label = 'Total shareholders funds (2016)', 
+             						fieldName ='currentTotalShareholdersFunds', 
+             						fieldValue = *{currentTotalShareholdersFunds}
+             						)"></div>
            </div>
            <div class="column-quarter">
-             <div class="form-group">
-               <label class="form-label-bold" for="total-shareholders-funds-previous"><span class="mobile-only-label"> Total shareholders' funds (2015)</span>
-                 <input type="number" placeholder="0" class="form-control" id="total-shareholders-funds-previous" readonly="readonly" th:field="*{previousTotalShareholdersFunds}" />
-                 <span><font color="red" th:if="${#fields.hasErrors('previousBalanced')}" th:errors="*{previousBalanced}">Balance sheet error</font></span>
-               </label>
-             </div>
+             <div th:replace="fragments/_numericInput :: numericInput (
+             						id = 'total-shareholders-funds-previous', 
+             						label = 'Total shareholders funds (2015)', 
+             						fieldName ='previousTotalShareholdersFunds', 
+             						fieldValue = *{previousTotalShareholdersFunds}
+             						)"></div>
            </div>
          </div>
          
