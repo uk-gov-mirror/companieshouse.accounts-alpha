@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 
 @Controller
-@SessionAttributes({"balanceSheet", "accountingPolicies", "tangibleAssetsNote"})
+@SessionAttributes({"balanceSheet", "accountingPolicies", "tangibleAssetsNote", "employeesNote"})
 public class ReviewPageController {
     
 	@RequestMapping(value="/review", method = RequestMethod.GET)

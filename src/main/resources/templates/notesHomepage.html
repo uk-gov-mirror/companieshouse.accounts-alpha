@@ -79,7 +79,11 @@
       <tr id="employees-note">
         <td>Employees</td>
         <td></td>
-        <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Employees</span></a></td>
+        <td class="change-answer"><a th:href="@{/employees-note}">
+       <span th:if="${employeesNote} == null">Add note</span>
+       <span th:if="${employeesNote != null and (employeesNote.employeesCurrent == null and employeesNote.additionalInfo == null) }">Add note</span>
+       <span th:if="${employeesNote != null and (employeesNote.employeesCurrent != null || employeesNote.additionalInfo != null) }">Change note</span>  
+        <span class="visuallyhidden">Employees</span></a></td>
       </tr>
       <tr id="fixed-assets-investments-note">
         <td>Fixed assets investments</td>
