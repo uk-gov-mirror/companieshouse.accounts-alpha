@@ -13,18 +13,17 @@
 			th:object="${tangibleAssetsNote}" method="post" class="form"
 			action="">
 			<div class="text">
-				<h1 class="heading-xlarge">Tangible assets note</h1>
-
 
 				<div th:if="${#fields.hasErrors('*')}">
 					<div class="error-summary" role="group"
 						aria-labelledby="error-summary-heading-example-1" tabindex="-1">
-
-						<h2 class="heading-medium error-summary-heading"
-							id="error-summary-heading-example-1">There is a problem with
-							this page that needs to be resolved before you can continue.</h2>
-
-
+						  <h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+						    There's been a problem
+						  </h2>
+						
+						  <p>
+						    Check the following:
+						  </p>
 						<ul class="error-summary-list">
 							<li th:each="e : ${#fields.detailedErrors()}"
 								th:class="${e.global}? globalerr : fielderr">
@@ -36,9 +35,8 @@
 					</div>
 				</div>
 			</div>
-
-
-
+			
+			<h1 class="heading-xlarge">Tangible assets note</h1>
 
       <div class="grid-row form-hint" id="accounts-header">
         <div class="column-half">

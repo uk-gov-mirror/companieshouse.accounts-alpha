@@ -7,10 +7,10 @@
 </head>
 <body>
 <div layout:fragment="content">
-  <h1 class="heading-xlarge">Balance sheet notes</h1>
 
+  <h1 class="heading-xlarge"><span class="circle circle-step-large">4</span>Balance sheet notes</h1>
   <div class="text">
-    <p>You need to add notes about some of the figures you entered in your balance sheet.</p>
+    <p>You need to provide additional information about some of the figures you entered in your balance sheet.</p>
   </div>
 
   <table class="check-your-answers">
@@ -18,7 +18,7 @@
   <thead class="">
     <tr>
       <th class="heading-large">Mandatory notes
-        <span class="form-hint text">Based on your balance sheet entries, you must supply these notes. You can add other notes later if you need to.</span>
+        <span class="form-hint text">Based on your balance sheet entries, you <strong>must supply</strong> these notes.</span>
       </th>
       <th></th>
       <th class="change-answer"></th>
@@ -27,41 +27,67 @@
   <tbody>
 
     <tr id="accounting-policies-note">
-      <td>Accounting policies</td>
-      <td></td>
+      <td>
+      <details role="group">
+         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Accounting policies</span></summary>
+         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+           <p>Describes the methods and measurements you've used to prepare your company accounts</p>
+         </div>
+       </details>
+       <td></td>
+       </td>
       <td class="change-answer"><a th:href="@{/accounting-policies}">
        <span th:if="${ accountingPolicies == null }">Add note</span>
        <span th:if="${ accountingPolicies != null and #strings.isEmpty(accountingPolicies.preparationStatement) == true  }">Add note</span>
        <span th:if="${ accountingPolicies != null and #strings.isEmpty(accountingPolicies.preparationStatement) != true }">Change note</span> 
        
       <span class="visuallyhidden">Accounting policies</span></a></td>
-
-       
     </tr>
+
       <tr id="intangible-assets-note" th:if="${balanceSheet.currentIntangibleAssets} !=null and ${balanceSheet.currentIntangibleAssets} !=0" >
-        <td>Intangible assets</td>
-        <td></td>
-        <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Intangible assets</span></a></td>
-      </tr>
-      
+      <td>
+      <details role="group">
+         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Intangible assets</span></summary>
+         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+           <p>Provides a more detailed breakdown of the intangible asset figure you entered on your balance sheet</p>
+         </div>
+       </details>
+       <td></td>
+       </td>
+      <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Intangible assets</span></a></td>
+    </tr>
+
       <tr id="tangible-assets-note" th:if="${balanceSheet.currentTangibleAssets} !=null and ${balanceSheet.currentTangibleAssets} !=0" >
-        <td>Tangible assets</td>
-        <td></td>
+      <td>
+      <details role="group">
+         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Tangible assets</span></summary>
+         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+           <p>Provides a more detailed breakdown of the tangible asset figure you entered on your balance sheet</p>
+         </div>
+       </details>
+       <td></td>
+       </td>
       <td class="change-answer"><a th:href="@{/tangible-assets}">
        <span th:if="${tangibleAssetsNote} == null">Add note</span>
        <span th:if="${tangibleAssetsNote != null and tangibleAssetsNote.netBookValueEnd == null }">Add note</span>
        <span th:if="${tangibleAssetsNote != null and tangibleAssetsNote.netBookValueEnd != null}">Change note</span>  
        <span class="visuallyhidden">Tangible Assets</span></a></td>
-      </tr>
-      
-      <tr id="revaluation-reserve-note" th:if="${balanceSheet.currentRevaluationReserve}!=null and ${balanceSheet.currentRevaluationReserve}!=0">
-        <td>Revaluation reserve</td>
-        <td></td>
-        <td class="change-answer"><a href="#">Add note <span class="visuallyhidden">Revaluation reserve</span></a></td>
-      </tr>
-    </tbody>
+    </tr>
+
+  <tr id="revaluation-reserve-note" th:if="${balanceSheet.currentRevaluationReserve}!=null and ${balanceSheet.currentRevaluationReserve}!=0">
+			<td>
+		      <details role="group">
+		         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Post balance sheet events</span></summary>
+		         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+		           <p>Provides a more detailed breakdown of the revaluation reserve figure you entered on your balance sheet</p>
+		         </div>
+		       </details>
+		       <td></td>
+		       </td>
+		       <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Revaluation reserve</span></a></td>
+		      </tr>
+  </tbody>
   </table>
-  
 
 
   <table class="check-your-answers">
@@ -69,77 +95,166 @@
   <thead class="">
     <tr>
       <th class="heading-large">Optional notes
-        <span class="form-hint text">You can add these notes if you want to.</span>
+        <span class="form-hint text">You should include these notes if you have them in your prepared and approved accounts.</span>
       </th>
       <th></th>
       <th class="change-answer"></th>
     </tr>
   </thead>
   <tbody>
+
       <tr id="employees-note">
-        <td>Employees</td>
-        <td></td>
-        <td class="change-answer"><a th:href="@{/employees-note}">
+      <td>
+      <details role="group">
+         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Employees</span></summary>
+         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+           <p>Provides a more detailed breakdown of the employees figure you entered on your balance sheet</p>
+         </div>
+       </details>
+       <td></td>
+       </td>
+      <td class="change-answer"><a th:href="@{/employees-note}">
        <span th:if="${employeesNote} == null">Add note</span>
        <span th:if="${employeesNote != null and (employeesNote.employeesCurrent == null and employeesNote.additionalInfo == null) }">Add note</span>
        <span th:if="${employeesNote != null and (employeesNote.employeesCurrent != null || employeesNote.additionalInfo != null) }">Change note</span>  
-        <span class="visuallyhidden">Employees</span></a></td>
+       <span class="visuallyhidden">Employees</span></a></td>
       </tr>
-      <tr id="fixed-assets-investments-note">
-        <td>Fixed assets investments</td>
-        <td><!--£15--></td>
-        <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Fixed assets investments</span></a></td>
+
+	<tr id="fixed-assets-investments-note">
+      <td>
+      <details role="group">
+         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Fixed assets investments</span></summary>
+         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+           <p>Provides a more detailed breakdown of the fixed asset investments figure you entered on your balance sheet</p>
+         </div>
+       </details>
+       <td></td>
+       </td>
+       <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Fixed assets investments</span></a></td>
       </tr>
+      
       <tr id="current-assets-investments-note">
-        <td>Current assets investments</td>
-        <td><!--£15--></td>
-        <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Current assets investments</span></a></td>
+      <td>
+      <details role="group">
+         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Current assets investments</span></summary>
+         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+           <p>Provides a more detailed breakdown of the current assets investment figure you entered on your balance sheet</p>
+         </div>
+       </details>
+       <td></td>
+       </td>
+       <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Current assets investments</span></a></td>
       </tr>
+
       <tr id="debtors-note" th:if="${balanceSheet.currentDebtors} != null and ${balanceSheet.currentDebtors} != 0">
-        <td>Debtors</td>
-        <td><!--£15--></td>
-        <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Debtors</span></a></td>
+      <td>
+      <details role="group">
+         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Debtors</span></summary>
+         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+           <p>Provides information about people who owe money for goods or services your company provided as part of its normal trading activities</p>
+         </div>
+       </details>
+       <td></td>
+       </td>
+       <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Debtors</span></a></td>
       </tr>
+      
       <tr id="creditors-within-year-note" th:if="${balanceSheet.currentCreditorsOneYear} != null and ${balanceSheet.currentCreditorsOneYear} != 0">
-        <td>Creditors - amounts falling due within one year</td>
-        <td><!--£10--></td>
-        <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Creditors - amounts falling due within one year</span></a></td>
+      <td>
+      <details role="group">
+         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Creditors - amounts falling due within one year</span></summary>
+         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+           <p>Provides information about people or businesses that your company owes, but who you expect to pay within one year from the end of the period you're filing for</p>
+         </div>
+       </details>
+       <td></td>
+       </td>
+       <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Creditors - amounts falling due within one year</span></a></td>
       </tr>
-      <tr id="creditors-more-than-one-year-note" th:if="${balanceSheet.currentCreditorsMoreYears} != null and ${balanceSheet.currentCreditorsMoreYears} != 0">
-        <td>Creditors - amounts falling due after more than one year</td>
-        <td><!--£5--></td>
-        <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Creditors - amounts falling due after more than one year</span></a></td>
-      </tr>
-      <tr id="financial-commitments-note">
-        <td>Financial commitments</td>
-        <td></td>
-        <td class="change-answer"><a href="#">Add note <span class="visuallyhidden">Financial commitments</span></a></td>
-      </tr>
-      <tr id="loans-to-directors-note">
-        <td>Loans to directors</td>
-        <td></td>
-      <td class="change-answer"><a href="#">Add note <span class="visuallyhidden">Loans to directors</span></a></td>
-      </tr>
-      <tr id="presentation-prior-adjustments-note">
-        <td>Changes in presentation and prior period adjustments</td>
-        <td></td>
-        <td class="change-answer"><a href="#">Add note <span class="visuallyhidden">Changes in presentation and prior period adjustments</span></a></td>
-      </tr>
-      <tr id="related-party-transactions-note">
-        <td>Related party transactions</td>
-        <td></td>
-        <td class="change-answer"><a href="#">Add note <span class="visuallyhidden">Related party transactions</span></a></td>
-      </tr>
-      <tr id="post-balance-sheet-events-note">
-        <td>Post balance sheet events</td>
-        <td></td>
-        <td class="change-answer"><a href="#">Add note <span class="visuallyhidden">Post balance sheet events</span></a></td>
-      </tr>
+
+		<tr id="creditors-more-than-one-year-note" th:if="${balanceSheet.currentCreditorsMoreYears} != null and ${balanceSheet.currentCreditorsMoreYears} != 0">
+		<td>
+	      <details role="group">
+	         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Creditors - amounts falling due after more than one year</span></summary>
+	         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+	           <p>Provides information about people or businesses that your company owes, but who you expect to pay after more than one year from the end of the period you're filing for</p>
+	         </div>
+	       </details>
+	       <td></td>
+	       </td>
+	       <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Creditors - amounts falling due within one year</span></a></td>
+	      </tr>
+
+		<tr id="financial-commitments-note" >
+			<td>
+		      <details role="group">
+		         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Financial commitments</span></summary>
+		         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+		           <p>Provides information on the total amount (or estimated amount) your company has committed to spend on future assets</p>
+		         </div>
+		       </details>
+		       <td></td>
+		       </td>
+		       <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Financial commitments</span></a></td>
+		      </tr>
+
+		<tr id="loans-to-directors-note" >
+			<td>
+		      <details role="group">
+		         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Loans to directors</span></summary>
+		         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+		           <p>Provides information about transactions with your company's directors, such as advances and credits, or loans guaranteed by a director</p>
+		         </div>
+		       </details>
+		       <td></td>
+		       </td>
+		       <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Loans to directors</span></a></td>
+		      </tr>
+
+		<tr id="presentation-prior-adjustments-note" >
+			<td>
+		      <details role="group">
+		         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Changes in presentation and prior period adjustments</span></summary>
+		         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+		           <p>Provides information on changes you've made to your accounts to accommodate changes in accounting standards</p>
+		         </div>
+		       </details>
+		       <td></td>
+		       </td>
+		       <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Changes in presentation and prior period adjustments</span></a></td>
+		      </tr>
+
+		<tr id="related-party-transactions-note" >
+			<td>
+		      <details role="group">
+		         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Related party transactions</span></summary>
+		         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+		           <p>Provides information on transactions between related parties (for example directors and investors)</p>
+		         </div>
+		       </details>
+		       <td></td>
+		       </td>
+		       <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Related party transactions</span></a></td>
+		      </tr>
+
+		<tr id="post-balance-sheet-events-note" >
+			<td>
+		      <details role="group">
+		         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Post balance sheet events</span></summary>
+		         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+		           <p>Provides information on events which happened between the balance sheet date and the date your company accounts were authorised if they had an impact on your accounts</p>
+		         </div>
+		       </details>
+		       <td></td>
+		       </td>
+		       <td class="change-answer"><a href="#">Add note<span class="visuallyhidden">Post balance sheet events</span></a></td>
+		      </tr>
+
     </tbody>
   </table>
   
   <div class="form-group" th:if="${accountingPolicies} != null and ( ${tangibleAssetsNote} != null or ${balanceSheet.currentTangibleAssets} == null )">
-    <p><a th:href="@{/review}" class="button" id="continue-button" >Continue to Review</a></p>
+    <p><a th:href="@{/review}" class="button" id="continue-button" >Save and continue</a></p>
   </div>
   
   </div>

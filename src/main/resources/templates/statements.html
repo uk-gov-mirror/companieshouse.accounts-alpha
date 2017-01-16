@@ -8,18 +8,17 @@
 <body>
 <div layout:fragment="content">
 <div class="text">
-<h1 class="heading-xlarge">Balance sheet statements</h1>
 
 <form action="/statements" th:action="@{/statements}"  th:object="${statementsPage}" method="post" class="form" id="confirmation-form">
 
 <div th:if="${#fields.hasErrors('*')}">
 <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
-
- <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-   There is a problem with this page that needs to be resolved before you can continue.
- </h2>
-
-
+  <h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+    There's been a problem
+  </h2>
+  <p>
+    Check the following:
+  </p>
 <ul class="error-summary-list">
    <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
        <a th:if="${e.fieldName == 'confirmation'}" th:href="'#' + confirmation" th:text="${e.message}" ></a>
@@ -29,13 +28,14 @@
 </div>
 </div>
 
+<h1 class="heading-xlarge"><span class="circle circle-step-large">3</span>Balance sheet statements</h1>
+
 <div class="notice">
       <p>
         <i class="icon icon-important"><span class="visuallyhidden">Warning</span></i>
         <strong class="bold-small">You’re legally required to include statements describing your accounts with your balance sheet.</strong>
       </p>
       </div>
-
 
         <ul class="list list-bullet">
           <li>For the year ending 31 March 2016 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</li>
@@ -68,7 +68,7 @@
 
 	 <div class="form-group">
             <input type="submit" class="button" id="submit"
-                value="Continue to balance sheet notes" />
+                value="Save and continue" />
         </div>
         </form>
         

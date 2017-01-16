@@ -46,7 +46,7 @@ public class BalanceSheet {
 	private Integer previousTotalNetAssetsLiabilities;
 	
 	// Capital and reserves
-	@NotNull( message="Please enter current called up share capital")
+	@NotNull( message="Please enter current called up share capital.")
 	private Integer currentShareCapital;
 	private Integer currentSharePremiumAccount;
 	private Integer currentRevaluationReserve;
@@ -54,7 +54,7 @@ public class BalanceSheet {
 	private Integer currentProfitAndLoss;
 	private Integer currentTotalShareholdersFunds;
 				
-	@NotNull( message="Please enter previous called up share capital")
+	@NotNull( message="Please enter previous called up share capital.")
 	private Integer previousShareCapital;
 	private Integer previousSharePremiumAccount;
 	private Integer previousRevaluationReserve;

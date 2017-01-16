@@ -7,7 +7,7 @@ public class AccountsDates {
 	private String defaultDateConfirmation;
 	private String customDateConfirmation;
 	
-	@AssertTrue(message = "Please confirm the dates that you have prepared your accounts to.") 
+	@AssertTrue(message = "Please confirm the date that you have prepared for your accounts.") 
 	   public boolean isValidDateSelection(){
 	       if ( defaultDateConfirmation == null || ( defaultDateConfirmation.equals("Yes") && customDateConfirmation == null)) {
 	           return false;

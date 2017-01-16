@@ -7,12 +7,16 @@
       <div layout:fragment="content">
          <div class="text">
             <form action="/approval" th:action="@{/approval}"  th:object="${approval}" method="post" class="form" id="approval-page">
-               <h1 class="heading-xlarge">Approve your accounts</h1>
+               
                <div th:if="${#fields.hasErrors('*')}">
                   <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
-                     <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-                        There is a problem with this page that needs to be resolved before you can continue.
-                     </h2>
+					  <h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+					    There's been a problem
+					  </h2>
+					
+					  <p>
+					    Check the following:
+					  </p>
                      <ul class="error-summary-list">
                         <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
                            <a th:if="${e.fieldName == 'directorConfirmation'}" th:href="'#' + director-confirmation" th:text="${e.message}" ></a>
@@ -21,6 +25,9 @@
                      </ul>
                   </div>
                </div>
+               
+               <h1 class="heading-xlarge">Approve your accounts</h1>
+               
                <h2 class="heading-medium">Who approved the accounts?</h2>
                <!--<p class="form-hint">If the company has only one director, enter their name here.</p>-->
                <p class="form-hint">
@@ -76,7 +83,7 @@
                
                <div class="form-group">
                   <input type="submit" class="button" id="submit"
-                     value="Continue " />
+                     value="Save and continue " />
                </div>
             </form>
          </div>

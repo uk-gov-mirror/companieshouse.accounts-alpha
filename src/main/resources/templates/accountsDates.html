@@ -10,16 +10,18 @@
   <body>
  <div layout:fragment="content">
 <div class="text">
-<h1 class="heading-xlarge">Confirm your company account dates</h1>
 
 <form action="/accounts-dates" th:action="@{/accounts-dates}"  th:object="${accountsDates}" method="post" class="form" id="confirmation-form">
 
 <div th:if="${#fields.hasErrors('*')}">
 <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
- <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-   There is a problem with this page that needs to be resolved before you can continue.
+ <h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+   There's been a problem
  </h2>
+ <p>
+    Check the following:
+  </p>
  
  <ul class="error-summary-list">
    <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
@@ -29,10 +31,12 @@
 
   </div>
 </div>
+
+<h1 class="heading-xlarge"><span class="circle circle-step-large">1</span> Confirm your company account dates</h1>
         
-      <p>Our records show you need to file accounts for the period:</p>
+      <p>You need to file accounts for the period:</p>
       <span class="heading-medium">1 April 2015 to 31 March 2016</span>
-      <p class="form-hint">These should be the dates you have prepared your accounts to.</p>
+      <p class="form-hint">This should match the dates on your prepared accounts.</p>
       
       
       <h2 class="heading-medium">Do you want to change your company account dates?</h2>
@@ -42,13 +46,15 @@
         <legend class="visuallyhidden">Are these the dates you want to file your accounts for?</legend>
 
         <div class="form-group">
+        
+        <span><font id="errorMessage" color="red" th:if="${#fields.hasErrors('validDateSelection')}" th:errors="*{validDateSelection}" >Accounts dates error</font></span>
 
-          <label class="block-label" data-target="dates-yes-reveal" for="dates-yes">
+          <label class="block-label selection-button-radio" data-target="dates-yes-reveal" for="dates-yes">
             <input id="dates-yes" type="radio" name="confirm-dates" value="Yes" th:field="*{defaultDateConfirmation}" />
             Yes
           </label>
 
-          <label class="block-label"  for="dates-no">
+          <label class="block-label selection-button-radio"  for="dates-no">
             <input id="dates-no" type="radio" name="confirm-dates" value="31 March 2016" th:field="*{defaultDateConfirmation}" />
             No
           </label>
@@ -58,76 +64,76 @@
             <p>You can change the end date of the period you're filing for by up to 7 days.</p>
             <div class="form-group">
               <fieldset>
-                <label class="block-label" for="date-7">
+                <label class="block-label selection-button-radio" for="date-7">
                      <input id="date-7" type="radio" name="change-date" value="24 March 2016" th:field="*{customDateConfirmation}" />
                      24 March 2016
                    </label>
-                   <label class="block-label" for="date+1">
+                   <label class="block-label selection-button-radio" for="date+1">
                      <input id="date+1" type="radio" name="change-date" value="1 April 2016" th:field="*{customDateConfirmation}" />
                      1 April 2016
                    </label>
-                   <label class="block-label" for="date-6">
+                   <label class="block-label selection-button-radio" for="date-6">
                      <input id="date-6" type="radio" name="change-date" value="25 March 2016" th:field="*{customDateConfirmation}" />
                      25 March 2016
                    </label>
-                   <label class="block-label" for="date+2">
+                   <label class="block-label selection-button-radio" for="date+2">
                      <input id="date+2" type="radio" name="change-date" value="2 April 2016" th:field="*{customDateConfirmation}" />
                      2 April 2016
                    </label>
-                   <label class="block-label" for="date-5">
+                   <label class="block-label selection-button-radio" for="date-5">
                      <input id="date-5" type="radio" name="change-date" value="26 March 2016" th:field="*{customDateConfirmation}" />
                      26 March 2016
                    </label>
-                   <label class="block-label" for="date+3">
+                   <label class="block-label selection-button-radio" for="date+3">
                      <input id="date+3" type="radio" name="change-date" value="3 April 2016" th:field="*{customDateConfirmation}" />
                      3 April 2016
                    </label>
-                   <label class="block-label" for="date-4">
+                   <label class="block-label selection-button-radio" for="date-4">
                      <input id="date-4" type="radio" name="change-date" value="27 March 2016" th:field="*{customDateConfirmation}" />
                      27 March 2016
                    </label>
-                   <label class="block-label" for="date+4">
+                   <label class="block-label selection-button-radio" for="date+4">
                      <input id="date+4" type="radio" name="change-date" value="4 April 2016" th:field="*{customDateConfirmation}" />
                      4 April 2016
                    </label>
-                   <label class="block-label" for="date-3">
+                   <label class="block-label selection-button-radio" for="date-3">
                      <input id="date-3" type="radio" name="change-date" value="28 March 2016" th:field="*{customDateConfirmation}" />
                      28 March 2016
                    </label>
-                   <label class="block-label" for="date+5">
+                   <label class="block-label selection-button-radio" for="date+5">
                      <input id="date+5" type="radio" name="change-date" value="5 April 2016" th:field="*{customDateConfirmation}" />
                      5 April 2016
                    </label>
-                   <label class="block-label" for="date-2">
+                   <label class="block-label selection-button-radio" for="date-2">
                      <input id="date-2" type="radio" name="change-date" value="29 March 2016" th:field="*{customDateConfirmation}" />
                      29 March 2016
                    </label>
-                   <label class="block-label" for="date+6">
+                   <label class="block-label selection-button-radio" for="date+6">
                      <input id="date+6" type="radio" name="change-date" value="6 April 2016" th:field="*{customDateConfirmation}" />
                      6 April 2016
                    </label>
-                   <label class="block-label" for="date-1">
+                   <label class="block-label selection-button-radio" for="date-1">
                      <input id="date-1" type="radio" name="change-date" value="30 March 2016" th:field="*{customDateConfirmation}" />
                      30 March 2016
                    </label>
-                   <label class="block-label" for="date+7">
+                   <label class="block-label selection-button-radio" for="date+7">
                      <input id="date+7" type="radio" name="change-date" value="7 April 2016" th:field="*{customDateConfirmation}" />
                      7 April 2016
                    </label>
                    
               </fieldset>
             </div><!--form-group-->
-            <p>To change this date by more than 7 days, or to change the start date of the period you want to file for, you need to file a <a href="javascript:void(0)">Change of accounting reference date</a> form.</p>
+            <p>To change the start date or change the end date by more than 7 days, file a <a href="javascript:void(0)">Change of accounting reference date</a> form.</p>
          
           </div>      
         </div>
-         <span><font id="errorMessage" color="red" th:if="${#fields.hasErrors('validDateSelection')}" th:errors="*{validDateSelection}" >Accounts dates error</font></span>
+         
       </fieldset>
       
 
       <div class="form-group">
             <input type="submit" class="button"
-                value="Continue" />
+                value="Save and continue" />
         </div>
     </form>
 
