@@ -13,10 +13,9 @@
 					  <h2 class="heading-medium error-summary-heading" id="error-summary-heading">
 					    There's been a problem
 					  </h2>
-					
-					  <p>
-					    Check the following:
-					  </p>
+					<p id="error-summary-subheading">
+    					Check the following:
+  					</p>
                      <ul class="error-summary-list">
                         <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
                            <a th:if="${e.fieldName == 'directorConfirmation'}" th:href="'#' + director-confirmation" th:text="${e.message}" ></a>
@@ -26,7 +25,8 @@
                   </div>
                </div>
                
-               <h1 class="heading-xlarge">Approve your accounts</h1>
+               <h1 class="heading-xlarge"><span class="circle circle-step-large">6</span>
+ 			 	<span id="page-heading">Approve your accounts</span></h1>
                
                <h2 class="heading-medium">Who approved the accounts?</h2>
                <!--<p class="form-hint">If the company has only one director, enter their name here.</p>-->

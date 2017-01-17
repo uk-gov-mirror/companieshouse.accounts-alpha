@@ -9,7 +9,9 @@
   </head>
   <body>
  <div layout:fragment="content">
-<h1 class="heading-xlarge">Review your abridged accounts</h1>
+ 
+  <h1 class="heading-xlarge"><span class="circle circle-step-large">5</span>
+  <span id="page-heading">Review your abridged accounts</span></h1>
 
 <form action="/summary" th:action="@{/summary}"  th:object="${summaryPage}" method="post" class="form" id="review-form">
 
