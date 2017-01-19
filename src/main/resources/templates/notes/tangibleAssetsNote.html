@@ -27,8 +27,8 @@
 						<ul class="error-summary-list">
 							<li th:each="e : ${#fields.detailedErrors()}"
 								th:class="${e.global}? globalerr : fielderr">
-								<a th:if="${e.fieldName == 'netBookValueEnd'}"	th:href="'#' + tangible-net-book-value-end"	th:text="${e.message}"></a>
-								<a th:if="${e.fieldName == 'netBookValueStart'}"	th:href="'#' + tangible-net-book-value-start"	th:text="${e.message}"></a>
+								<a id="error-summary-current" th:if="${e.fieldName == 'netBookValueEnd'}"	th:href="'#' + tangible-net-book-value-end"	th:text="${e.message}"></a>
+								<a id="error-summary-previous" th:if="${e.fieldName == 'netBookValueStart'}"	th:href="'#' + tangible-net-book-value-start"	th:text="${e.message}"></a>
 							</li>
 						</ul>
 
